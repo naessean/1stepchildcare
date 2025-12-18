@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programs | First Step Child Care</title>
+  <meta name="description" content="Explore our Infant, Toddler, and Preschool/Pre-K programs at First Step Child Care in Watertown, MA (ages 3 months to 5 years)." />
+
+  <meta property="og:title" content="Programs | First Step Child Care" />
+  <meta property="og:description" content="Infant, Toddler, and Preschool/Pre-K programs (ages 3 months to 5 years) in Watertown, MA." />
+  <meta property="og:type" content="website" />
+
+  <!-- program.html is in /pages, and CSS is in /css -->
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    /* Page-only helpers */
+    .page-hero { padding: 34px 0; }
+    .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
+    .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .feature-grid{ grid-template-columns: 1fr; }
+    }
+
+    .feature{
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .feature h3{ margin: 0 0 8px; }
+    .feature p{ margin: 0; color: var(--muted); }
+
+    .program-card{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .tag-row{ display:flex; gap:8px; flex-wrap:wrap; }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-weight: 800;
+      color: var(--text);
+      font-size: .92rem;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .two-col{ grid-template-columns: 1fr; }
+    }
+
+    .info-list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .info-list li{ margin: 6px 0; }
+
+    .cta-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .cta-box h3{ margin: 0 0 8px; }
+    .cta-box p{ margin: 0 0 12px; color: var(--muted); }
+    .cta-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+ <header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Brand -->
+    <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+      <span class="brand-mark" aria-hidden="true">★</span>
+      <span class="brand-text">
+        <span class="brand-name">First Step</span>
+        <span class="brand-sub">Child Care</span>
+      </span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Open menu</span>
+      ☰
+    </button>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            About <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/prices.html">Prices</a></li>
+            <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
+            <li><a href="../pages/calendar.html">Calendar</a></li>
+            <li><a href="../pages/gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Programs <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../pages/program.html">Overview</a></li>
+            <li><a href="../pages/infant-program.html">Infant Program</a></li>
+            <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
+            <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
+            <li><a href="../pages/schedules.html">Schedules</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Policies <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../pages/policies.html">Policies Overview</a></li>
+            <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
+            <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
+            <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+            <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header CTA -->
+    <div class="header-cta">
+      <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
+      <a
+        class="mini-link"
+        href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+        target="_blank"
+        rel="noopener"
+      >📍 Get Directions</a>
+      <a class="cta" href="#bring">What to Bring</a>
+    </div>
+
+  </div>
+</header>
+
+
+  <main id="main">
+    <!-- Page hero -->
+    <section class="hero page-hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="breadcrumbs">
+            <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Programs
+          </p>
+          <h1>Programs for Ages 3 Months – 5 Years</h1>
+          <p class="lead">
+            First Step is a play-based learning center where children experience learning through play in
+            literature, sensory, science, mathematics, dramatics, and physical activity.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#programs">View Programs</a>
+            <a class="btn ghost" href="#tour">Schedule a Tour</a>
+          </div>
+
+          <div class="hero-contact" style="display:flex; gap:16px; margin-top:14px; font-weight:700; color: var(--muted); flex-wrap:wrap;">
+            <span>📍 1078 Belmont St, Watertown, MA</span>
+            <span>📞 (617) 484-6688</span>
+          </div>
+        </div>
+
+        <div class="hero-media" role="img" aria-label="Children learning through play"></div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How We Support Your Child</h2>
+        <p class="section-sub">A consistent routine, caring educators, and learning through play—every day.</p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Play-Based Learning</h3>
+            <p>Children explore and learn through hands-on activities across core areas like literacy, science, and math.</p>
+          </div>
+          <div class="feature">
+            <h3>Positive Guidance</h3>
+            <p>We support children in developing self-control by guiding each child in a positive way.</p>
+          </div>
+          <div class="feature">
+            <h3>Center + Parent Teamwork</h3>
+            <p>We believe in close collaboration between the center and parents to support each child’s development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program cards -->
+    <section class="section alt" id="programs">
+      <div class="container">
+        <h2 class="section-title">Our Programs</h2>
+        <p class="section-sub">Choose a program to learn more about daily routines, activities, and goals.</p>
+
+        <div class="cards">
+          <a class="card program-card" href="../pages/infant-program.html">
+            <h3>Infant Program</h3>
+            <p>Nurturing routines, sensory exploration, early communication, and safe discovery.</p>
+            <div class="tag-row">
+              <span class="tag">Infant I: 2–9 months</span>
+              <span class="tag">Infant II: 9–15 months</span>
+              <span class="tag">7 children / 2 educators</span>
+            </div>
+            <span class="card-link">Learn more →</span>
+          </a>
+
+          <a class="card program-card" href="../pages/toddler-program.html">
+            <h3>Toddler Program</h3>
+            <p>Free play + structured play-based curriculum that builds independence, confidence, and social skills.</p>
+            <div class="tag-row">
+              <span class="tag">15 months – 3.3 years</span>
+              <span class="tag">9 children / 2 teachers</span>
+              <span class="tag">Social skills</span>
+            </div>
+            <span class="card-link">Learn more →</span>
+          </a>
+
+          <a class="card program-card" href="../pages/preschool-program.html">
+            <h3>Preschool / Pre-K</h3>
+            <p>Daily activities, early literacy, and confidence-building for kindergarten readiness.</p>
+            <div class="tag-row">
+              <span class="tag">2.9 – 5 years</span>
+              <span class="tag">10 children / 1 teacher</span>
+              <span class="tag">Early literacy</span>
+            </div>
+            <span class="card-link">Learn more →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to expect + CTA -->
+    <section class="section" id="tour">
+      <div class="container two-col">
+        <div>
+          <h2 class="section-title">What to Expect</h2>
+          <p class="section-sub">
+            Our goal is for children to feel secure, loved, and excited to learn—while families feel confident and supported.
+          </p>
+
+          <ul class="info-list">
+            <li>Daily routines that help children feel safe and confident</li>
+            <li>Learning through play across multiple classroom areas</li>
+            <li>Positive support for social-emotional skills and self-control</li>
+            <li>Ongoing communication and partnership with families</li>
+          </ul>
+        </div>
+
+        <div class="cta-box">
+          <h3>Schedule a Tour</h3>
+          <p>Call us to schedule a tour and learn more about enrollment and availability.</p>
+          <div class="cta-actions">
+            <a class="btn primary" href="tel:+16174846688">Call (617) 484-6688</a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+
+          <p class="hint" style="margin-top:12px;">
+            Want a contact form on this page too? Tell me what email address to send inquiries to and I’ll wire it up.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open");
+    });
+
+    // dropdown buttons
+    document.querySelectorAll(".dropdown-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        btn.closest(".has-dropdown").classList.toggle("open");
+      });
+    });
+
+    // click outside closes dropdowns
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        document.querySelectorAll(".has-dropdown").forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

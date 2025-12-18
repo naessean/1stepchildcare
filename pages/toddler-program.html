@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toddler Program | First Step Child Care</title>
+  <meta name="description" content="Learn about our Toddler Program at First Step Child Care in Watertown, MA. Play-based learning with structured and free play that builds independence and confidence." />
+
+  <meta property="og:title" content="Toddler Program | First Step Child Care" />
+  <meta property="og:description" content="Play-based learning with structured and free play that builds independence, confidence, and social skills." />
+  <meta property="og:type" content="website" />
+
+  <!-- toddler-program.html is in /pages, and CSS is in /css -->
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    /* Page-only helpers */
+    .page-hero { padding: 34px 0; }
+    .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
+    .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .content{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .content{ grid-template-columns: 1fr; }
+    }
+
+    .stack{ display:grid; gap: 14px; }
+
+    .tag-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 10px; }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-weight: 800;
+      color: var(--text);
+      font-size: .92rem;
+    }
+
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 700px){
+      .kpi{ grid-template-columns: 1fr; }
+    }
+    .kpi .tile{
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .tile strong{ display:block; margin-bottom:6px; }
+    .tile span{ color: var(--muted); font-weight: 700; }
+
+    .bullets{ margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+    .bullets li{ margin: 6px 0; }
+
+    .checklist{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display:grid;
+      gap: 10px;
+    }
+    .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 12px;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .check{
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display:grid;
+      place-items:center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+    .checklist strong{ display:block; margin-bottom:3px; }
+
+    .cta-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .cta-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
+
+    .divider{ height: 1px; background: var(--border); margin: 14px 0; }
+    .note{ color: var(--muted); margin-top: 10px; font-weight: 700; }
+
+    .age-table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background:#fff;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .age-table th, .age-table td{
+      text-align:left;
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .age-table th{
+      background: var(--card);
+      font-weight: 900;
+    }
+    .age-table tr:last-child td{ border-bottom: 0; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Brand -->
+    <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+      <span class="brand-mark" aria-hidden="true">★</span>
+      <span class="brand-text">
+        <span class="brand-name">First Step</span>
+        <span class="brand-sub">Child Care</span>
+      </span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Open menu</span>
+      ☰
+    </button>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            About <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/prices.html">Prices</a></li>
+            <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
+            <li><a href="../pages/calendar.html">Calendar</a></li>
+            <li><a href="../pages/gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Programs <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../pages/program.html">Overview</a></li>
+            <li><a href="../pages/infant-program.html">Infant Program</a></li>
+            <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
+            <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
+            <li><a href="../pages/schedules.html">Schedules</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Policies <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="../pages/policies.html">Policies Overview</a></li>
+            <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
+            <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
+            <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+            <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header CTA -->
+    <div class="header-cta">
+      <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
+      <a
+        class="mini-link"
+        href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+        target="_blank"
+        rel="noopener"
+      >📍 Get Directions</a>
+      <a class="cta" href="#bring">What to Bring</a>
+    </div>
+
+  </div>
+</header>
+
+  <main id="main">
+    <!-- Page hero -->
+    <section class="hero page-hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="breadcrumbs">
+            <a href="../index.html">Home</a> <span aria-hidden="true">/</span>
+            <a href="../pages/program.html">Programs</a> <span aria-hidden="true">/</span> Toddler Program
+          </p>
+
+          <h1>Toddler Program</h1>
+          <p class="lead">
+            Each of our Toddler Classrooms are licensed for nine children with 2 teachers. Children are offered plenty of
+            opportunity for exploration, discovery, and learning on their own terms through free play—paired with a structured
+            play-based curriculum.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#details">Program Details</a>
+            <a class="btn ghost" href="#bring">Toddler Room: Things to Bring</a>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">9 children / room</span>
+            <span class="tag">2 teachers / room</span>
+            <span class="tag">Free play + structured curriculum</span>
+          </div>
+        </div>
+
+        <div class="hero-media" role="img" aria-label="Toddler classroom"></div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="section" id="details">
+      <div class="container content">
+        <div class="stack">
+          <h2 class="section-title">Classroom Age Ranges</h2>
+          <p class="section-sub">Our toddler program is grouped to match each child’s stage of development.</p>
+
+          <table class="age-table" aria-label="Toddler classroom age ranges">
+            <thead>
+              <tr>
+                <th>Classroom</th>
+                <th>Age Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Infant–Toddler</strong></td>
+                <td>15 months – 2 years old</td>
+              </tr>
+              <tr>
+                <td><strong>Toddler</strong></td>
+                <td>2 years old – 2.6 years old</td>
+              </tr>
+              <tr>
+                <td><strong>Toddler–Preschool</strong></td>
+                <td>2.6 years old – 3.3 years old</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="panel">
+            <h3 style="margin-top:0">Program Details</h3>
+            <p>
+              In our Toddler Program, children are offered plenty of opportunity for exploration, discovery and learning on their
+              own terms through free play.
+            </p>
+            <p>
+              Through free play, we promote interaction and social skills through socialization with peers, playing in a group,
+              and sharing and taking turns.
+            </p>
+            <p>
+              In partnership with free play, children also learn through a structured play-based curriculum where they engage in
+              literature, sensory, dramatic play, art, STEM, and movement activities to learn about a subject that teaches children
+              more about themselves, others, or the world around them.
+            </p>
+            <p>
+              Through a combination of structured play and free play, children enhance development, while also growing independence,
+              self-esteem, and confidence.
+            </p>
+          </div>
+
+          <div class="kpi">
+            <div class="tile">
+              <strong>Free Play</strong>
+              <span>Exploration, discovery, and learning on their own terms</span>
+            </div>
+            <div class="tile">
+              <strong>Social Skills</strong>
+              <span>Group play, sharing, taking turns, and peer interactions</span>
+            </div>
+            <div class="tile">
+              <strong>Structured Curriculum</strong>
+              <span>Literature, sensory, dramatic play, art, STEM, movement</span>
+            </div>
+            <div class="tile">
+              <strong>Confidence Building</strong>
+              <span>Independence, self-esteem, and confidence</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3 style="margin-top:0">We also ensure to</h3>
+            <ul class="bullets">
+              <li>Review classroom rules daily</li>
+              <li>Encourage and reward appropriate behavior to further boost self-esteem and confidence</li>
+              <li>Provide an environment that is stimulating, yet safe and not overly challenging</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="stack">
+          <div class="cta-box">
+            <h3>Questions or want a tour?</h3>
+            <p>Call us anytime to learn more about enrollment and availability.</p>
+            <div class="cta-actions">
+              <a class="btn primary" href="tel:+16174846688">Call (617) 484-6688</a>
+              <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">Get Directions</a>
+            </div>
+            <p class="note">📍 1078 Belmont St, Watertown, MA 02472</p>
+          </div>
+
+          <div class="panel">
+            <h3 style="margin-top:0">Helpful reminder</h3>
+            <p class="section-sub" style="margin-bottom:0">
+              Please label all belongings including sippy cups, plastic bags, blankets, bibs, clothes… etc.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Things to bring -->
+    <section class="section alt" id="bring">
+      <div class="container">
+        <h2 class="section-title">Toddler Room: Things to Bring</h2>
+        <p class="section-sub">Please label all belongings (especially sippy cups, clothes, blankets, etc.).</p>
+
+        <ul class="checklist">
+          <li>
+            <div class="check">✓</div>
+            <div><strong>Blanket</strong></div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div><strong>Crib sheet</strong></div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div><strong>2 sets of extra clothes</strong></div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div>
+              <strong>Lunch</strong>
+              <div class="muted">Parents can buy lunch at the center.</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div>
+              <strong>2 sippy cups</strong>
+              <div class="muted">Water, milk, or juice.</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div><strong>Bibs</strong></div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div><strong>Diapers and wipes</strong></div>
+          </li>
+
+          <li>
+            <div class="check">✓</div>
+            <div><strong>Toothbrush</strong></div>
+          </li>
+        </ul>
+
+        <div class="panel" style="margin-top:14px;">
+          <p style="margin:0; font-weight:900;">Thank you,<br>First Step</p>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0; font-weight:700;">
+            Please label all belongings including sippy cups, plastic bags, blankets, bibs, clothes...etc.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open");
+    });
+
+    // dropdown buttons
+    document.querySelectorAll(".dropdown-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        btn.closest(".has-dropdown").classList.toggle("open");
+      });
+    });
+
+    // click outside closes dropdowns
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        document.querySelectorAll(".has-dropdown").forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
