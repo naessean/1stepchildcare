@@ -81,6 +81,42 @@
     .cta-box p{ margin: 0 0 12px; color: var(--muted); }
     .cta-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ChildCare",
+  "name": "First Step Child Care",
+  "url": "https://www.1stepchildcare.com",
+  "logo": "https://www.1stepchildcare.com/assets/img/logo.png",
+  "image": "https://www.1stepchildcare.com/assets/img/logo.png",
+  "telephone": "+16174846688",
+  "email": "sonia_firststep@comcast.net",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1078 Belmont St",
+    "addressLocality": "Watertown",
+    "addressRegion": "MA",
+    "postalCode": "02472",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.3672,
+    "longitude": -71.1856
+  },
+  "areaServed": "Watertown MA",
+  "sameAs": [
+    "https://www.google.com/maps/place/1078+Belmont+St,+Watertown,+MA+02472"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "07:00",
+    "closes": "18:00"
+  }
+}
+</script>
+
 </head>
 
 <body>
@@ -149,6 +185,17 @@
         </li>
 
         <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+        <li class="has-dropdown">
+  <button class="nav-link dropdown-btn" aria-expanded="false">
+    Contact <span aria-hidden="true">▾</span>
+  </button>
+  <ul class="dropdown">
+    <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+    <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
+    <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
+  </ul>
+</li>
+
       </ul>
     </nav>
 
@@ -161,7 +208,6 @@
         target="_blank"
         rel="noopener"
       >📍 Get Directions</a>
-      <a class="cta" href="#bring">What to Bring</a>
     </div>
 
   </div>
@@ -193,8 +239,15 @@
           </div>
         </div>
 
-        <div class="hero-media" role="img" aria-label="Children learning through play"></div>
-      </div>
+<div class="hero-media logo-box">
+  <img
+    src="../assets/img/logo.png"
+    alt="First Step Child Care logo"
+    loading="eager"
+    decoding="async"
+  >
+</div>
+
     </section>
 
     <!-- Highlights -->
@@ -259,6 +312,18 @@
             </div>
             <span class="card-link">Learn more →</span>
           </a>
+
+          <a class="card program-card" href="../pages/schedules.html">
+  <h3>Daily Schedules</h3>
+  <p>See typical daily routines for infants, toddlers, and preschool / pre-K.</p>
+  <div class="tag-row">
+    <span class="tag">Consistent routine</span>
+    <span class="tag">Meals + rest</span>
+    <span class="tag">Indoor + outdoor play</span>
+  </div>
+  <span class="card-link">View schedules →</span>
+</a>
+
         </div>
       </div>
     </section>
@@ -329,13 +394,52 @@
     });
 
     // dropdown buttons
-    document.querySelectorAll(".dropdown-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        btn.closest(".has-dropdown").classList.toggle("open");
-      });
-    });
+// dropdowns: mobile/touch = click, desktop = hover (no sticky click)
+const dropdowns = document.querySelectorAll(".has-dropdown");
+const isTouch = window.matchMedia("(hover: none)").matches;
+
+function closeAllDropdowns(except = null){
+  dropdowns.forEach(d => {
+    if (d !== except) {
+      d.classList.remove("open");
+      const b = d.querySelector(".dropdown-btn");
+      if (b) b.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+dropdowns.forEach(drop => {
+  const btn = drop.querySelector(".dropdown-btn");
+  if (!btn) return;
+
+  btn.addEventListener("click", (e) => {
+    // On desktop, ignore click so it doesn't "stick"
+    if (!isTouch) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const isOpen = drop.classList.contains("open");
+    closeAllDropdowns(drop);
+
+    drop.classList.toggle("open", !isOpen);
+    btn.setAttribute("aria-expanded", String(!isOpen));
+  });
+});
+
+// close dropdowns when clicking outside (especially helpful on mobile)
+document.addEventListener("click", () => closeAllDropdowns());
+
+// close on ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeAllDropdowns();
+});
+
+// if a dropdown link is clicked, close all (nice on mobile)
+document.querySelectorAll(".dropdown a").forEach(link => {
+  link.addEventListener("click", () => closeAllDropdowns());
+});
+
 
     // click outside closes dropdowns
     document.addEventListener("click", (e) => {

@@ -4,17 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | First Step Child Care</title>
-  <meta name="description" content="Meet Sonia Rossi, Owner and Director of First Step Child Care Center in Watertown, MA. Learn about our play-based approach and programs for ages 3 months to 5 years." />
+  <meta name="description" content="Learn about First Step Child Care in Watertown, MA — our approach, programs, and how to contact us." />
 
   <meta property="og:title" content="About Us | First Step Child Care" />
-  <meta property="og:description" content="Meet our Director and learn about our center in Watertown, MA." />
+  <meta property="og:description" content="Learn about our center, approach, and how to contact us." />
   <meta property="og:type" content="website" />
 
-  <!-- IMPORTANT: about.html is in /pages, and CSS is in /css -->
+  <!-- IMPORTANT: about.html is in /pages, so CSS is one level up -->
   <link rel="stylesheet" href="../css/styles.css" />
 
+
   <style>
-    /* Page-only helpers */
+    /* Small page-only helpers (optional) */
     .page-hero { padding: 34px 0; }
     .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
     .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
@@ -107,92 +108,138 @@
     }
     details p{ color: var(--muted); margin: 10px 0 0; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ChildCare",
+  "name": "First Step Child Care",
+  "url": "https://www.1stepchildcare.com",
+  "logo": "https://www.1stepchildcare.com/assets/img/logo.png",
+  "image": "https://www.1stepchildcare.com/assets/img/logo.png",
+  "telephone": "+16174846688",
+  "email": "sonia_firststep@comcast.net",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1078 Belmont St",
+    "addressLocality": "Watertown",
+    "addressRegion": "MA",
+    "postalCode": "02472",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.3672,
+    "longitude": -71.1856
+  },
+  "areaServed": "Watertown MA",
+  "sameAs": [
+    "https://www.google.com/maps/place/1078+Belmont+St,+Watertown,+MA+02472"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "07:00",
+    "closes": "18:00"
+  }
+}
+</script>
+
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
- <header class="site-header">
-  <div class="container header-inner">
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- IMPORTANT: about.html is in /pages so Home is ../index.html -->
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
 
-    <!-- Brand -->
-    <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-      <span class="brand-mark" aria-hidden="true">★</span>
-      <span class="brand-text">
-        <span class="brand-name">First Step</span>
-        <span class="brand-sub">Child Care</span>
-      </span>
-    </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open menu</span>
+        ☰
+      </button>
 
-    <!-- Mobile toggle -->
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span class="sr-only">Open menu</span>
-      ☰
-    </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html">Home</a></li>
 
-    <!-- Navigation -->
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <ul class="nav-list">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              About <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="../pages/about.html">About Us</a></li>
+              <li><a href="../pages/prices.html">Prices</a></li>
+              <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
+              <li><a href="../pages/calendar.html">Calendar</a></li>
+              <li><a href="../pages/gallery.html">Gallery</a></li>
+            </ul>
+          </li>
 
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            About <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a href="../pages/about.html">About Us</a></li>
-            <li><a href="../pages/prices.html">Prices</a></li>
-            <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
-            <li><a href="../pages/calendar.html">Calendar</a></li>
-            <li><a href="../pages/gallery.html">Gallery</a></li>
-          </ul>
-        </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Program <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="../pages/program.html">Overview</a></li>
+              <li><a href="../program/infant-program.html">Infant Program</a></li>
+              <li><a href="../program/toddler-program.html">Toddler Program</a></li>
+              <li><a href="../program/preschool-program.html">Preschool / Pre-K</a></li>
+              <li><a href="../program/schedules.html">Schedules</a></li>
+            </ul>
+          </li>
 
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            Programs <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a href="../pages/program.html">Overview</a></li>
-            <li><a href="../pages/infant-program.html">Infant Program</a></li>
-            <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
-            <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
-            <li><a href="../pages/schedules.html">Schedules</a></li>
-          </ul>
-        </li>
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Policies <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="../pages/policies.html">Policies Overview</a></li>
+              <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
+              <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
+              <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+              <li><a href="../policies/first-aid-injury-prevention.html">First Aid & Injury Prevention</a></li>
+              <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+              <li><a href="../policies/holiday-inclement-weather.html">Holiday & Inclement Weather</a></li>
+              <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
+              <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
+            </ul>
+          </li>
 
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            Policies <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a href="../pages/policies.html">Policies Overview</a></li>
-            <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
-            <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
-            <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
-            <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
-          </ul>
-        </li>
+          <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+          <li class="has-dropdown">
+  <button class="nav-link dropdown-btn" aria-expanded="false">
+    Contact <span aria-hidden="true">▾</span>
+  </button>
+  <ul class="dropdown">
+    <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+    <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
+    <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
+  </ul>
+</li>
 
-        <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
-      </ul>
-    </nav>
+        </ul>
+      </nav>
 
-    <!-- Header CTA -->
-    <div class="header-cta">
-      <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
-      <a
-        class="mini-link"
-        href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
-        target="_blank"
-        rel="noopener"
-      >📍 Get Directions</a>
-      <a class="cta" href="#bring">What to Bring</a>
+      <!-- Header contact block (real info) -->
+      <div class="header-cta">
+        <a class="mini-link" href="tel:+16174846688">Call: (617) 484-6688</a>
+        <a
+          class="mini-link"
+          href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+          target="_blank"
+          rel="noopener"
+        >Get Directions</a>
+        <a class="cta" href="#contact">Contact</a>
+      </div>
     </div>
-
-  </div>
-</header>
-
+  </header>
 
   <main id="main">
     <!-- Page hero -->
@@ -204,8 +251,8 @@
           </p>
           <h1>About First Step Child Care</h1>
           <p class="lead">
-            Meet our Director and learn about our center in Watertown, Massachusetts—providing early care and education for
-            children ages <strong>3 months to 5 years</strong>.
+            We provide a warm, structured, play-based environment for children ages
+            <strong>3 months to 5 years</strong>—supporting social-emotional growth, early learning, and kindergarten readiness.
           </p>
 
           <div class="pill-row">
@@ -216,74 +263,41 @@
           </div>
         </div>
 
-        <div class="hero-media" role="img" aria-label="Classroom or center photo"></div>
+        <div class="hero-media logo-box">
+  <img
+    src="../assets/img/logo.png"
+    alt="First Step Child Care logo"
+    loading="eager"
+    decoding="async"
+  >
+</div>
+
       </div>
     </section>
 
-    <!-- About Director + About Center -->
+    <!-- Mission / Values -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">About the Director</h2>
-        <p class="section-sub">My name is Sonia Rossi and I am the Owner and Director of First Step Child Care Center.</p>
+        <h2 class="section-title">Our Approach</h2>
+        <p class="section-sub">
+          A balance of play, routine, and intentional learning—so kids feel safe, engaged, and excited to grow.
+        </p>
 
-        <div class="panel">
-          <p><strong>My name is Sonia Rossi</strong> and I am the Owner and Director of First Step Child Care Center.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Safe & Nurturing</h3>
+            <p>Consistent routines, caring teachers, and an environment where children feel supported.</p>
+          </div>
 
-          <p>
-            I have worked in childcare for 25 years as both a teacher and director. Throughout these years,
-            I have witnessed many children grow and learn while building confidence and a strong self-esteem.
-          </p>
+          <div class="card">
+            <h3>Learning Through Play</h3>
+            <p>Hands-on activities that build language, motor skills, curiosity, and social skills.</p>
+          </div>
 
-          <p>
-            I believe that every child is a unique individual who is entitled to their own thoughts, feelings,
-            and opinions, and deserving of love and a sense of security. At First Step, I have created an environment
-            where children can feel a sense of security and love, while learning and growing.
-          </p>
-
-          <p>
-            I select my staff based on their experience, education, and most importantly, a love for children.
-            Each staff member will be respectful of every child as an individual and will model loving and respectful
-            behavior for children to follow with one another.
-          </p>
-
-          <p>
-            As a mother of two myself, I know how important it is for parents to have peace of mind while leaving their
-            little ones during the day. Therefore, we want each child and parent to feel as though First Step is a safe
-            and welcoming <strong>"second home".</strong>
-          </p>
-        </div>
-
-        <div style="height:18px"></div>
-
-        <h2 class="section-title">About the Center</h2>
-        <p class="section-sub">First Step is a play-based learning center offering early care and education in Watertown, MA.</p>
-
-        <div class="panel">
-          <p>
-            First Step is located in Watertown, MA. We are licensed for <strong>67 children</strong> and offer early care and
-            education for children between <strong>3 months old and 5 years old</strong>.
-          </p>
-
-          <p>
-            First Step is a play-based learning center, where children can experience learning through play in literature,
-            sensory, science, mathematics, dramatics, and physical activity.
-          </p>
-
-          <p>
-            First Step provides an environment where children can feel free to learn, grow and be safe with themselves and others
-            with guidance from parents, educators and administration, who work together as a team.
-          </p>
-
-          <p>
-            First Step believes helping children develop self-control is an enormous challenge and responsibility. Our staff are
-            prepared to help children reach that milestone by supporting and guiding each child in a positive way.
-          </p>
-
-          <p>
-            We believe that the first years of a child’s life are a crucial part of their development. We support parents in any
-            way we can and believe in close collaboration between center and parents. We want the best for each child and hope that
-            each child and parent has a wonderful experience at the center.
-          </p>
+          <div class="card">
+            <h3>Family Partnership</h3>
+            <p>Clear communication, shared goals, and a community that celebrates milestones together.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -293,13 +307,13 @@
       <div class="container info-grid">
         <div>
           <h2 class="section-title">Location</h2>
-          <p class="section-sub">Conveniently located in Watertown, Massachusetts.</p>
+          <p class="section-sub">
+            Conveniently located in Watertown, Massachusetts.
+          </p>
 
           <div class="panel">
             <p style="margin:0"><strong>Address</strong><br />1078 Belmont St, Watertown, MA 02472</p>
-            <p style="margin:12px 0 0"><strong>Phone</strong><br />
-              <a href="tel:+16174846688" style="color:var(--primary-2); font-weight:800; text-decoration:none;">(617) 484-6688</a>
-            </p>
+            <p style="margin:12px 0 0"><strong>Phone</strong><br /><a href="tel:+16174846688" style="color:var(--primary-2); font-weight:800; text-decoration:none;">(617) 484-6688</a></p>
 
             <div class="pill-row">
               <a class="pill" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">Get Directions →</a>
@@ -307,171 +321,5 @@
             </div>
 
             <p class="hint" style="margin-top:12px;">
-              Add hours here once you confirm them (example):
-              <br />Mon–Fri: 7:00 AM – 6:00 PM
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <div class="map-embed" aria-label="Map">
-            <iframe
-              title="First Step Child Care Map"
-              width="100%"
-              height="100%"
-              style="border:0"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=1078%20Belmont%20St%2C%20Watertown%2C%20MA%2002472&output=embed"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="container split">
-        <div>
-          <h2 class="section-title">Contact Us</h2>
-          <p class="section-sub">
-            Tell us your child’s age and what start date you’re hoping for—we’ll follow up as soon as possible.
-          </p>
-
-          <div class="panel">
-            <p style="margin:0"><strong>Call:</strong>
-              <a href="tel:+16174846688" style="color:var(--primary-2); font-weight:900; text-decoration:none;">(617) 484-6688</a>
-            </p>
-            <p style="margin:10px 0 0"><strong>Visit:</strong> 1078 Belmont St, Watertown, MA 02472</p>
-          </div>
-
-          <p class="hint" style="margin-top:14px;">
-            Want a working contact form that emails the owner? Tell me what email address it should go to and I’ll wire it up.
-          </p>
-        </div>
-
-        <div class="panel">
-          <h3 style="margin-top:0">Request Information</h3>
-
-          <!-- Placeholder form (not wired yet) -->
-          <form class="form" onsubmit="event.preventDefault(); alert('Form not wired yet. Tell me the email and I’ll connect it.');">
-            <div class="two-col">
-              <div class="field">
-                <label for="name">Parent/Guardian Name</label>
-                <input id="name" name="name" autocomplete="name" required />
-              </div>
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required />
-              </div>
-            </div>
-
-            <div class="two-col">
-              <div class="field">
-                <label for="childage">Child Age</label>
-                <input id="childage" name="childage" placeholder="e.g., 18 months" />
-              </div>
-              <div class="field">
-                <label for="start">Preferred Start Date</label>
-                <input id="start" name="start" placeholder="e.g., March 1" />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Anything we should know?"></textarea>
-            </div>
-
-            <button class="btn primary" type="submit">Send Request</button>
-            <p class="hint">We’ll respond via phone as soon as we can.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section alt">
-      <div class="container">
-        <h2 class="section-title">FAQs</h2>
-        <p class="section-sub">Common questions parents ask when choosing a child care center.</p>
-
-        <div class="faq">
-          <details>
-            <summary>What ages do you accept?</summary>
-            <p>Children ages 3 months to 5 years.</p>
-          </details>
-
-          <details>
-            <summary>How do I schedule a tour?</summary>
-            <p>Call (617) 484-6688 or use the contact section above to request information.</p>
-          </details>
-
-          <details>
-            <summary>Where are you located?</summary>
-            <p>1078 Belmont St, Watertown, MA 02472.</p>
-          </details>
-
-          <details>
-            <summary>Where can I find policies?</summary>
-            <p>Visit the Policies section in the menu. We can also add a “Download Policies PDF” link if you have the file.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>First Step Child Care</strong>
-        <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
-      </div>
-      <div class="footer-links">
-        <a href="../pages/about.html">About</a>
-        <a href="../pages/program.html">Programs</a>
-        <a href="../pages/policies.html">Policies</a>
-        <a href="../pages/gallery.html">Gallery</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p class="muted">© <span id="year"></span> First Step Child Care</p>
-    </div>
-  </footer>
-
-  <script>
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // mobile nav toggle
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.getElementById("site-nav");
-
-    toggle.addEventListener("click", () => {
-      const open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      nav.classList.toggle("open");
-    });
-
-    // dropdown buttons
-    document.querySelectorAll(".dropdown-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        btn.closest(".has-dropdown").classList.toggle("open");
-      });
-    });
-
-    // click outside closes dropdowns
-    document.addEventListener("click", (e) => {
-      const isMenu = e.target.closest(".has-dropdown");
-      if (!isMenu) {
-        document.querySelectorAll(".has-dropdown").forEach(li => {
-          li.classList.remove("open");
-          const b = li.querySelector(".dropdown-btn");
-          if (b) b.setAttribute("aria-expanded", "false");
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+              (Optional) Add hours here once you confirm them:
+              <br />Mon–Fri: 7:0

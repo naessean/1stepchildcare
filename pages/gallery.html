@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | First Step Child Care</title>
+  <meta name="description" content="A look inside First Step Child Care in Watertown, MA — classroom moments, learning through play, and daily activities." />
+
+  <meta property="og:title" content="Gallery | First Step Child Care" />
+  <meta property="og:description" content="Explore photos from First Step Child Care — learning through play, classroom activities, and daily routines." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    /* Page-only: modern gallery */
+    .page-hero { padding: 34px 0; }
+    .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
+    .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .gallery-wrap { padding: 10px 0 52px; }
+    .gallery-head {
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 16px;
+    }
+    .gallery-head p { margin:0; color: var(--muted); max-width: 70ch; }
+
+    /* Masonry-ish columns (very modern, super simple, very fast) */
+    .masonry {
+      column-count: 3;
+      column-gap: 16px;
+    }
+    @media (max-width: 900px){ .masonry{ column-count: 2; } }
+    @media (max-width: 560px){ .masonry{ column-count: 1; } }
+
+    .shot {
+      break-inside: avoid;
+      margin: 0 0 16px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+      cursor: zoom-in;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .shot:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .shot img{
+      width: 100%;
+      height: auto;
+      display:block;
+    }
+
+    /* Lightbox modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 18px;
+    }
+    .lightbox.open { display:flex; }
+
+    .lb-card{
+      width: min(1100px, 96vw);
+      max-height: 86vh;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0b1220;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      position: relative;
+    }
+    .lb-img{
+      width: 100%;
+      height: 86vh;
+      max-height: 86vh;
+      object-fit: contain;
+      display:block;
+      background: #0b1220;
+    }
+    .lb-close, .lb-prev, .lb-next{
+      position:absolute;
+      top: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.10);
+      color: #fff;
+      cursor: pointer;
+      display:grid;
+      place-items:center;
+      font-size: 18px;
+      line-height: 1;
+      backdrop-filter: blur(6px);
+    }
+    .lb-close{ right: 12px; }
+    .lb-prev{ left: 12px; top: 50%; transform: translateY(-50%); }
+    .lb-next{ right: 12px; top: 50%; transform: translateY(-50%); }
+    .lb-close:hover, .lb-prev:hover, .lb-next:hover{ background: rgba(255,255,255,.18); }
+
+    .lb-hint{
+      position:absolute;
+      left: 14px;
+      bottom: 12px;
+      color: rgba(255,255,255,.75);
+      font-weight: 700;
+      font-size: .95rem;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    /* Small CTA panel */
+    .cta-panel{
+      margin-top: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .cta-panel p{ margin:0; color: var(--muted); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open menu</span>
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html">Home</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              About <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="prices.html">Prices</a></li>
+              <li><a href="kindercam.html">Kinder Cam</a></li>
+              <li><a href="calendar.html">Calendar</a></li>
+              <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Programs <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="program.html">Overview</a></li>
+              <li><a href="infant-program.html">Infant Program</a></li>
+              <li><a href="toddler-program.html">Toddler Program</a></li>
+              <li><a href="preschool-program.html">Preschool / Pre-K</a></li>
+              <li><a href="schedules.html">Schedules</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Policies <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="policies.html">Policies Overview</a></li>
+              <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
+              <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
+              <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+              <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+            </ul>
+          </li>
+
+          <li><a class="nav-link" href="gallery.html" aria-current="page">Gallery</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
+        <a class="mini-link"
+           href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+           target="_blank" rel="noopener">📍 Get Directions</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="breadcrumbs">
+            <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Gallery
+          </p>
+          <h1>Photo Gallery</h1>
+          <p class="lead">A look inside our classrooms, learning through play, and everyday moments.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="program.html">Explore Programs</a>
+            <a class="btn ghost" href="about.html#contact">Request Info</a>
+          </div>
+        </div>
+        <div class="hero-media logo-box">
+        <img
+            src="../assets/img/logo.png"
+            alt="First Step Child Care logo"
+            loading="eager"
+            decoding="async"
+        >
+        </div>
+
+    </section>
+
+    <section class="section gallery-wrap">
+      <div class="container">
+        <div class="gallery-head">
+          <div>
+            <h2 class="section-title" style="margin:0 0 6px;">Moments at First Step</h2>
+            <p>Click any photo to view it larger. Use the arrows or your keyboard (← →) to navigate.</p>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="masonry" id="gallery">
+          <!-- Update filenames here if needed -->
+          <figure class="shot"><img src="../assets/img/gallery-01.avif" alt="Children engaged in classroom activity" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-02.avif" alt="Learning through play in the classroom" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-03.avif" alt="Preschool activity and materials" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-04.avif" alt="Group play and social development" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-05.avif" alt="Teacher-led activity with children" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-06.avif" alt="Creative play and exploration" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-07.avif" alt="Classroom learning moment" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-08.avif" alt="Play-based center activity" loading="lazy" decoding="async"></figure>
+          <figure class="shot"><img src="../assets/img/gallery-09.avif" alt="Child care environment and daily routine" loading="lazy" decoding="async"></figure>
+        </div>
+
+        <div class="cta-panel">
+          <p><strong>Want to see us in person?</strong> We’d love to meet you and answer questions about enrollment.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="tel:+16174846688">Call (617) 484-6688</a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lb-card" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+      <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+      <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+      <img class="lb-img" id="lbImg" alt="">
+      <div class="lb-hint">Esc to close • ← → to navigate</div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="program.html">Programs</a>
+        <a href="policies.html">Policies</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open");
+    });
+
+    // dropdowns: mobile click only, desktop uses hover
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
+      btn.addEventListener("click", (e) => {
+        if (!isTouch) return;
+        e.stopPropagation();
+
+        dropdowns.forEach(d => {
+          if (d !== drop) {
+            d.classList.remove("open");
+            const b = d.querySelector(".dropdown-btn");
+            if (b) b.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        const isOpen = drop.classList.contains("open");
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => {
+        dropdowns.forEach(d => {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        dropdowns.forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    // Lightbox
+    const shots = Array.from(document.querySelectorAll("#gallery img"));
+    const lightbox = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbClose = document.getElementById("lbClose");
+    const lbPrev = document.getElementById("lbPrev");
+    const lbNext = document.getElementById("lbNext");
+
+    let idx = 0;
+
+    function openLB(i){
+      idx = i;
+      const img = shots[idx];
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || "";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLB(){
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    function prev(){
+      idx = (idx - 1 + shots.length) % shots.length;
+      openLB(idx);
+    }
+    function next(){
+      idx = (idx + 1) % shots.length;
+      openLB(idx);
+    }
+
+    shots.forEach((img, i) => {
+      img.closest(".shot").addEventListener("click", () => openLB(i));
+    });
+
+    lbClose.addEventListener("click", closeLB);
+    lbPrev.addEventListener("click", (e) => { e.stopPropagation(); prev(); });
+    lbNext.addEventListener("click", (e) => { e.stopPropagation(); next(); });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLB();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") closeLB();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    });
+  </script>
+</body>
+</html>
