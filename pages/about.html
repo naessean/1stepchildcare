@@ -10,9 +10,8 @@
   <meta property="og:description" content="Learn about our center, approach, and how to contact us." />
   <meta property="og:type" content="website" />
 
-  <!-- IMPORTANT: about.html is in /pages, so CSS is one level up -->
+  <!-- about.html is in /pages, CSS is in /css -->
   <link rel="stylesheet" href="../css/styles.css" />
-
 
   <style>
     /* Small page-only helpers (optional) */
@@ -25,7 +24,7 @@
       display:grid;
       grid-template-columns: 1.1fr .9fr;
       gap: 18px;
-      align-items:start;
+      align-items: stretch; /* ✅ key change */
     }
     @media (max-width: 900px){
       .info-grid{ grid-template-columns: 1fr; }
@@ -33,13 +32,15 @@
 
     .map-embed{
       width:100%;
-      height: 320px;
+      height: 100%;              /* ✅ was fixed height before */
+      min-height: 320px;         /* keeps it nice even if content is short */
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow:hidden;
       background:#fff;
       box-shadow: 0 2px 0 rgba(2,6,23,.04);
-    }
+}
+
 
     .form{
       display:grid;
@@ -108,42 +109,6 @@
     }
     details p{ color: var(--muted); margin: 10px 0 0; }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ChildCare",
-  "name": "First Step Child Care",
-  "url": "https://www.1stepchildcare.com",
-  "logo": "https://www.1stepchildcare.com/assets/img/logo.png",
-  "image": "https://www.1stepchildcare.com/assets/img/logo.png",
-  "telephone": "+16174846688",
-  "email": "sonia_firststep@comcast.net",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1078 Belmont St",
-    "addressLocality": "Watertown",
-    "addressRegion": "MA",
-    "postalCode": "02472",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 42.3672,
-    "longitude": -71.1856
-  },
-  "areaServed": "Watertown MA",
-  "sameAs": [
-    "https://www.google.com/maps/place/1078+Belmont+St,+Watertown,+MA+02472"
-  ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "07:00",
-    "closes": "18:00"
-  }
-}
-</script>
-
 </head>
 
 <body>
@@ -151,7 +116,6 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <!-- IMPORTANT: about.html is in /pages so Home is ../index.html -->
       <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
         <span class="brand-mark" aria-hidden="true">★</span>
         <span class="brand-text">
@@ -184,14 +148,14 @@
 
           <li class="has-dropdown">
             <button class="nav-link dropdown-btn" aria-expanded="false">
-              Program <span aria-hidden="true">▾</span>
+              Programs <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
               <li><a href="../pages/program.html">Overview</a></li>
-              <li><a href="../program/infant-program.html">Infant Program</a></li>
-              <li><a href="../program/toddler-program.html">Toddler Program</a></li>
-              <li><a href="../program/preschool-program.html">Preschool / Pre-K</a></li>
-              <li><a href="../program/schedules.html">Schedules</a></li>
+              <li><a href="../pages/infant-program.html">Infant Program</a></li>
+              <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
+              <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
+              <li><a href="../pages/schedules.html">Schedules</a></li>
             </ul>
           </li>
 
@@ -213,36 +177,28 @@
           </li>
 
           <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
-          <li class="has-dropdown">
-  <button class="nav-link dropdown-btn" aria-expanded="false">
-    Contact <span aria-hidden="true">▾</span>
-  </button>
-  <ul class="dropdown">
-    <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
-    <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
-    <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
-  </ul>
-</li>
 
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Contact <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+              <li><a href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry">✉️ Email Sonia</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
-      <!-- Header contact block (real info) -->
       <div class="header-cta">
-        <a class="mini-link" href="tel:+16174846688">Call: (617) 484-6688</a>
-        <a
-          class="mini-link"
-          href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
-          target="_blank"
-          rel="noopener"
-        >Get Directions</a>
-        <a class="cta" href="#contact">Contact</a>
+        <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
+        <a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Get Directions</a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- Page hero -->
     <section class="hero page-hero">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -264,18 +220,11 @@
         </div>
 
         <div class="hero-media logo-box">
-  <img
-    src="../assets/img/logo.png"
-    alt="First Step Child Care logo"
-    loading="eager"
-    decoding="async"
-  >
-</div>
-
+          <img src="../assets/img/logo.png" alt="First Step Child Care logo">
+        </div>
       </div>
     </section>
 
-    <!-- Mission / Values -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Our Approach</h2>
@@ -302,24 +251,171 @@
       </div>
     </section>
 
-    <!-- Center info + map -->
     <section class="section alt">
       <div class="container info-grid">
         <div>
           <h2 class="section-title">Location</h2>
-          <p class="section-sub">
-            Conveniently located in Watertown, Massachusetts.
-          </p>
+          <p class="section-sub">Conveniently located in Watertown, Massachusetts.</p>
 
           <div class="panel">
-            <p style="margin:0"><strong>Address</strong><br />1078 Belmont St, Watertown, MA 02472</p>
-            <p style="margin:12px 0 0"><strong>Phone</strong><br /><a href="tel:+16174846688" style="color:var(--primary-2); font-weight:800; text-decoration:none;">(617) 484-6688</a></p>
+            <p style="margin:0"><strong>Address</strong><br>1078 Belmont St, Watertown, MA 02472</p>
+            <p style="margin:12px 0 0"><strong>Phone</strong><br>
+              <a href="tel:+16174846688" style="color:var(--primary-2); font-weight:800; text-decoration:none;">(617) 484-6688</a>
+            </p>
 
             <div class="pill-row">
               <a class="pill" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">Get Directions →</a>
-              <a class="pill" href="#contact">Request Info →</a>
+              <a class="pill" href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry">Request Info →</a>
             </div>
 
-            <p class="hint" style="margin-top:12px;">
-              (Optional) Add hours here once you confirm them:
-              <br />Mon–Fri: 7:0
+            <p class="hint" style="margin-top:12px; margin-bottom:0;">
+              Hours:
+              <br>Mon–Fri: 7:00 AM – 6:00 PM
+            </p>
+          </div>
+        </div>
+
+        <div class="map-embed" aria-label="Map showing First Step Child Care location">
+          <iframe
+            title="First Step Child Care Map"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=1078+Belmont+St,+Watertown,+MA+02472&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Questions, tour requests, or enrollment info—reach out anytime.</p>
+
+        <div class="panel">
+          <div class="pill-row">
+            <a class="pill" href="tel:+16174846688">📞 Call (617) 484-6688</a>
+            <a class="pill" href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry">✉️ Email Sonia</a>
+            <a class="pill" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a>
+          </div>
+
+          <p class="hint" style="margin-top:12px; margin-bottom:0;">
+            Prefer email? Tap “Email Sonia” and your email app will open with the subject filled in.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">Early care and education for ages 3 months – 5 years.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Button -->
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
+
+  <script>
+    // year
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+
+    if (toggle && nav){
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        nav.classList.toggle("open");
+      });
+    }
+
+    // dropdowns: mobile click only, desktop uses hover
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
+      if(!btn) return;
+
+      btn.addEventListener("click", (e) => {
+        if (!isTouch) return; // desktop uses hover
+        e.stopPropagation();
+
+        // close other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== drop) {
+            d.classList.remove("open");
+            const b = d.querySelector(".dropdown-btn");
+            if (b) b.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // toggle current dropdown
+        const isOpen = drop.classList.contains("open");
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+
+    // close dropdowns when a link is clicked (mobile)
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => {
+        dropdowns.forEach(d => {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    // click outside to close dropdowns (mobile convenience)
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        dropdowns.forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    // Pulse floating button only after user scrolls
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
