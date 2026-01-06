@@ -3,19 +3,18 @@
   --text: #0f172a;
   --muted: #475569;
 
-  /* Backgrounds */
-  --card: #f4f8fd;                /* slightly darker blue-tinted cards */
-  --section-bg: #eef4fb;          /* alt section background */
+  /* Surfaces */
+  --card: #eef4fb;
+  --section-bg: #e2ecf8;
+  --border: rgba(15, 23, 42, .14);
 
-  --border: rgba(15, 23, 42, .12);
-
-  /* Blues (rebalanced) */
-  --primary:   #4a8fd6;   /* BUTTONS – lighter & friendly */
-  --primary-2: #2f74b8;   /* hovers, nav underline */
-  --primary-3: #245f9e;   /* active / focus */
+  /* DARKER BLUES (key change) */
+  --primary:   #1f4f8c;   /* buttons, strong accents */
+  --primary-2: #173d6b;   /* hovers, nav underline */
+  --primary-3: #0f2f55;   /* active / focus states */
 
   --radius: 16px;
-  --shadow: 0 10px 25px rgba(2, 6, 23, .10);
+  --shadow: 0 10px 25px rgba(15, 60, 120, .18);
 }
 
 
@@ -303,14 +302,14 @@ body{
 /* ================= HERO ================= */
 
 .hero{
-  border-bottom: 1px solid var(--border);
   background: linear-gradient(
     180deg,
-    rgba(79,163,227,.22),
-    rgba(79,163,227,.08) 60%,
+    rgba(31,79,140,.22),
+    rgba(31,79,140,.10) 60%,
     transparent
   );
 }
+
 
 
 .hero-inner{
@@ -365,6 +364,8 @@ body{
   height: auto;
   width: auto;
 }
+
+
 
 
 /* ================= BUTTONS ================= */
@@ -500,11 +501,12 @@ button.dropdown-btn {
 .site-footer{
   background: linear-gradient(
     180deg,
-    #f2f7ff,
-    #e9f2fc
+    #e4eefb,
+    #d8e6f8
   );
   border-top: 1px solid var(--border);
 }
+
 
 .footer-inner{
   padding-top: 10px;
@@ -529,7 +531,7 @@ button.dropdown-btn {
   color: #4b5d78;
 }
 .site-footer strong{
-  color: #1f3a5f;
+  color: #0f2f55;   /* darker, confident blue */
 }
 
 
