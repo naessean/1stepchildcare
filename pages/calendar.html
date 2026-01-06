@@ -585,5 +585,49 @@
       link.addEventListener("click", () => closeAllDropdowns());
     });
   </script>
+  <a class="floating-contact"
+   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+   aria-label="Email First Step Child Care">
+  ✉️ Contact
+</a>
+<script>
+  (function(){
+    const btn = document.querySelector('.floating-contact');
+    if(!btn) return;
+
+    let activated = false;
+
+    window.addEventListener('scroll', () => {
+      if (activated) return;
+
+      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
+        btn.classList.add('pulse');
+        activated = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+<a class="floating-contact"
+   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+   aria-label="Email First Step Child Care">
+  ✉️ Contact
+</a>
+<script>
+  (function(){
+    const btn = document.querySelector('.floating-contact');
+    if(!btn) return;
+
+    let activated = false;
+
+    window.addEventListener('scroll', () => {
+      if (activated) return;
+
+      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
+        btn.classList.add('pulse');
+        activated = true;
+      }
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>
