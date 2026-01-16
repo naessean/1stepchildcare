@@ -11,15 +11,24 @@
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ✅ Floating playful icons -->
+  <div class="fun-floaters" aria-hidden="true">
+    <span class="floater f1" data-speed="0.10">★</span>
+    <span class="floater f2" data-speed="0.18">☁️</span>
+    <span class="floater f3" data-speed="0.14">🧸</span>
+    <span class="floater f4" data-speed="0.22">✨</span>
+    <span class="floater f5" data-speed="0.16">🎈</span>
+    <span class="floater f6" data-speed="0.20">🧩</span>
+  </div>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -49,7 +58,7 @@
             <ul class="dropdown">
               <li><a href="../pages/about.html">About Us</a></li>
               <li><a href="../pages/prices.html">Prices</a></li>
-              <li><a href="../pages/kindercam.html">KinderCam</a></li>
+              <li><a href="../pages/kindercam.html" aria-current="page">KinderCam</a></li>
               <li><a href="../pages/calendar.html">Calendar</a></li>
               <li><a href="../pages/gallery.html">Gallery</a></li>
             </ul>
@@ -65,6 +74,8 @@
               <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
               <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
               <li><a href="../pages/schedules.html">Schedules</a></li>
+              <!-- ✅ ADDED -->
+              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
 
@@ -73,11 +84,16 @@
               Policies <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
-              <li><a href="../pages/policies.html">Policies Overview</a></li>
+              <li><a href="policies.html">Policies Overview</a></li>
+
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+              <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
               <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+              <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
+              <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
+              <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
             </ul>
           </li>
 
@@ -120,38 +136,42 @@
       </div>
     </section>
 
+    <!-- ✅ Wave divider (Hero -> Content) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
     <!-- Content -->
     <section class="section">
       <div class="container split">
 
         <div>
           <!-- KinderCam Logo -->
-            <div
+          <div
             style="
-                margin-bottom:22px;
-                padding:14px 18px;
-                background:#fff;
-                border:1px solid var(--border);
-                border-radius:14px;
+              margin-bottom:22px;
+              padding:14px 18px;
+              background:#fff;
+              border:1px solid var(--border);
+              border-radius:14px;
             "
-            >
+          >
             <img
-                src="../assets/img/kindercam-logo.gif"
-                alt="KinderCam secure childcare viewing system logo"
-                style="
+              src="../assets/img/kindercam-logo.gif"
+              alt="KinderCam secure childcare viewing system logo"
+              style="
                 display:block;
                 max-width:295px;
                 width:100%;
                 height:auto;
                 margin:0 auto;
                 image-rendering:auto;
-                "
-                loading="lazy"
+              "
+              loading="lazy"
             >
-            </div>
-
-
-
+          </div>
 
           <h2 class="section-title">What Is KinderCam?</h2>
 
@@ -192,6 +212,13 @@
 
       </div>
     </section>
+
+    <!-- ✅ Wave divider (Content -> Benefits alt section) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
 
     <!-- Benefits -->
     <section class="section alt">
@@ -251,8 +278,10 @@
   </footer>
 
   <script>
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // mobile nav toggle
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("site-nav");
 
@@ -261,28 +290,112 @@
       toggle.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("open");
     });
+
+    // dropdowns: mobile/touch = click, desktop = hover (no sticky click)
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    function closeAllDropdowns(except = null){
+      dropdowns.forEach(d => {
+        if (d !== except) {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
+      if (!btn) return;
+
+      btn.addEventListener("click", (e) => {
+        // On desktop, ignore click so it doesn't "stick"
+        if (!isTouch) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = drop.classList.contains("open");
+        closeAllDropdowns(drop);
+
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+
+    // close dropdowns when clicking outside (helpful on mobile)
+    document.addEventListener("click", () => closeAllDropdowns());
+
+    // close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeAllDropdowns();
+    });
+
+    // if a dropdown link is clicked, close all
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => closeAllDropdowns());
+    });
   </script>
-  <a class="floating-contact"
-   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-   aria-label="Email First Step Child Care">
-  ✉️ Contact
-</a>
-<script>
-  (function(){
-    const btn = document.querySelector('.floating-contact');
-    if(!btn) return;
 
-    let activated = false;
+  <!-- ✅ Scroll-reactive floaters (light parallax) -->
+  <script>
+    (function(){
+      const floaters = document.querySelectorAll(".fun-floaters .floater");
+      if (!floaters.length) return;
 
-    window.addEventListener('scroll', () => {
-      if (activated) return;
+      // Respect reduced motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
-        btn.classList.add('pulse');
-        activated = true;
+      // Desktop only (matches CSS hide breakpoint)
+      if (!window.matchMedia("(min-width: 901px)").matches) return;
+
+      let ticking = false;
+
+      function update(){
+        ticking = false;
+        const y = window.scrollY || 0;
+
+        floaters.forEach(el => {
+          const speed = parseFloat(el.dataset.speed || "0.12");
+          const drift = y * speed;
+          const twist = drift * 0.015;
+          el.style.transform = `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
+        });
       }
-    }, { passive: true });
-  })();
-</script>
+
+      function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      update();
+    })();
+  </script>
+
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
+  <script>
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>

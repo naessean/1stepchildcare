@@ -4,22 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | First Step Child Care</title>
-  <meta name="description" content="Learn about First Step Child Care in Watertown, MA — our approach, programs, and how to contact us." />
+  <meta name="description" content="Learn about First Step Child Care in Watertown, MA — our philosophy, director, programs, and how to contact us." />
 
   <meta property="og:title" content="About Us | First Step Child Care" />
-  <meta property="og:description" content="Learn about our center, approach, and how to contact us." />
+  <meta property="og:description" content="Meet our director and learn about our play-based child care center in Watertown, MA." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
-
-  <!-- about.html is in /pages, CSS is in /css -->
   <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
-    /* Small page-only helpers (optional) */
+    /* Page-only helpers */
     .page-hero { padding: 34px 0; }
     .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
     .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
@@ -29,7 +27,7 @@
       display:grid;
       grid-template-columns: 1.1fr .9fr;
       gap: 18px;
-      align-items: stretch; /* ✅ key change */
+      align-items: stretch;
     }
     @media (max-width: 900px){
       .info-grid{ grid-template-columns: 1fr; }
@@ -37,45 +35,15 @@
 
     .map-embed{
       width:100%;
-      height: 100%;              /* ✅ was fixed height before */
-      min-height: 320px;         /* keeps it nice even if content is short */
+      height: 100%;
+      min-height: 320px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow:hidden;
       background:#fff;
       box-shadow: 0 2px 0 rgba(2,6,23,.04);
-}
-
-
-    .form{
-      display:grid;
-      gap: 12px;
-      margin-top: 10px;
     }
-    .field{
-      display:grid;
-      gap: 6px;
-    }
-    label{ font-weight: 800; }
-    input, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font: inherit;
-      background:#fff;
-    }
-    textarea{ min-height: 120px; resize: vertical; }
-    .hint{ color: var(--muted); font-size: .95rem; }
-
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    @media (max-width: 700px){
-      .two-col{ grid-template-columns: 1fr; }
-    }
+    .map-embed iframe{ display:block; width:100%; height:100%; border:0; }
 
     .pill-row{
       display:flex;
@@ -97,30 +65,26 @@
     }
     .pill:hover{ background: var(--card); }
 
-    .faq{
-      display:grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    details{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background:#fff;
-      padding: 12px 14px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight: 900;
-    }
-    details p{ color: var(--muted); margin: 10px 0 0; }
+    .hint{ color: var(--muted); font-size: .95rem; }
   </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Floating playful icons (match index.html) -->
+  <div class="fun-floaters" aria-hidden="true">
+    <span class="floater f1" data-speed="0.10">★</span>
+    <span class="floater f2" data-speed="0.18">☁️</span>
+    <span class="floater f3" data-speed="0.14">🧸</span>
+    <span class="floater f4" data-speed="0.22">✨</span>
+    <span class="floater f5" data-speed="0.16">🎈</span>
+    <span class="floater f6" data-speed="0.20">🧩</span>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
+
       <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
         <span class="brand-mark" aria-hidden="true">★</span>
         <span class="brand-text">
@@ -143,7 +107,7 @@
               About <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
-              <li><a href="../pages/about.html">About Us</a></li>
+              <li><a href="../pages/about.html" aria-current="page">About Us</a></li>
               <li><a href="../pages/prices.html">Prices</a></li>
               <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
               <li><a href="../pages/calendar.html">Calendar</a></li>
@@ -161,6 +125,9 @@
               <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
               <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
               <li><a href="../pages/schedules.html">Schedules</a></li>
+
+              <!-- ✅ ADDED -->
+              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
 
@@ -173,9 +140,9 @@
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
-              <li><a href="../policies/first-aid-injury-prevention.html">First Aid & Injury Prevention</a></li>
+              <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
               <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
-              <li><a href="../policies/holiday-inclement-weather.html">Holiday & Inclement Weather</a></li>
+              <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
               <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
               <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
             </ul>
@@ -204,16 +171,18 @@
   </header>
 
   <main id="main">
+
     <section class="hero page-hero">
       <div class="container hero-inner">
         <div class="hero-copy">
           <p class="breadcrumbs">
             <a href="../index.html">Home</a> <span aria-hidden="true">/</span> About Us
           </p>
+
           <h1>About First Step Child Care</h1>
           <p class="lead">
-            We provide a warm, structured, play-based environment for children ages
-            <strong>3 months to 5 years</strong>—supporting social-emotional growth, early learning, and kindergarten readiness.
+            A warm, structured, play-based environment supporting children
+            <strong>3 months to 5 years</strong> during their most important early years.
           </p>
 
           <div class="pill-row">
@@ -225,36 +194,129 @@
         </div>
 
         <div class="hero-media logo-box">
-          <img src="../assets/img/logo.png" alt="First Step Child Care logo">
+          <img src="../assets/img/logo.png" alt="First Step Child Care logo" loading="eager" decoding="async">
         </div>
       </div>
     </section>
+
+    <!-- wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
 
     <section class="section">
       <div class="container">
         <h2 class="section-title">Our Approach</h2>
         <p class="section-sub">
-          A balance of play, routine, and intentional learning—so kids feel safe, engaged, and excited to grow.
+          A thoughtful balance of play, routine, and intentional learning.
         </p>
 
         <div class="cards">
           <div class="card">
-            <h3>Safe & Nurturing</h3>
-            <p>Consistent routines, caring teachers, and an environment where children feel supported.</p>
+            <h3>Safe &amp; Nurturing</h3>
+            <p>Children feel secure, supported, and respected every day.</p>
           </div>
-
           <div class="card">
             <h3>Learning Through Play</h3>
-            <p>Hands-on activities that build language, motor skills, curiosity, and social skills.</p>
+            <p>Hands-on experiences that build curiosity, confidence, and skills.</p>
           </div>
-
           <div class="card">
             <h3>Family Partnership</h3>
-            <p>Clear communication, shared goals, and a community that celebrates milestones together.</p>
+            <p>Open communication and shared goals with families.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
+    <section class="section alt">
+      <div class="container">
+        <h2 class="section-title">About the Director</h2>
+
+        <div class="panel">
+          <p style="margin-top:0"><strong>My name is Sonia Rossi</strong> and I am the Owner and Director of First Step Child Care Center.</p>
+
+          <p>
+            I have worked in childcare for <strong>25 years</strong> as both a teacher and director. Throughout these years,
+            I have witnessed many children grow and learn while building confidence and a strong self-esteem.
+          </p>
+
+          <p>
+            I believe that every child is a unique individual who is entitled to their own thoughts, feelings, and opinions,
+            and deserving of love and a sense of security. At First Step, I have created an environment where children can
+            feel a sense of security and love, while learning and growing.
+          </p>
+
+          <p>
+            I select my staff based on their experience, education, and most importantly, a love for children. Each staff member
+            will be respectful of every child as an individual and will model loving and respectful behavior for children to
+            follow with one another.
+          </p>
+
+          <p style="margin-bottom:0">
+            As a mother of two myself, I know how important it is for parents to have peace of mind while leaving their little
+            ones during the day. Therefore, we want each child and parent to feel as though First Step is a safe and welcoming
+            “second home”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">About the Center</h2>
+
+        <div class="panel">
+          <p>
+            First Step is located in <strong>Watertown, MA</strong>. We are licensed for <strong>67 children</strong> and offer
+            early care and education for children between <strong>3 months old and 5 years old</strong>.
+          </p>
+
+          <p>
+            First Step is a play-based learning center, where children can experience learning through play in literature, sensory,
+            science, mathematics, dramatics, and physical activity.
+          </p>
+
+          <p>
+            First Step provides an environment where children can feel free to learn, grow and be safe with themselves and others
+            with guidance from parents, educators and administration, who work together as a team.
+          </p>
+
+          <p>
+            First Step believes helping children develop self-control is an enormous challenge and responsibility. Our staff are prepared
+            to help children reach that milestone by supporting and guiding each child in a positive way.
+          </p>
+
+          <p style="margin-bottom:0">
+            We believe that the first years of a child’s life are a crucial part of their development. We support parents in any way we can
+            and believe in close collaboration between center and parents. We want the best for each child and hope that each child and parent
+            has a wonderful experience at the center.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
 
     <section class="section alt">
       <div class="container info-grid">
@@ -264,6 +326,7 @@
 
           <div class="panel">
             <p style="margin:0"><strong>Address</strong><br>1078 Belmont St, Watertown, MA 02472</p>
+
             <p style="margin:12px 0 0"><strong>Phone</strong><br>
               <a href="tel:+16174846688" style="color:var(--primary-2); font-weight:800; text-decoration:none;">(617) 484-6688</a>
             </p>
@@ -275,7 +338,7 @@
 
             <p class="hint" style="margin-top:12px; margin-bottom:0;">
               Hours:
-              <br>Mon–Fri: 7:00 AM – 6:00 PM
+              <br>Mon–Fri: 7:30 AM – 5:30 PM
             </p>
           </div>
         </div>
@@ -283,9 +346,6 @@
         <div class="map-embed" aria-label="Map showing First Step Child Care location">
           <iframe
             title="First Step Child Care Map"
-            width="100%"
-            height="100%"
-            style="border:0;"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=1078+Belmont+St,+Watertown,+MA+02472&output=embed">
@@ -293,6 +353,13 @@
         </div>
       </div>
     </section>
+
+    <!-- wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
 
     <section class="section" id="contact">
       <div class="container">
@@ -332,7 +399,7 @@
     </div>
   </footer>
 
-  <!-- Floating Contact Button -->
+  <!-- Floating contact button (match index.html) -->
   <a class="floating-contact"
      href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
      aria-label="Email First Step Child Care">
@@ -347,7 +414,6 @@
     // mobile nav toggle
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("site-nav");
-
     if (toggle && nav){
       toggle.addEventListener("click", () => {
         const open = toggle.getAttribute("aria-expanded") === "true";
@@ -362,7 +428,7 @@
 
     dropdowns.forEach(drop => {
       const btn = drop.querySelector(".dropdown-btn");
-      if(!btn) return;
+      if (!btn) return;
 
       btn.addEventListener("click", (e) => {
         if (!isTouch) return; // desktop uses hover
@@ -406,15 +472,56 @@
         });
       }
     });
+  </script>
 
-    // Pulse floating button only after user scrolls
+  <!-- ✅ Scroll-reactive floaters (light parallax) -->
+  <script>
+    (function(){
+      const floaters = document.querySelectorAll(".fun-floaters .floater");
+      if (!floaters.length) return;
+
+      // Respect reduced motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      // Desktop only (matches CSS hide breakpoint)
+      if (!window.matchMedia("(min-width: 901px)").matches) return;
+
+      let ticking = false;
+
+      function update(){
+        ticking = false;
+        const y = window.scrollY || 0;
+
+        floaters.forEach(el => {
+          const speed = parseFloat(el.dataset.speed || "0.12");
+          const drift = y * speed;
+          const twist = drift * 0.015;
+          el.style.transform = `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
+        });
+      }
+
+      function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      update();
+    })();
+  </script>
+
+  <!-- ✅ Pulse floating button only after user scrolls -->
+  <script>
     (function(){
       const btn = document.querySelector('.floating-contact');
       if(!btn) return;
 
       let activated = false;
+
       window.addEventListener('scroll', () => {
         if (activated) return;
+
         if (window.scrollY > 120) {
           btn.classList.add('pulse');
           activated = true;
@@ -422,5 +529,6 @@
       }, { passive: true });
     })();
   </script>
+
 </body>
 </html>

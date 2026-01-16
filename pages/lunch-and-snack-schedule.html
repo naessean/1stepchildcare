@@ -3,21 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lunch & Snack Schedule | First Step Child Care</title>
+  <meta name="description" content="Weekly lunch and snack schedule at First Step Child Care." />
 
-  <title>Daily Schedules | First Step Child Care</title>
-  <meta name="description" content="Daily schedules for infants, toddlers, preschool and pre-K at First Step Child Care in Watertown, MA." />
+  <meta property="og:title" content="Lunch & Snack Schedule | First Step Child Care" />
+  <meta property="og:description" content="View our weekly lunch and snack menu at First Step Child Care." />
+  <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- ✅ IMPORTANT: from /pages -> go up one level to /css/styles.css -->
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ✅ Floating playful icons -->
+  <!-- Floating playful icons (homepage only) -->
+  <!-- If you truly want these ONLY on homepage, delete this whole block + the floater script below -->
   <div class="fun-floaters" aria-hidden="true">
     <span class="floater f1" data-speed="0.10">★</span>
     <span class="floater f2" data-speed="0.18">☁️</span>
@@ -27,10 +32,10 @@
     <span class="floater f6" data-speed="0.20">🧩</span>
   </div>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
 
+      <!-- Brand -->
       <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
         <span class="brand-mark" aria-hidden="true">★</span>
         <span class="brand-text">
@@ -39,11 +44,13 @@
         </span>
       </a>
 
+      <!-- Mobile toggle -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
         ☰
       </button>
 
+      <!-- Navigation -->
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a class="nav-link" href="../index.html">Home</a></li>
@@ -70,8 +77,8 @@
               <li><a href="infant-program.html">Infant Program</a></li>
               <li><a href="toddler-program.html">Toddler Program</a></li>
               <li><a href="preschool-program.html">Preschool / Pre-K</a></li>
-              <li><a href="schedules.html" aria-current="page">Schedules</a></li>
-              <li><a href="lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
+              <li><a href="schedules.html">Schedules</a></li>
+              <li><a href="lunch-and-snack-schedule.html" aria-current="page">Lunch & Snacks</a></li>
             </ul>
           </li>
 
@@ -81,7 +88,7 @@
             </button>
             <ul class="dropdown">
               <li><a href="policies.html">Policies Overview</a></li>
-
+              <!-- ✅ policies folder is at /policies (same level as /pages), so we need ../policies -->
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
@@ -94,9 +101,21 @@
           </li>
 
           <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Contact <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+              <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
+      <!-- Header CTA -->
       <div class="header-cta">
         <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
         <a
@@ -110,32 +129,46 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main id="main">
+
     <section class="section">
-      <div class="container narrow">
-        <h1 class="section-title">Daily Schedules</h1>
-        <p class="lead">
-          Our daily routines provide structure, consistency, and flexibility to meet the developmental
-          needs of each age group.
-        </p>
+      <div class="container">
+        <h1 class="section-title">Lunch & Snack Schedule</h1>
+        <p class="section-sub">Weekly menu (subject to change based on availability and dietary needs).</p>
 
-        <!-- Card/button link to Lunch & Snack Schedule -->
-        <div class="cards" style="margin-top: 18px;">
-          <a class="card" href="lunch-and-snack-schedule.html">
-            <h3>Lunch &amp; Snack Schedule</h3>
-            <p>
-              View our weekly lunch and snack menu, including allergy considerations
-              and balanced meal options.
-            </p>
-            <span class="card-link">View menu →</span>
-          </a>
+        <div class="panel">
+          <div class="table-wrapper">
+            <table class="menu-table">
+              <thead>
+                <tr>
+                  <th>Monday</th>
+                  <th>Tuesday</th>
+                  <th>Wednesday</th>
+                  <th>Thursday</th>
+                  <th>Friday</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Fish filet<br>Tater tots<br>Broccoli</td>
+                  <td>Pasta w/ meat sauce / butter<br>Garlic bread</td>
+                  <td>Cheese quesadilla<br>Tomatoes<br>Cucumbers</td>
+                  <td>Chicken fingers<br>Broccoli<br>Rice pilaf</td>
+                  <td>Pizza &amp; fries</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="menu-note">
+            Please contact us about allergies or dietary restrictions:
+            <a href="mailto:sonia_firststep@comcast.net">sonia_firststep@comcast.net</a>
+          </p>
         </div>
-
       </div>
     </section>
 
-    <!-- WAVE DIVIDER: white -> blue -->
+    <!-- ✅ WAVE DIVIDER (same SVG + fill as homepage) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="#dbe9fb" d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"></path>
@@ -144,77 +177,30 @@
 
     <section class="section alt">
       <div class="container split">
-
         <div>
-          <h2>Infant Schedule</h2>
+          <h2 class="section-title">Questions?</h2>
           <ul class="checklist">
-            <li>Individual feeding and nap routines</li>
-            <li>Tummy time and sensory exploration</li>
-            <li>Music, books, and one-on-one interaction</li>
-            <li>Diapering and care as needed</li>
+            <li>Allergies & dietary restrictions</li>
+            <li>Ingredient questions</li>
+            <li>Substitution requests</li>
+            <li>Nutrition info</li>
           </ul>
-          <p class="muted">
-            Infant schedules are flexible and based on each child’s needs and family routine.
-          </p>
-        </div>
-
-        <div>
-          <h2>Toddler Schedule</h2>
-          <ul class="checklist">
-            <li>Morning free play & guided activities</li>
-            <li>Circle time, songs, and movement</li>
-            <li>Snack, lunch, and rest time</li>
-            <li>Outdoor play and creative exploration</li>
-          </ul>
-          <p class="muted">
-            Toddlers follow a predictable routine that supports independence and social development.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WAVE DIVIDER: blue -> white -->
-    <div class="wave-divider" aria-hidden="true">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#ffffff" d="M0,50 C240,10 480,90 720,50 C960,10 1200,70 1440,40 L1440,90 L0,90 Z"></path>
-      </svg>
-    </div>
-
-    <section class="section">
-      <div class="container split">
-
-        <div>
-          <h2>Preschool / Pre-K Schedule</h2>
-          <ul class="checklist">
-            <li>Learning centers and small group instruction</li>
-            <li>Early literacy, math, and science activities</li>
-            <li>Outdoor play and gross motor development</li>
-            <li>Lunch, rest, and afternoon enrichment</li>
-          </ul>
-          <p class="muted">
-            Our preschool schedule balances academics, play, and social-emotional learning.
-          </p>
+          <a class="btn primary" href="mailto:sonia_firststep@comcast.net?subject=Lunch%20%26%20Snack%20Schedule%20Question">Email Us</a>
         </div>
 
         <div class="panel">
-          <h3>Daily Rhythm</h3>
-          <p>
-            While each classroom follows its own routine, all schedules include:
-          </p>
+          <h3>Quick Links</h3>
           <ul class="link-list">
-            <li>Consistent transitions</li>
-            <li>Healthy meals and snacks</li>
-            <li>Indoor and outdoor play</li>
-            <li>Rest and quiet time</li>
+            <li><a href="prices.html">Prices</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
           </ul>
         </div>
-
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -234,8 +220,10 @@
   </footer>
 
   <script>
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // mobile nav toggle
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("site-nav");
 
@@ -245,18 +233,50 @@
       nav.classList.toggle("open");
     });
 
-    document.querySelectorAll(".dropdown-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        btn.closest(".has-dropdown").classList.toggle("open");
+    // dropdowns: mobile click only, desktop uses hover
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
+
+      btn.addEventListener("click", (e) => {
+        if (!isTouch) return; // desktop uses hover
+
+        e.stopPropagation();
+
+        // close other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== drop) {
+            d.classList.remove("open");
+            const b = d.querySelector(".dropdown-btn");
+            if (b) b.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // toggle current dropdown
+        const isOpen = drop.classList.contains("open");
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
       });
     });
 
+    // close dropdowns when a link is clicked (mobile)
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => {
+        dropdowns.forEach(d => {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    // click outside to close dropdowns (mobile convenience)
     document.addEventListener("click", (e) => {
       const isMenu = e.target.closest(".has-dropdown");
       if (!isMenu) {
-        document.querySelectorAll(".has-dropdown").forEach(li => {
+        dropdowns.forEach(li => {
           li.classList.remove("open");
           const b = li.querySelector(".dropdown-btn");
           if (b) b.setAttribute("aria-expanded", "false");
@@ -265,7 +285,7 @@
     });
   </script>
 
-  <!-- ✅ Scroll-reactive floaters (light parallax) -->
+  <!-- Scroll-reactive floaters (light parallax) -->
   <script>
     (function(){
       const floaters = document.querySelectorAll(".fun-floaters .floater");
@@ -299,6 +319,30 @@
 
       window.addEventListener("scroll", onScroll, { passive: true });
       update();
+    })();
+  </script>
+
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
     })();
   </script>
 

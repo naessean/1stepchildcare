@@ -12,9 +12,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- infant-program.html is in /pages, and CSS is in /css -->
   <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
@@ -115,6 +114,25 @@
     .cta-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
 
     .divider{ height: 1px; background: var(--border); margin: 14px 0; }
+
+    /* Photo strip layout (no cropping, responsive, matches site cards) */
+    .image-row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 820px){
+      .image-row{ grid-template-columns: 1fr; }
+    }
+    .image-row img{
+      width: 100%;
+      height: auto;              /* no cropping */
+      display:block;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
   </style>
 
   <script type="application/ld+json">
@@ -152,16 +170,24 @@
   }
 }
 </script>
-
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ✅ Floating playful icons -->
+  <div class="fun-floaters" aria-hidden="true">
+    <span class="floater f1" data-speed="0.10">★</span>
+    <span class="floater f2" data-speed="0.18">☁️</span>
+    <span class="floater f3" data-speed="0.14">🧸</span>
+    <span class="floater f4" data-speed="0.22">✨</span>
+    <span class="floater f5" data-speed="0.16">🎈</span>
+    <span class="floater f6" data-speed="0.20">🧩</span>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
 
-      <!-- Brand -->
       <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
         <span class="brand-mark" aria-hidden="true">★</span>
         <span class="brand-text">
@@ -170,13 +196,11 @@
         </span>
       </a>
 
-      <!-- Mobile toggle -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
         ☰
       </button>
 
-      <!-- Navigation -->
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a class="nav-link" href="../index.html">Home</a></li>
@@ -200,10 +224,12 @@
             </button>
             <ul class="dropdown">
               <li><a href="../pages/program.html">Overview</a></li>
-              <li><a href="../pages/infant-program.html">Infant Program</a></li>
+              <li><a href="../pages/infant-program.html" aria-current="page">Infant Program</a></li>
               <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
               <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
               <li><a href="../pages/schedules.html">Schedules</a></li>
+              <!-- ✅ ADDED -->
+              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
 
@@ -212,11 +238,16 @@
               Policies <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
-              <li><a href="../pages/policies.html">Policies Overview</a></li>
+              <li><a href="policies.html">Policies Overview</a></li>
+
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+              <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
               <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+              <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
+              <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
+              <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
             </ul>
           </li>
 
@@ -236,7 +267,6 @@
         </ul>
       </nav>
 
-      <!-- Header CTA -->
       <div class="header-cta">
         <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
         <a class="mini-link"
@@ -249,7 +279,6 @@
 
   <main id="main">
 
-    <!-- Page hero -->
     <section class="hero page-hero">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -288,16 +317,30 @@
       </div>
     </section>
 
-    <!-- ✅ NEW: Full images (not cropped, sized smaller) -->
-    <section class="section">
-<div class="image-row">
-  <img src="../assets/img/infants1.jpg" alt="Infants in the classroom at First Step Child Care">
-  <img src="../assets/img/infants2.jpg" alt="Infant learning and play at First Step Child Care">
-</div>
+    <!-- ✅ Wave divider (Hero -> Photos) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
 
+    <!-- Photos -->
+    <section class="section">
+      <div class="container">
+        <div class="image-row">
+          <img src="../assets/img/infants1.jpg" alt="Infants in the classroom at First Step Child Care" loading="lazy" decoding="async">
+          <img src="../assets/img/infants2.jpg" alt="Infant learning and play at First Step Child Care" loading="lazy" decoding="async">
+        </div>
+      </div>
     </section>
 
-    <!-- Main content -->
+    <!-- ✅ Wave divider (Photos -> Details) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
     <section class="section" id="details">
       <div class="container content">
         <div class="stack">
@@ -382,7 +425,13 @@
       </div>
     </section>
 
-    <!-- Things to bring -->
+    <!-- ✅ Wave divider (Details -> Bring alt section) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
     <section class="section alt" id="bring">
       <div class="container">
         <h2 class="section-title">Infant Room: Things to Bring</h2>
@@ -489,6 +538,43 @@
     document.querySelectorAll(".dropdown a").forEach(link => {
       link.addEventListener("click", () => closeAllDropdowns());
     });
+  </script>
+
+  <!-- ✅ Scroll-reactive floaters (light parallax) -->
+  <script>
+    (function(){
+      const floaters = document.querySelectorAll(".fun-floaters .floater");
+      if (!floaters.length) return;
+
+      // Respect reduced motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      // Desktop only (match your CSS breakpoint if you hide them on mobile)
+      if (!window.matchMedia("(min-width: 901px)").matches) return;
+
+      let ticking = false;
+
+      function update(){
+        ticking = false;
+        const y = window.scrollY || 0;
+
+        floaters.forEach(el => {
+          const speed = parseFloat(el.dataset.speed || "0.12");
+          const drift = y * speed;
+          const twist = drift * 0.015;
+          el.style.transform = `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
+        });
+      }
+
+      function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      update();
+    })();
   </script>
 
   <a class="floating-contact"

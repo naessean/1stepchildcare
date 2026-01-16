@@ -11,9 +11,8 @@
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/styles.css" />
 
@@ -28,19 +27,19 @@
     .policies-wrap{ max-width: 1100px; }
 
     /* Policies hero image */
-.policies-hero-image {
-  margin: 10px 0 16px; /* tight, clean spacing */
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.policies-hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
+    .policies-hero-image{
+      margin: 10px 0 16px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background:#fff;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .policies-hero-image img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .overview-grid{
       display:grid;
@@ -135,333 +134,448 @@
       line-height: 1.7;
     }
   </style>
+
+  <!-- ✅ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ChildCare",
+    "name": "First Step Child Care",
+    "url": "https://www.1stepchildcare.com",
+    "logo": "https://www.1stepchildcare.com/assets/img/logo.png",
+    "image": "https://www.1stepchildcare.com/assets/img/logo.png",
+    "telephone": "+16174846688",
+    "email": "sonia_firststep@comcast.net",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1078 Belmont St",
+      "addressLocality": "Watertown",
+      "addressRegion": "MA",
+      "postalCode": "02472",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.3672,
+      "longitude": -71.1856
+    },
+    "areaServed": "Watertown MA",
+    "sameAs": [
+      "https://www.google.com/maps/place/1078+Belmont+St,+Watertown,+MA+02472"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:30",
+      "closes": "17:30"
+    }
+  }
+  </script>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-
-    <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-      <span class="brand-mark" aria-hidden="true">★</span>
-      <span class="brand-text">
-        <span class="brand-name">First Step</span>
-        <span class="brand-sub">Child Care</span>
-      </span>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span class="sr-only">Open menu</span>
-      ☰
-    </button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <ul class="nav-list">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
-
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            About <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a href="../pages/about.html">About Us</a></li>
-            <li><a href="../pages/prices.html">Prices</a></li>
-            <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
-            <li><a href="../pages/calendar.html">Calendar</a></li>
-            <li><a href="../pages/gallery.html">Gallery</a></li>
-          </ul>
-        </li>
-
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            Programs <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a href="../pages/program.html">Overview</a></li>
-            <li><a href="../pages/infant-program.html">Infant Program</a></li>
-            <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
-            <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
-            <li><a href="../pages/schedules.html">Schedules</a></li>
-          </ul>
-        </li>
-
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            Policies <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a aria-current="page" href="../pages/policies.html">Policies Overview</a></li>
-            <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
-            <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
-            <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
-            <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
-            <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
-            <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
-            <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
-          </ul>
-        </li>
-
-        <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
-
-        <li class="has-dropdown">
-          <button class="nav-link dropdown-btn" aria-expanded="false">
-            Contact <span aria-hidden="true">▾</span>
-          </button>
-          <ul class="dropdown">
-            <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
-            <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="header-cta">
-      <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
-      <a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Get Directions</a>
-    </div>
-
+  <!-- Floating playful icons (match index.html) -->
+  <div class="fun-floaters" aria-hidden="true">
+    <span class="floater f1" data-speed="0.10">★</span>
+    <span class="floater f2" data-speed="0.18">☁️</span>
+    <span class="floater f3" data-speed="0.14">🧸</span>
+    <span class="floater f4" data-speed="0.22">✨</span>
+    <span class="floater f5" data-speed="0.16">🎈</span>
+    <span class="floater f6" data-speed="0.20">🧩</span>
   </div>
-</header>
 
-<main id="main">
-  <section class="hero page-hero">
-    <div class="container hero-inner">
-      <div class="hero-copy policies-wrap">
-        <p class="breadcrumbs">
-          <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Policies
-        </p>
-        <h1>Policies Overview</h1>
-        <p class="lead">
-          Our policies are designed to support a safe, nurturing, and well-communicated experience for children and families.
-          Use the links below to review each policy.
-        </p>
+  <header class="site-header">
+    <div class="container header-inner">
 
-        <div class="policies-hero-image">
-        <img
-            src="../assets/img/classroom.avif"
-            alt="First Step Child Care classroom environment"
-            loading="eager"
-            decoding="async"
-  >
-</div>
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
 
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open menu</span>
+        ☰
+      </button>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="#policies">View Policies</a>
-          <a class="btn ghost" href="mailto:sonia_firststep@comcast.net">Questions? Email Us</a>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html">Home</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              About <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="../pages/about.html">About Us</a></li>
+              <li><a href="../pages/prices.html">Prices</a></li>
+              <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
+              <li><a href="../pages/calendar.html">Calendar</a></li>
+              <li><a href="../pages/gallery.html">Gallery</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Programs <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="../pages/program.html">Overview</a></li>
+              <li><a href="../pages/infant-program.html">Infant Program</a></li>
+              <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
+              <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
+              <li><a href="../pages/schedules.html">Schedules</a></li>
+
+              <!-- ✅ ADDED -->
+              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Policies <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <!-- ✅ FIXED PATH -->
+              <li><a href="../pages/policies.html" aria-current="page">Policies Overview</a></li>
+
+              <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
+              <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
+              <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+              <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
+              <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+              <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
+              <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
+              <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
+            </ul>
+          </li>
+
+          <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link dropdown-btn" aria-expanded="false">
+              Contact <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="dropdown">
+              <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+              <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
+        <a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Get Directions</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container hero-inner">
+        <div class="hero-copy policies-wrap">
+          <p class="breadcrumbs">
+            <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Policies
+          </p>
+          <h1>Policies Overview</h1>
+          <p class="lead">
+            Our policies are designed to support a safe, nurturing, and well-communicated experience for children and families.
+            Use the links below to review each policy.
+          </p>
+
+          <div class="policies-hero-image">
+            <img
+              src="../assets/img/classroom.avif"
+              alt="First Step Child Care classroom environment"
+              loading="eager"
+              decoding="async"
+            >
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#policies">View Policies</a>
+            <a class="btn ghost" href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Policy%20Question">Questions? Email Us</a>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- wave divider -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
     </div>
-  </section>
 
-  <section class="section alt" id="policies">
-    <div class="container policies-wrap">
-      <h2 class="section-title">Policy Documents</h2>
-      <p class="section-sub">Click any policy to view full details.</p>
+    <section class="section alt" id="policies">
+      <div class="container policies-wrap">
+        <h2 class="section-title">Policy Documents</h2>
+        <p class="section-sub">Click any policy to view full details.</p>
 
-      <div class="overview-grid">
-        <a class="policy-card" href="../policies/behavior-management.html">
-          <div class="policy-top">
-            <div>
-              <h3>Behavior Management</h3>
-              <p>How we guide children with kindness, consistency, and clear limits.</p>
+        <div class="overview-grid">
+          <a class="policy-card" href="../policies/behavior-management.html">
+            <div class="policy-top">
+              <div>
+                <h3>Behavior Management</h3>
+                <p>How we guide children with kindness, consistency, and clear limits.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">🧩</div>
             </div>
-            <div class="policy-icon" aria-hidden="true">🧩</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
-
-        <a class="policy-card" href="../policies/emergency-procedures.html">
-          <div class="policy-top">
-            <div>
-              <h3>Emergency Procedures</h3>
-              <p>Emergency response, evacuation procedures, and contact numbers.</p>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
             </div>
-            <div class="policy-icon" aria-hidden="true">🚨</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
+          </a>
 
-        <a class="policy-card" href="../policies/first-aid-injury-prevention.html">
-          <div class="policy-top">
-            <div>
-              <h3>First Aid &amp; Injury Prevention</h3>
-              <p>First aid readiness, kit contents, safety checks, and injury reporting.</p>
+          <a class="policy-card" href="../policies/emergency-procedures.html">
+            <div class="policy-top">
+              <div>
+                <h3>Emergency Procedures</h3>
+                <p>Emergency response, evacuation procedures, and contact numbers.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">🚨</div>
             </div>
-            <div class="policy-icon" aria-hidden="true">🩹</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
+            </div>
+          </a>
 
-        <a class="policy-card" href="../policies/healthcare-policy.html">
-          <div class="policy-top">
-            <div>
-              <h3>Healthcare Policy</h3>
-              <p>Illness guidelines, return-to-care requirements, and infection control.</p>
+          <a class="policy-card" href="../policies/first-aid-injury-prevention.html">
+            <div class="policy-top">
+              <div>
+                <h3>First Aid &amp; Injury Prevention</h3>
+                <p>First aid readiness, kit contents, safety checks, and injury reporting.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">🩹</div>
             </div>
-            <div class="policy-icon" aria-hidden="true">🩺</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
+            </div>
+          </a>
 
-        <a class="policy-card" href="../policies/holiday-inclement-weather.html">
-          <div class="policy-top">
-            <div>
-              <h3>Holiday &amp; Inclement Weather</h3>
-              <p>Holiday closures, early dismissals, and weather-related delays/closings.</p>
+          <a class="policy-card" href="../policies/healthcare-policy.html">
+            <div class="policy-top">
+              <div>
+                <h3>Healthcare Policy</h3>
+                <p>Illness guidelines, return-to-care requirements, and infection control.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">🩺</div>
             </div>
-            <div class="policy-icon" aria-hidden="true">🌨️</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
+            </div>
+          </a>
 
-        <a class="policy-card" href="../policies/medication-policy.html">
-          <div class="policy-top">
-            <div>
-              <h3>Medication Policy</h3>
-              <p>Authorization requirements, administration steps, and documentation logs.</p>
+          <a class="policy-card" href="../policies/holiday-inclement-weather.html">
+            <div class="policy-top">
+              <div>
+                <h3>Holiday &amp; Inclement Weather</h3>
+                <p>Holiday closures, early dismissals, and weather-related delays/closings.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">🌨️</div>
             </div>
-            <div class="policy-icon" aria-hidden="true">💊</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
+            </div>
+          </a>
 
-        <a class="policy-card" href="../policies/suspected-child-abuse-policy.html">
-          <div class="policy-top">
-            <div>
-              <h3>Suspected Child Abuse Policy</h3>
-              <p>Procedures for identifying, reporting, and cooperating with investigations.</p>
+          <a class="policy-card" href="../policies/medication-policy.html">
+            <div class="policy-top">
+              <div>
+                <h3>Medication Policy</h3>
+                <p>Authorization requirements, administration steps, and documentation logs.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">💊</div>
             </div>
-            <div class="policy-icon" aria-hidden="true">🛡️</div>
-          </div>
-          <div class="policy-meta">
-            <span>Policy</span>
-            <span class="policy-link">View →</span>
-          </div>
-        </a>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
+            </div>
+          </a>
+
+          <a class="policy-card" href="../policies/suspected-child-abuse-policy.html">
+            <div class="policy-top">
+              <div>
+                <h3>Suspected Child Abuse Policy</h3>
+                <p>Procedures for identifying, reporting, and cooperating with investigations.</p>
+              </div>
+              <div class="policy-icon" aria-hidden="true">🛡️</div>
+            </div>
+            <div class="policy-meta">
+              <span>Policy</span>
+              <span class="policy-link">View →</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="note-box">
+          <p>
+            Need clarification on a policy? Email
+            <a href="mailto:sonia_firststep@comcast.net" style="text-decoration: underline;">sonia_firststep@comcast.net</a>
+            and we’ll be happy to help.
+          </p>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="note-box">
-        <p>
-          Need clarification on a policy? Email
-          <a href="mailto:sonia_firststep@comcast.net" style="text-decoration: underline;">sonia_firststep@comcast.net</a>
-          and we’ll be happy to help.
-        </p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>First Step Child Care</strong>
-      <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
     </div>
-    <div class="footer-links">
-      <a href="../pages/about.html">About</a>
-      <a href="../pages/program.html">Programs</a>
-      <a href="../pages/policies.html">Policies</a>
-      <a href="../pages/gallery.html">Gallery</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <p class="muted">© <span id="year"></span> First Step Child Care</p>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  // year
-  document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- Floating Contact Button (match index.html) -->
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
 
-  // mobile nav toggle
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.getElementById("site-nav");
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    nav.classList.toggle("open");
-  });
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
 
-  // dropdowns: mobile/touch = click, desktop = hover (no sticky click)
-  const dropdowns = document.querySelectorAll(".has-dropdown");
-  const isTouch = window.matchMedia("(hover: none)").matches;
+    if (toggle && nav){
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        nav.classList.toggle("open");
+      });
+    }
 
-  function closeAllDropdowns(except = null){
-    dropdowns.forEach(d => {
-      if (d !== except) {
-        d.classList.remove("open");
-        const b = d.querySelector(".dropdown-btn");
-        if (b) b.setAttribute("aria-expanded", "false");
+    // dropdowns: mobile click only, desktop uses hover (no sticky click)
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
+      if (!btn) return;
+
+      btn.addEventListener("click", (e) => {
+        if (!isTouch) return; // desktop uses hover
+        e.stopPropagation();
+
+        // close other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== drop) {
+            d.classList.remove("open");
+            const b = d.querySelector(".dropdown-btn");
+            if (b) b.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // toggle current dropdown
+        const isOpen = drop.classList.contains("open");
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+
+    // close dropdowns when a link is clicked (mobile)
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => {
+        dropdowns.forEach(d => {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    // click outside to close dropdowns (mobile convenience)
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        dropdowns.forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
       }
     });
-  }
+  </script>
 
-  dropdowns.forEach(drop => {
-    const btn = drop.querySelector(".dropdown-btn");
-    if (!btn) return;
+  <!-- ✅ Scroll-reactive floaters (light parallax) -->
+  <script>
+    (function(){
+      const floaters = document.querySelectorAll(".fun-floaters .floater");
+      if (!floaters.length) return;
 
-    btn.addEventListener("click", (e) => {
-      if (!isTouch) return; // desktop: ignore click so it doesn't stick
+      // Respect reduced motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      e.preventDefault();
-      e.stopPropagation();
+      // Desktop only (matches CSS hide breakpoint)
+      if (!window.matchMedia("(min-width: 901px)").matches) return;
 
-      const isOpen = drop.classList.contains("open");
-      closeAllDropdowns(drop);
+      let ticking = false;
 
-      drop.classList.toggle("open", !isOpen);
-      btn.setAttribute("aria-expanded", String(!isOpen));
-    });
-  });
+      function update(){
+        ticking = false;
+        const y = window.scrollY || 0;
 
-  document.addEventListener("click", () => closeAllDropdowns());
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAllDropdowns(); });
-  document.querySelectorAll(".dropdown a").forEach(link => link.addEventListener("click", () => closeAllDropdowns()));
-</script>
+        floaters.forEach(el => {
+          const speed = parseFloat(el.dataset.speed || "0.12");
+          const drift = y * speed;
+          const twist = drift * 0.015;
+          el.style.transform = `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
+        });
+      }
+
+      function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      update();
+    })();
+  </script>
+
+  <!-- ✅ Pulse floating button only after user scrolls -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
-<a class="floating-contact"
-   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-   aria-label="Email First Step Child Care">
-  ✉️ Contact
-</a>
-<script>
-  (function(){
-    const btn = document.querySelector('.floating-contact');
-    if(!btn) return;
-
-    let activated = false;
-
-    window.addEventListener('scroll', () => {
-      if (activated) return;
-
-      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
-        btn.classList.add('pulse');
-        activated = true;
-      }
-    }, { passive: true });
-  })();
-</script>
 </html>

@@ -11,9 +11,8 @@
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- calendar.html is in /pages, and CSS is in /css -->
   <link rel="stylesheet" href="../css/styles.css" />
@@ -88,6 +87,7 @@
       color: #7f1d1d; /* dark red */
       font-weight: 900;
     }
+
     .pill-row{
       display:flex;
       gap:10px;
@@ -105,85 +105,90 @@
       color: var(--text);
       font-size: .92rem;
     }
-/* ---------- PRINT STYLES ---------- */
-@media print {
 
-  /* Ask for landscape (supported in many browsers) */
-  @page {
-    size: landscape;
-    margin: 0.5in;
-  }
+    /* ---------- PRINT STYLES ---------- */
+    @media print {
 
-  /* Hide non-essential sections */
-  header,
-  footer,
-  .hero,
-  .hero-actions,
-  .pill-row,
-  .breadcrumbs,
-  .skip-link {
-    display: none !important;
-  }
+      @page {
+        size: landscape;
+        margin: 0.5in;
+      }
 
-  body {
-    background: #fff !important;
-    color: #000 !important;
-  }
+      header,
+      footer,
+      .hero,
+      .hero-actions,
+      .pill-row,
+      .breadcrumbs,
+      .skip-link,
+      .wave-divider,
+      .floating-contact,
+      .fun-floaters {
+        display: none !important;
+      }
 
-  /* Make calendar full width */
-  .section.alt {
-    padding: 0 !important;
-  }
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
 
-  .container {
-    max-width: 100% !important;
-    padding: 0 12px !important;
-  }
+      .section.alt {
+        padding: 0 !important;
+      }
 
-  /* Landscape layout: 2 columns */
-  .month-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px !important;
-  }
+      .container {
+        max-width: 100% !important;
+        padding: 0 12px !important;
+      }
 
-  /* Prevent awkward splits */
-  .month-card {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    border: 1px solid #ccc !important;
-    box-shadow: none !important;
-    padding: 14px !important;
-  }
+      .month-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
 
-  .month-card h3 {
-    margin-bottom: 8px !important;
-  }
+      .month-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 14px !important;
+      }
 
-  .event {
-    background: #fff !important;
-    border-color: #ddd !important;
-    padding: 8px 10px !important;
-  }
+      .month-card h3 {
+        margin-bottom: 8px !important;
+      }
 
-  .event.is-closed {
-    background: #fce8e8 !important;
-    border-color: #f5a5a5 !important;
-  }
+      .event {
+        background: #fff !important;
+        border-color: #ddd !important;
+        padding: 8px 10px !important;
+      }
 
-  /* Improve date readability */
-  .event .date {
-    min-width: 105px !important;
-    font-weight: 700 !important;
-  }
-}
+      .event.is-closed {
+        background: #fce8e8 !important;
+        border-color: #f5a5a5 !important;
+      }
 
-
-
+      .event .date {
+        min-width: 105px !important;
+        font-weight: 700 !important;
+      }
+    }
   </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Floating playful icons (match index.html) -->
+  <div class="fun-floaters" aria-hidden="true">
+    <span class="floater f1" data-speed="0.10">★</span>
+    <span class="floater f2" data-speed="0.18">☁️</span>
+    <span class="floater f3" data-speed="0.14">🧸</span>
+    <span class="floater f4" data-speed="0.22">✨</span>
+    <span class="floater f5" data-speed="0.16">🎈</span>
+    <span class="floater f6" data-speed="0.20">🧩</span>
+  </div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -231,6 +236,9 @@
               <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
               <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
               <li><a href="../pages/schedules.html">Schedules</a></li>
+
+              <!-- ✅ ADDED -->
+              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
 
@@ -239,11 +247,17 @@
               Policies <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
+              <!-- ✅ FIXED PATH -->
               <li><a href="../pages/policies.html">Policies Overview</a></li>
+
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
+              <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
               <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
+              <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
+              <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
+              <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
             </ul>
           </li>
 
@@ -290,12 +304,11 @@
             Classroom themes, special events, and closures. “Closed” dates are highlighted for quick scanning.
           </p>
 
-            <div class="hero-actions">
+          <div class="hero-actions">
             <a class="btn primary" href="#dates">View Dates</a>
             <button class="btn ghost" type="button" onclick="window.print()">🖨️ Print Calendar</button>
             <a class="btn ghost" href="mailto:sonia_firststep@comcast.net">Questions? Email Us</a>
-            </div>
-
+          </div>
 
           <div class="pill-row" aria-label="Legend">
             <span class="pill">📚 Weekly Themes</span>
@@ -320,6 +333,13 @@
         </div>
       </div>
     </section>
+
+    <!-- ✅ WAVE DIVIDER: hero -> dates (alt blue) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#dbe9fb" d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
 
     <!-- Dates -->
     <section class="section alt" id="dates">
@@ -530,6 +550,13 @@
     </div>
   </footer>
 
+  <!-- Floating Contact Button (match index.html) -->
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
+
   <script>
     // year
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -538,11 +565,13 @@
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("site-nav");
 
-    toggle.addEventListener("click", () => {
-      const open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      nav.classList.toggle("open");
-    });
+    if (toggle && nav){
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        nav.classList.toggle("open");
+      });
+    }
 
     // dropdowns: mobile/touch = click, desktop = hover (no sticky click)
     const dropdowns = document.querySelectorAll(".has-dropdown");
@@ -563,9 +592,7 @@
       if (!btn) return;
 
       btn.addEventListener("click", (e) => {
-        // On desktop, ignore click so it doesn't "stick"
-        if (!isTouch) return;
-
+        if (!isTouch) return; // desktop: ignore click so it doesn't stick
         e.preventDefault();
         e.stopPropagation();
 
@@ -577,62 +604,66 @@
       });
     });
 
-    // close dropdowns when clicking outside (especially helpful on mobile)
     document.addEventListener("click", () => closeAllDropdowns());
-
-    // close on ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeAllDropdowns();
-    });
-
-    // if a dropdown link is clicked, close all (nice on mobile)
-    document.querySelectorAll(".dropdown a").forEach(link => {
-      link.addEventListener("click", () => closeAllDropdowns());
-    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAllDropdowns(); });
+    document.querySelectorAll(".dropdown a").forEach(link => link.addEventListener("click", () => closeAllDropdowns()));
   </script>
-  <a class="floating-contact"
-   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-   aria-label="Email First Step Child Care">
-  ✉️ Contact
-</a>
-<script>
-  (function(){
-    const btn = document.querySelector('.floating-contact');
-    if(!btn) return;
 
-    let activated = false;
+  <!-- ✅ Scroll-reactive floaters (light parallax) -->
+  <script>
+    (function(){
+      const floaters = document.querySelectorAll(".fun-floaters .floater");
+      if (!floaters.length) return;
 
-    window.addEventListener('scroll', () => {
-      if (activated) return;
+      // Respect reduced motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
-        btn.classList.add('pulse');
-        activated = true;
+      // Desktop only (matches CSS hide breakpoint)
+      if (!window.matchMedia("(min-width: 901px)").matches) return;
+
+      let ticking = false;
+
+      function update(){
+        ticking = false;
+        const y = window.scrollY || 0;
+
+        floaters.forEach(el => {
+          const speed = parseFloat(el.dataset.speed || "0.12");
+          const drift = y * speed;
+          const twist = drift * 0.015;
+          el.style.transform = `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
+        });
       }
-    }, { passive: true });
-  })();
-</script>
-<a class="floating-contact"
-   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-   aria-label="Email First Step Child Care">
-  ✉️ Contact
-</a>
-<script>
-  (function(){
-    const btn = document.querySelector('.floating-contact');
-    if(!btn) return;
 
-    let activated = false;
-
-    window.addEventListener('scroll', () => {
-      if (activated) return;
-
-      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
-        btn.classList.add('pulse');
-        activated = true;
+      function onScroll(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
       }
-    }, { passive: true });
-  })();
-</script>
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      update();
+    })();
+  </script>
+
+  <!-- ✅ Pulse floating button only after user scrolls -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>
