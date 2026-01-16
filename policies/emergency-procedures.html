@@ -10,6 +10,10 @@
   <meta property="og:description" content="Our emergency response, evacuation plans, and emergency contact procedures." />
   <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
@@ -29,9 +33,7 @@
       text-decoration: underline;
     }
 
-    .policy-content{
-      max-width: 900px;
-    }
+    .policy-content{ max-width: 900px; }
 
     .policy-box{
       background: #fff;
@@ -42,9 +44,7 @@
       margin-bottom: 20px;
     }
 
-    .policy-box h2{
-      margin-top: 0;
-    }
+    .policy-box h2{ margin-top: 0; }
 
     .policy-list{
       padding-left: 18px;
@@ -52,9 +52,7 @@
       font-weight: 600;
       line-height: 1.7;
     }
-    .policy-list li{
-      margin: 8px 0;
-    }
+    .policy-list li{ margin: 8px 0; }
 
     .policy-highlight{
       background: var(--card);
@@ -83,19 +81,18 @@
       font-weight: 600;
       color: var(--muted);
     }
-    .contact-list strong{
-      color: var(--text);
-    }
+    .contact-list strong{ color: var(--text); }
   </style>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="container header-inner">
 
-    <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+    <!-- Brand -->
+    <a class="brand" href="/index.html" aria-label="First Step Child Care Home">
       <span class="brand-mark" aria-hidden="true">★</span>
       <span class="brand-text">
         <span class="brand-name">First Step</span>
@@ -103,25 +100,27 @@
       </span>
     </a>
 
+    <!-- Mobile toggle -->
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
       <span class="sr-only">Open menu</span>
       ☰
     </button>
 
+    <!-- Navigation -->
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul class="nav-list">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="/index.html">Home</a></li>
 
         <li class="has-dropdown">
           <button class="nav-link dropdown-btn" aria-expanded="false">
             About <span aria-hidden="true">▾</span>
           </button>
           <ul class="dropdown">
-            <li><a href="../pages/about.html">About Us</a></li>
-            <li><a href="../pages/prices.html">Prices</a></li>
-            <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
-            <li><a href="../pages/calendar.html">Calendar</a></li>
-            <li><a href="../pages/gallery.html">Gallery</a></li>
+            <li><a href="/pages/about.html">About Us</a></li>
+            <li><a href="/pages/prices.html">Prices</a></li>
+            <li><a href="/pages/kindercam.html">Kinder Cam</a></li>
+            <li><a href="/pages/calendar.html">Calendar</a></li>
+            <li><a href="/pages/gallery.html">Gallery</a></li>
           </ul>
         </li>
 
@@ -130,11 +129,12 @@
             Programs <span aria-hidden="true">▾</span>
           </button>
           <ul class="dropdown">
-            <li><a href="../pages/program.html">Overview</a></li>
-            <li><a href="../pages/infant-program.html">Infant Program</a></li>
-            <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
-            <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
-            <li><a href="../pages/schedules.html">Schedules</a></li>
+            <li><a href="/pages/program.html">Overview</a></li>
+            <li><a href="/pages/infant-program.html">Infant Program</a></li>
+            <li><a href="/pages/toddler-program.html">Toddler Program</a></li>
+            <li><a href="/pages/preschool-program.html">Preschool / Pre-K</a></li>
+            <li><a href="/pages/schedules.html">Schedules</a></li>
+            <li><a href="/pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
           </ul>
         </li>
 
@@ -143,184 +143,271 @@
             Policies <span aria-hidden="true">▾</span>
           </button>
           <ul class="dropdown">
-            <li><a href="../pages/policies.html">Policies Overview</a></li>
-            <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
-            <li><a aria-current="page" href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
-            <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
-            <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
-            <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
-            <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
-            <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
+            <li><a href="/pages/policies.html">Policies Overview</a></li>
+            <li><a href="/policies/allergy-policy.html">Allergy Policy</a></li>
+            <li><a href="/policies/behavior-management.html">Behavior Management</a></li>
+            <li><a href="/policies/emergency-procedures.html">Emergency Procedures</a></li>
+            <li><a href="/policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
+            <li><a href="/policies/healthcare-policy.html">Healthcare Policy</a></li>
+            <li><a href="/policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
+            <li><a href="/policies/medication-policy.html">Medication Policy</a></li>
+            <li><a href="/policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
           </ul>
         </li>
 
-        <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+        <li><a class="nav-link" href="/pages/gallery.html">Gallery</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Contact <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+            <li><a href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry">✉️ Email Sonia</a></li>
+            <li>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+                target="_blank"
+                rel="noopener"
+              >📍 Directions</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
 
+    <!-- Header CTA -->
     <div class="header-cta">
       <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
-      <a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Get Directions</a>
+      <a
+        class="mini-link"
+        href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+        target="_blank"
+        rel="noopener"
+      >📍 Get Directions</a>
     </div>
 
   </div>
 </header>
 
-<main id="main">
-  <section class="hero page-hero">
-    <div class="container hero-inner">
-      <div class="hero-copy policy-content">
-        <p class="breadcrumbs">
-          <a href="../index.html">Home</a> /
-          <a href="../pages/policies.html">Policies</a> /
-          Emergency Procedures
-        </p>
 
-        <h1>Emergency Procedures</h1>
-        <p class="lead">
-          Our procedures ensure the safety, supervision, and well-being of every child during emergencies.
-        </p>
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container hero-inner">
+        <div class="hero-copy policy-content">
+          <p class="breadcrumbs">
+            <a href="../index.html">Home</a> /
+            <a href="../pages/policies.html">Policies</a> /
+            Emergency Procedures
+          </p>
+
+          <h1>Emergency Procedures</h1>
+          <p class="lead">
+            Our procedures ensure the safety, supervision, and well-being of every child during emergencies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ WAVE DIVIDER: Hero (white) -> Policy Content (alt blue) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#dbe9fb" d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
+
+    <section class="section alt">
+      <div class="container policy-content">
+
+        <div class="policy-box">
+          <h2>Medical Emergencies</h2>
+          <p>
+            In case a child needs to be transported to a nearby hospital, the following procedure will be applied:
+          </p>
+          <ul class="policy-list">
+            <li>The administrator will immediately call 911 and remain on the phone until help arrives.</li>
+            <li>A teacher will accompany the child in the ambulance and remain with the child. The child’s file will be taken.</li>
+            <li>The administrator will contact the parents by phone.</li>
+            <li>If parents cannot be reached immediately, an emergency contact provided at enrollment will be contacted.</li>
+            <li>The administrator will continue attempting to reach the parents until contact is made.</li>
+          </ul>
+        </div>
+
+        <div class="policy-box">
+          <h2>Field Trips &amp; Walks</h2>
+          <ul class="policy-list">
+            <li>All emergency cards will be up to date and carried at all times.</li>
+            <li>A designated staff member will carry a small first aid kit.</li>
+            <li>The administrator will ensure all emergency supplies are checked monthly.</li>
+          </ul>
+        </div>
+
+        <div class="policy-highlight">
+          Signs indicating locations for first aid and health care policies are posted in each classroom.
+        </div>
+
+        <hr class="policy-divider">
+
+        <div class="policy-box">
+          <h2>Emergency Evacuation</h2>
+          <p>
+            Evacuation procedures are posted in each classroom. Teachers are trained during orientation on evacuation routes.
+          </p>
+          <ul class="policy-list">
+            <li>Each classroom is provided with a clipboard listing enrolled children.</li>
+            <li>Teachers must bring the clipboard to the designated evacuation location.</li>
+          </ul>
+
+          <p><strong>During evacuation:</strong></p>
+          <ul class="policy-list">
+            <li>Infants will be placed in evacuation cribs and escorted out by a teacher.</li>
+            <li>Toddlers and preschoolers will walk in a line to the designated location.</li>
+            <li>A teacher will lead the line and another will follow to ensure all children arrive safely.</li>
+            <li>Each teacher will conduct a head count upon arrival.</li>
+            <li>The administrator will complete a final walk-through to ensure no one remains inside.</li>
+            <li>A folder containing all emergency cards will be brought to the designated location.</li>
+          </ul>
+        </div>
+
+        <div class="policy-box">
+          <h2>Fire Drills</h2>
+          <p>
+            Fire drills are conducted monthly. A fire drill log is posted in the director’s office and records the date,
+            time, and efficiency of each drill.
+          </p>
+        </div>
+
+        <hr class="policy-divider">
+
+        <div class="policy-box">
+          <h2>Emergency Telephone Numbers</h2>
+          <ul class="contact-list">
+            <li><strong>Health Consultant:</strong> Marylou Sauro</li>
+            <li>Home: 617-969-9577</li>
+            <li>Cell: 617-291-4819</li>
+
+            <li><strong>Fire Department:</strong> 911</li>
+            <li><strong>Police:</strong> 911</li>
+
+            <li><strong>Designated Adult:</strong> Robert Rossi</li>
+            <li>Cell: 617-784-7953</li>
+
+            <li><strong>Poison Control:</strong> 617-232-2120</li>
+            <li><strong>Mt. Auburn Hospital:</strong> 617-492-3500</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">Early care and education for ages 3 months – 5 years.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="container policy-content">
-
-      <div class="policy-box">
-        <h2>Medical Emergencies</h2>
-        <p>
-          In case a child needs to be transported to a nearby hospital, the following procedure will be applied:
-        </p>
-        <ul class="policy-list">
-          <li>The administrator will immediately call 911 and remain on the phone until help arrives.</li>
-          <li>A teacher will accompany the child in the ambulance and remain with the child. The child’s file will be taken.</li>
-          <li>The administrator will contact the parents by phone.</li>
-          <li>If parents cannot be reached immediately, an emergency contact provided at enrollment will be contacted.</li>
-          <li>The administrator will continue attempting to reach the parents until contact is made.</li>
-        </ul>
-      </div>
-
-      <div class="policy-box">
-        <h2>Field Trips & Walks</h2>
-        <ul class="policy-list">
-          <li>All emergency cards will be up to date and carried at all times.</li>
-          <li>A designated staff member will carry a small first aid kit.</li>
-          <li>The administrator will ensure all emergency supplies are checked monthly.</li>
-        </ul>
-      </div>
-
-      <div class="policy-highlight">
-        Signs indicating locations for first aid and health care policies are posted in each classroom.
-      </div>
-
-      <hr class="policy-divider">
-
-      <div class="policy-box">
-        <h2>Emergency Evacuation</h2>
-        <p>
-          Evacuation procedures are posted in each classroom. Teachers are trained during orientation on evacuation routes.
-        </p>
-        <ul class="policy-list">
-          <li>Each classroom is provided with a clipboard listing enrolled children.</li>
-          <li>Teachers must bring the clipboard to the designated evacuation location.</li>
-        </ul>
-
-        <p><strong>During evacuation:</strong></p>
-        <ul class="policy-list">
-          <li>Infants will be placed in evacuation cribs and escorted out by a teacher.</li>
-          <li>Toddlers and preschoolers will walk in a line to the designated location.</li>
-          <li>A teacher will lead the line and another will follow to ensure all children arrive safely.</li>
-          <li>Each teacher will conduct a head count upon arrival.</li>
-          <li>The administrator will complete a final walk-through to ensure no one remains inside.</li>
-          <li>A folder containing all emergency cards will be brought to the designated location.</li>
-        </ul>
-      </div>
-
-      <div class="policy-box">
-        <h2>Fire Drills</h2>
-        <p>
-          Fire drills are conducted monthly. A fire drill log is posted in the director’s office and records the date,
-          time, and efficiency of each drill.
-        </p>
-      </div>
-
-      <hr class="policy-divider">
-
-      <div class="policy-box">
-        <h2>Emergency Telephone Numbers</h2>
-        <ul class="contact-list">
-          <li><strong>Health Consultant:</strong> Marylou Sauro</li>
-          <li>Home: 617-969-9577</li>
-          <li>Cell: 617-291-4819</li>
-
-          <li><strong>Fire Department:</strong> 911</li>
-          <li><strong>Police:</strong> 911</li>
-
-          <li><strong>Designated Adult:</strong> Robert Rossi</li>
-          <li>Cell: 617-784-7953</li>
-
-          <li><strong>Poison Control:</strong> 617-232-2120</li>
-          <li><strong>Mt. Auburn Hospital:</strong> 617-492-3500</li>
-        </ul>
-      </div>
-
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>First Step Child Care</strong>
-      <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
-    </div>
-    <div class="footer-links">
-      <a href="../pages/about.html">About</a>
-      <a href="../pages/program.html">Programs</a>
-      <a href="../pages/policies.html">Policies</a>
-      <a href="../pages/gallery.html">Gallery</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <p class="muted">© <span id="year"></span> First Step Child Care</p>
-  </div>
-</footer>
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
 
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.getElementById("site-nav");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open");
+    });
 
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    nav.classList.toggle("open");
-  });
-</script>
+    // dropdowns: mobile click only, desktop uses hover
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
+
+      btn.addEventListener("click", (e) => {
+        if (!isTouch) return; // desktop uses hover
+
+        e.stopPropagation();
+
+        // close other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== drop) {
+            d.classList.remove("open");
+            const b = d.querySelector(".dropdown-btn");
+            if (b) b.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // toggle current dropdown
+        const isOpen = drop.classList.contains("open");
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+
+    // close dropdowns when a link is clicked (mobile)
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => {
+        dropdowns.forEach(d => {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    // click outside to close dropdowns (mobile convenience)
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        dropdowns.forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+  </script>
+
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
-<a class="floating-contact"
-   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-   aria-label="Email First Step Child Care">
-  ✉️ Contact
-</a>
-<script>
-  (function(){
-    const btn = document.querySelector('.floating-contact');
-    if(!btn) return;
-
-    let activated = false;
-
-    window.addEventListener('scroll', () => {
-      if (activated) return;
-
-      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
-        btn.classList.add('pulse');
-        activated = true;
-      }
-    }, { passive: true });
-  })();
-</script>
 </html>

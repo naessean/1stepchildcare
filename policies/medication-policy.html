@@ -10,6 +10,10 @@
   <meta property="og:description" content="How medications are authorized, administered, documented, stored, and returned to families at First Step Child Care." />
   <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
@@ -25,13 +29,9 @@
       color: var(--primary-2);
       text-decoration: none;
     }
-    .breadcrumbs a:hover {
-      text-decoration: underline;
-    }
+    .breadcrumbs a:hover { text-decoration: underline; }
 
-    .policy-content{
-      max-width: 900px;
-    }
+    .policy-content{ max-width: 900px; }
 
     .policy-box{
       background: #fff;
@@ -42,9 +42,7 @@
       margin-bottom: 20px;
     }
 
-    .policy-box h2{
-      margin-top: 0;
-    }
+    .policy-box h2{ margin-top: 0; }
 
     .policy-list{
       padding-left: 18px;
@@ -52,9 +50,7 @@
       font-weight: 600;
       line-height: 1.7;
     }
-    .policy-list li{
-      margin: 10px 0;
-    }
+    .policy-list li{ margin: 10px 0; }
 
     .policy-highlight{
       background: var(--card);
@@ -81,12 +77,13 @@
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="container header-inner">
 
-    <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+    <!-- Brand -->
+    <a class="brand" href="/index.html" aria-label="First Step Child Care Home">
       <span class="brand-mark" aria-hidden="true">★</span>
       <span class="brand-text">
         <span class="brand-name">First Step</span>
@@ -94,25 +91,27 @@
       </span>
     </a>
 
+    <!-- Mobile toggle -->
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
       <span class="sr-only">Open menu</span>
       ☰
     </button>
 
+    <!-- Navigation -->
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul class="nav-list">
-        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="/index.html">Home</a></li>
 
         <li class="has-dropdown">
           <button class="nav-link dropdown-btn" aria-expanded="false">
             About <span aria-hidden="true">▾</span>
           </button>
           <ul class="dropdown">
-            <li><a href="../pages/about.html">About Us</a></li>
-            <li><a href="../pages/prices.html">Prices</a></li>
-            <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
-            <li><a href="../pages/calendar.html">Calendar</a></li>
-            <li><a href="../pages/gallery.html">Gallery</a></li>
+            <li><a href="/pages/about.html">About Us</a></li>
+            <li><a href="/pages/prices.html">Prices</a></li>
+            <li><a href="/pages/kindercam.html">Kinder Cam</a></li>
+            <li><a href="/pages/calendar.html">Calendar</a></li>
+            <li><a href="/pages/gallery.html">Gallery</a></li>
           </ul>
         </li>
 
@@ -121,11 +120,12 @@
             Programs <span aria-hidden="true">▾</span>
           </button>
           <ul class="dropdown">
-            <li><a href="../pages/program.html">Overview</a></li>
-            <li><a href="../pages/infant-program.html">Infant Program</a></li>
-            <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
-            <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
-            <li><a href="../pages/schedules.html">Schedules</a></li>
+            <li><a href="/pages/program.html">Overview</a></li>
+            <li><a href="/pages/infant-program.html">Infant Program</a></li>
+            <li><a href="/pages/toddler-program.html">Toddler Program</a></li>
+            <li><a href="/pages/preschool-program.html">Preschool / Pre-K</a></li>
+            <li><a href="/pages/schedules.html">Schedules</a></li>
+            <li><a href="/pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
           </ul>
         </li>
 
@@ -134,175 +134,261 @@
             Policies <span aria-hidden="true">▾</span>
           </button>
           <ul class="dropdown">
-            <li><a href="../pages/policies.html">Policies Overview</a></li>
-            <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
-            <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
-            <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
-            <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
-            <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
-            <li><a aria-current="page" href="../policies/medication-policy.html">Medication Policy</a></li>
-            <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
+            <li><a href="/pages/policies.html">Policies Overview</a></li>
+            <li><a href="/policies/allergy-policy.html">Allergy Policy</a></li>
+            <li><a href="/policies/behavior-management.html">Behavior Management</a></li>
+            <li><a href="/policies/emergency-procedures.html">Emergency Procedures</a></li>
+            <li><a href="/policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
+            <li><a href="/policies/healthcare-policy.html">Healthcare Policy</a></li>
+            <li><a href="/policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
+            <li><a href="/policies/medication-policy.html">Medication Policy</a></li>
+            <li><a href="/policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
           </ul>
         </li>
 
-        <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+        <li><a class="nav-link" href="/pages/gallery.html">Gallery</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-btn" aria-expanded="false">
+            Contact <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown">
+            <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
+            <li><a href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry">✉️ Email Sonia</a></li>
+            <li>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+                target="_blank"
+                rel="noopener"
+              >📍 Directions</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
 
+    <!-- Header CTA -->
     <div class="header-cta">
       <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
-      <a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Get Directions</a>
+      <a
+        class="mini-link"
+        href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+        target="_blank"
+        rel="noopener"
+      >📍 Get Directions</a>
     </div>
 
   </div>
 </header>
 
-<main id="main">
-  <section class="hero page-hero">
-    <div class="container hero-inner">
-      <div class="hero-copy policy-content">
-        <p class="breadcrumbs">
-          <a href="../index.html">Home</a> /
-          <a href="../pages/policies.html">Policies</a> /
-          Medication Policy
-        </p>
 
-        <h1>Medication</h1>
-        <p class="lead">
-          To keep children safe, all medications require proper documentation and parent authorization.
-        </p>
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container hero-inner">
+        <div class="hero-copy policy-content">
+          <p class="breadcrumbs">
+            <a href="../index.html">Home</a> /
+            <a href="../pages/policies.html">Policies</a> /
+            Medication Policy
+          </p>
+
+          <h1>Medication Policy</h1>
+          <p class="lead">
+            To keep children safe, all medications require proper documentation and parent authorization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ WAVE DIVIDER: Hero (white) -> Policy Content (alt blue) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#dbe9fb" d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
+
+    <section class="section alt">
+      <div class="container policy-content">
+
+        <div class="policy-box">
+          <h2>Administration of Medication</h2>
+          <p class="subhead"><strong>First Step will administer medication to children as follows:</strong></p>
+
+          <ul class="policy-list">
+            <li>
+              <strong>Non-Prescription Medication:</strong>
+              A note from the child’s physician is required indicating the dosage, time, and reasons why medication is being given.
+              Written parental authorization is also required. The note will be kept in the child’s file and will be valid for one year
+              from the date it was signed.
+            </li>
+
+            <li>
+              For infants and toddlers, please provide the center with a new note from the child’s physician if dosage of medication is
+              changed from the last note. First Step will contact the parents before administering any non-prescription medication to a child.
+              If a child needs medication urgently, the director or a staff member will contact the child’s parents immediately after the medication
+              was administered and notify them of the time.
+              <em>(Example of non-prescription medication: Tylenol, Motrin, Aspirin, or any over-the-counter medication.)</em>
+            </li>
+
+            <li>
+              <strong>Prescription Medication:</strong>
+              Any prescription medication needs a written order from the child’s physician, which may include the label on the medication.
+              The label must indicate the medicine is for the specific child and include the specific dosage, number of times per day,
+              and number of days the medication is to be administered. A written parental authorization is also required.
+            </li>
+
+            <li>
+              First Step will not administer any medication contrary to the directions on the original container unless authorized by a written
+              order from the child’s physician.
+            </li>
+
+            <li>
+              <strong>Topical Medication (applied to skin):</strong>
+              Diaper rash ointments, anti-bacterial ointments, and petroleum jelly will be stored in their original containers,
+              labeled with the child’s name, and used only for that individual child. Parents are responsible to provide the center with any
+              specific ointment that must be administered to the child. A parent or guardian must sign a parental authorization form.
+            </li>
+
+            <li>
+              <strong>Topical Medication (not applied to open wounds, rashes, or broken skin):</strong>
+              Sunscreen, bug spray, and other ointments will be administered to children with written parental authorization.
+              Parents are responsible to provide sunscreen, bug spray, and other ointments to the center.
+              If a child is missing one of the items, the administrator or a staff member will contact one of the parents to notify them.
+              First Step will keep extra topical medication (sunscreen and bug spray) in case a child is missing one.
+              First Step will contact the parents or guardians before applying any of the provided topical medication to any child enrolled at the program.
+              All forms will be provided by the center upon enrollment.
+            </li>
+
+            <li>
+              First Step will maintain a written record of the administration of prescription or non-prescription medications given to each child,
+              which includes: the time and date of each administration, the dosage, the name of the staff member administering the medication,
+              and the name of the child.
+            </li>
+
+            <li>
+              The completed medication records will be kept in the child’s file.
+            </li>
+          </ul>
+        </div>
+
+        <div class="policy-box">
+          <h2>Disposing of Medication</h2>
+          <p>
+            First Step will not dispose of any prescription or non-prescription medications at the center.
+            Any left over medication will be given back to parents.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>First Step Child Care</strong>
+        <p class="muted">Early care and education for ages 3 months – 5 years.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="container policy-content">
-
-      <div class="policy-box">
-        <h2>Administration of Medication</h2>
-        <p class="subhead"><strong>First Step will administer medication to children as follows:</strong></p>
-
-        <ul class="policy-list">
-          <li>
-            <strong>Non-Prescription Medication:</strong>
-            A note from the child’s physician is required indicating the dosage, time, and reasons why medication is being given.
-            Written parental authorization is also required. The note will be kept in the child’s file and will be valid for one year
-            from the date it was signed.
-          </li>
-
-          <li>
-            For infants and toddlers, please provide the center with a new note from the child’s physician if dosage of medication is
-            changed from the last note. First Step will contact the parents before administering any non-prescription medication to a child.
-            If a child needs medication urgently, the director or a staff member will contact the child’s parents immediately after the medication
-            was administered and notify them of the time.
-            <em>(Example of non-prescription medication: Tylenol, Motrin, Aspirin, or any over-the-counter medication.)</em>
-          </li>
-
-          <li>
-            <strong>Prescription Medication:</strong>
-            Any prescription medication needs a written order from the child’s physician, which may include the label on the medication.
-            The label must indicate the medicine is for the specific child and include the specific dosage, number of times per day,
-            and number of days the medication is to be administered. A written parental authorization is also required.
-          </li>
-
-          <li>
-            First Step will not administer any medication contrary to the directions on the original container unless authorized by a written
-            order from the child’s physician.
-          </li>
-
-          <li>
-            <strong>Topical Medication (applied to skin):</strong>
-            Diaper rash ointments, anti-bacterial ointments, and petroleum jelly will be stored in their original containers,
-            labeled with the child’s name, and used only for that individual child. Parents are responsible to provide the center with any
-            specific ointment that must be administered to the child. A parent or guardian must sign a parental authorization form.
-          </li>
-
-          <li>
-            <strong>Topical Medication (not applied to open wounds, rashes, or broken skin):</strong>
-            Sunscreen, bug spray, and other ointments will be administered to children with written parental authorization.
-            Parents are responsible to provide sunscreen, bug spray, and other ointments to the center.
-            If a child is missing one of the items, the administrator or a staff member will contact one of the parents to notify them.
-            First Step will keep extra topical medication (sunscreen and bug spray) in case a child is missing one.
-            First Step will contact the parents or guardians before applying any of the provided topical medication to any child enrolled at the program.
-            All forms will be provided by the center upon enrollment.
-          </li>
-
-          <li>
-            First Step will maintain a written record of the administration of prescription or non-prescription medications given to each child,
-            which includes: the time and date of each administration, the dosage, the name of the staff member administering the medication,
-            and the name of the child.
-          </li>
-
-          <li>
-            The completed medication records will be kept in the child’s file.
-          </li>
-        </ul>
-      </div>
-
-      <div class="policy-box">
-        <h2>Disposing of Medication</h2>
-        <p>
-          First Step will not dispose of any prescription or non-prescription medications at the center.
-          Any left over medication will be given back to parents.
-        </p>
-      </div>
-
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>First Step Child Care</strong>
-      <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
-    </div>
-    <div class="footer-links">
-      <a href="../pages/about.html">About</a>
-      <a href="../pages/program.html">Programs</a>
-      <a href="../pages/policies.html">Policies</a>
-      <a href="../pages/gallery.html">Gallery</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <p class="muted">© <span id="year"></span> First Step Child Care</p>
-  </div>
-</footer>
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+    // mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
 
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.getElementById("site-nav");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open");
+    });
 
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    nav.classList.toggle("open");
-  });
-</script>
-<a class="floating-contact"
-   href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-   aria-label="Email First Step Child Care">
-  ✉️ Contact
-</a>
-<script>
-  (function(){
-    const btn = document.querySelector('.floating-contact');
-    if(!btn) return;
+    // dropdowns: mobile click only, desktop uses hover
+    const dropdowns = document.querySelectorAll(".has-dropdown");
+    const isTouch = window.matchMedia("(hover: none)").matches;
 
-    let activated = false;
+    dropdowns.forEach(drop => {
+      const btn = drop.querySelector(".dropdown-btn");
 
-    window.addEventListener('scroll', () => {
-      if (activated) return;
+      btn.addEventListener("click", (e) => {
+        if (!isTouch) return; // desktop uses hover
+        e.stopPropagation();
 
-      if (window.scrollY > 120) {   // 👈 adjust threshold if desired
-        btn.classList.add('pulse');
-        activated = true;
+        // close other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== drop) {
+            d.classList.remove("open");
+            const b = d.querySelector(".dropdown-btn");
+            if (b) b.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // toggle current dropdown
+        const isOpen = drop.classList.contains("open");
+        drop.classList.toggle("open", !isOpen);
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+    });
+
+    // close dropdowns when a link is clicked (mobile)
+    document.querySelectorAll(".dropdown a").forEach(link => {
+      link.addEventListener("click", () => {
+        dropdowns.forEach(d => {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+
+    // click outside to close dropdowns (mobile convenience)
+    document.addEventListener("click", (e) => {
+      const isMenu = e.target.closest(".has-dropdown");
+      if (!isMenu) {
+        dropdowns.forEach(li => {
+          li.classList.remove("open");
+          const b = li.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        });
       }
-    }, { passive: true });
-  })();
-</script>
+    });
+  </script>
+
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.floating-contact');
+      if(!btn) return;
+
+      let activated = false;
+
+      window.addEventListener('scroll', () => {
+        if (activated) return;
+
+        if (window.scrollY > 120) {
+          btn.classList.add('pulse');
+          activated = true;
+        }
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
 </html>
