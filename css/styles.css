@@ -865,3 +865,208 @@ main, .site-footer{
   color: var(--muted);
 }
 
+/* ===== A Day at First Step (Interactive Timeline) ===== */
+.timeline{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.time-card{
+  text-align:left;
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+
+  border: 1px solid rgba(30,64,175,.18);
+  background: rgba(255,255,255,.92);
+  border-radius: var(--radius);
+  padding: 14px;
+
+  cursor:pointer;
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 180ms cubic-bezier(.2,.8,.2,1),
+              border-color 180ms cubic-bezier(.2,.8,.2,1);
+}
+
+.time-card h3{ margin:0 0 4px; font-weight:800; }
+.time-card p{ margin:0; color: var(--muted); }
+
+.time-emoji{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(37,99,235,.10);
+  border: 1px solid rgba(37,99,235,.14);
+  font-size: 22px;
+  flex: 0 0 auto;
+}
+
+.time-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(2,6,23,.10);
+  border-color: rgba(37,99,235,.28);
+}
+
+.time-card.active{
+  background: #ffffff;
+  border-color: rgba(37,99,235,.45);
+  box-shadow: 0 18px 36px rgba(2,6,23,.12);
+}
+
+.timeline-detail{
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: #ffffff;
+  border: 1px solid rgba(30,64,175,.18);
+  box-shadow: 0 10px 22px rgba(30,64,175,.10);
+}
+
+.detail-title{ margin: 0 0 6px; font-weight: 900; }
+.detail-text{ margin: 0; color: var(--muted); }
+
+@media (max-width: 900px){
+  .timeline{ grid-template-columns: 1fr; }
+}
+
+/* ================= TRUST BADGES ROW ================= */
+
+.trust-row{
+  background: linear-gradient(
+    180deg,
+    rgba(37,99,235,.08),
+    rgba(37,99,235,.03)
+  );
+  border-top: 1px solid rgba(30,64,175,.18);
+  border-bottom: 1px solid rgba(30,64,175,.18);
+  padding: 26px 0;
+}
+
+.trust-inner{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.trust-badge{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+
+  background:#ffffff;
+  border:1px solid rgba(30,64,175,.18);
+  border-radius: var(--radius);
+  padding: 16px;
+
+  box-shadow: 0 6px 18px rgba(30,64,175,.10);
+
+  transition: transform 180ms var(--ease-out),
+              box-shadow 180ms var(--ease-out),
+              border-color 180ms var(--ease-out);
+}
+
+.trust-badge strong{
+  display:block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  margin-bottom: 2px;
+  color:#0f3d7a;
+}
+
+.trust-badge p{
+  margin:0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.trust-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+
+  background: rgba(37,99,235,.12);
+  border: 1px solid rgba(37,99,235,.18);
+  font-size: 22px;
+  flex: 0 0 auto;
+}
+
+.trust-badge:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(2,6,23,.12);
+  border-color: rgba(37,99,235,.32);
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .trust-inner{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= PARENT TESTIMONIAL STRIP ================= */
+
+.section-title.center{
+  text-align:center;
+}
+
+.testimonial-strip{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.95),
+      rgba(219,233,251,.65)
+    );
+  border-top: 1px solid rgba(30,64,175,.18);
+  border-bottom: 1px solid rgba(30,64,175,.18);
+  padding: 40px 0;
+}
+
+.testimonial-carousel{
+  position: relative;
+  max-width: 760px;
+  margin: 22px auto 0;
+  min-height: 130px;
+}
+
+.testimonial{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 520ms cubic-bezier(.2,.8,.2,1),
+              transform 520ms cubic-bezier(.2,.8,.2,1);
+  text-align: center;
+}
+
+.testimonial.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial p{
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #0f3d7a;
+  margin: 0 0 10px;
+}
+
+.testimonial footer{
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 700px){
+  .testimonial p{
+    font-size: 1.05rem;
+  }
+}
