@@ -205,6 +205,45 @@
       </div>
     </section>
 
+    <section class="trust-row reveal" aria-label="Why parents trust First Step Child Care">
+  <div class="container trust-inner">
+
+    <div class="trust-badge">
+      <span class="trust-icon" aria-hidden="true">🛡️</span>
+      <div>
+        <strong>Safe & Licensed</strong>
+        <p>Clear policies, trained staff, and consistent routines.</p>
+      </div>
+    </div>
+
+    <div class="trust-badge">
+      <span class="trust-icon" aria-hidden="true">🧠</span>
+      <div>
+        <strong>Play-Based Learning</strong>
+        <p>Children learn naturally through guided play.</p>
+      </div>
+    </div>
+
+    <div class="trust-badge">
+      <span class="trust-icon" aria-hidden="true">💬</span>
+      <div>
+        <strong>Daily Communication</strong>
+        <p>Open, ongoing communication with families.</p>
+      </div>
+    </div>
+
+    <div class="trust-badge">
+      <span class="trust-icon" aria-hidden="true">❤️</span>
+      <div>
+        <strong>Teachers Who Care</strong>
+        <p>Warm relationships that support growth.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
     <section class="section">
       <div class="container">
         <h2 class="section-title">Programs</h2>
@@ -231,6 +270,117 @@
         </div>
       </div>
     </section>
+
+    <section class="section alt reveal" id="day-at-first-step">
+  <div class="container">
+    <h2 class="section-title">A Day at First Step</h2>
+    <p class="section-sub">A calm, consistent routine that helps children feel safe, confident, and ready to learn.</p>
+
+    <div class="timeline">
+      <button class="time-card active" type="button" data-detail="arrival">
+        <span class="time-emoji" aria-hidden="true">🌞</span>
+        <div>
+          <h3>Morning Arrival</h3>
+          <p>Warm welcome + smooth transitions.</p>
+        </div>
+      </button>
+
+      <button class="time-card" type="button" data-detail="centers">
+        <span class="time-emoji" aria-hidden="true">🎨</span>
+        <div>
+          <h3>Learning Centers</h3>
+          <p>Hands-on play builds skills naturally.</p>
+        </div>
+      </button>
+
+      <button class="time-card" type="button" data-detail="outside">
+        <span class="time-emoji" aria-hidden="true">🌳</span>
+        <div>
+          <h3>Outdoor Play</h3>
+          <p>Movement, fresh air, big smiles.</p>
+        </div>
+      </button>
+
+      <button class="time-card" type="button" data-detail="lunch">
+        <span class="time-emoji" aria-hidden="true">🍎</span>
+        <div>
+          <h3>Lunch & Snacks</h3>
+          <p>Nutritious routines + good habits.</p>
+        </div>
+      </button>
+
+      <button class="time-card" type="button" data-detail="quiet">
+        <span class="time-emoji" aria-hidden="true">📖</span>
+        <div>
+          <h3>Story & Quiet Time</h3>
+          <p>Reset, recharge, relax.</p>
+        </div>
+      </button>
+
+      <button class="time-card" type="button" data-detail="pickup">
+        <span class="time-emoji" aria-hidden="true">🧸</span>
+        <div>
+          <h3>Pick-Up</h3>
+          <p>Sharing highlights of the day.</p>
+        </div>
+      </button>
+    </div>
+
+    <div class="timeline-detail reveal" id="timeline-detail" aria-live="polite">
+      <h3 class="detail-title">Morning Arrival</h3>
+      <p class="detail-text">
+        We greet each child by name, help them settle in, and start the day with familiar routines that build security and confidence.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial-strip reveal" aria-label="Parent testimonials">
+  <div class="container">
+
+    <h2 class="section-title center">What Parents Are Saying</h2>
+
+    <div class="testimonial-carousel" aria-live="polite">
+      <blockquote class="testimonial active">
+        <p>
+          “We’ve been part of this amazing daycare for over 4 years, and I truly cannot recommend it highly enough.”
+        </p>
+        <footer>— Preschool Parent</footer>
+      </blockquote>
+
+            <blockquote class="testimonial">
+        <p>
+          “We love the ability to use KinderCam to see our baby from work”
+        </p>
+        <footer>— Infant Parent</footer>
+      </blockquote>
+
+                  <blockquote class="testimonial">
+        <p>
+          “I can’t say enough good things about this daycare. It has been an absolute gift to our family.”
+        </p>
+        <footer>— Toddler Parent</footer>
+      </blockquote>
+
+      <blockquote class="testimonial">
+        <p>
+          “Both of our girls have been here since they were just 3 months old all the way through Pre-K, and the care, love, and consistency they’ve received have been incredible”
+        </p>
+        <footer>— Preschool Parent</footer>
+      </blockquote>
+
+      <blockquote class="testimonial">
+        <p>
+          “First Step was head and shoulders above the other sites we visited in terms of employee tenure and child reading know how”
+        </p>
+        <footer>— Preschool Parent</footer>
+      </blockquote>
+    </div>
+
+  </div>
+</section>
+
+
 
     <!-- ✅ WAVE DIVIDER: Programs (white) -> What Parents Care About (alt blue) -->
     <div class="wave-divider" aria-hidden="true">
@@ -409,6 +559,74 @@
       }, { passive: true });
     })();
   </script>
+
+  <script>
+  (function(){
+    const cards = document.querySelectorAll('.time-card');
+    const box = document.getElementById('timeline-detail');
+    if(!cards.length || !box) return;
+
+    const title = box.querySelector('.detail-title');
+    const text  = box.querySelector('.detail-text');
+
+    const details = {
+      arrival: {
+        t: "Morning Arrival",
+        p: "We greet each child by name, help them settle in, and start the day with familiar routines that build security and confidence."
+      },
+      centers: {
+        t: "Learning Centers",
+        p: "Children explore art, blocks, sensory, and early literacy through play—teachers guide and extend learning naturally."
+      },
+      outside: {
+        t: "Outdoor Play",
+        p: "Fresh air and movement support healthy bodies, social skills, and big joyful energy—every day we can."
+      },
+      lunch: {
+        t: "Lunch & Snacks",
+        p: "Predictable mealtimes help children feel grounded. We encourage independence, manners, and trying new foods."
+      },
+      quiet: {
+        t: "Story & Quiet Time",
+        p: "A calm reset with books, music, and rest so children can recharge and finish the day feeling great."
+      },
+      pickup: {
+        t: "Pick-Up",
+        p: "We share highlights, celebrate progress, and keep communication open—so you always feel connected to your child’s day."
+      }
+    };
+
+    cards.forEach(btn => {
+      btn.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+
+        const key = btn.getAttribute('data-detail');
+        const d = details[key];
+        if(!d) return;
+
+        title.textContent = d.t;
+        text.textContent = d.p;
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function(){
+    const quotes = document.querySelectorAll('.testimonial');
+    if(quotes.length < 2) return;
+
+    let index = 0;
+
+    setInterval(() => {
+      quotes[index].classList.remove('active');
+      index = (index + 1) % quotes.length;
+      quotes[index].classList.add('active');
+    }, 5200); // calm pace
+  })();
+</script>
+
 
 </body>
 </html>
