@@ -69,7 +69,7 @@ li{
 /* Subtle checklist styling (What Parents Care About) */
 /* Subtle checklist styling (Homepage / simple list only)
    Use <ul class="checklist simple"> on pages that should use CSS checkmarks. */
-   
+
 .checklist.simple{
   list-style: none;
   padding-left: 0;
@@ -596,6 +596,35 @@ a:hover{ color: var(--primary); }
 @media (max-width: 900px){
   .image-row{ grid-template-columns: 1fr; }
 }
+
+/* ================= PRESCHOOL GRADUATION IMAGE STRIP ================= */
+
+.graduation-row{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 860px;       /* keeps images from getting too large */
+  margin: 28px auto 10px; /* centers and adds breathing room */
+}
+
+.graduation-row img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid rgba(30,64,175,.18);
+  box-shadow: 0 10px 24px rgba(30,64,175,.18);
+  background: #fff;
+}
+
+/* Stack on mobile */
+@media (max-width: 900px){
+  .graduation-row{
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
+
 
 /* ================= FUN FLOATERS (HOMEPAGE) ================= */
 /* ✅ FIXED: does NOT touch .site-header, so nav stays clickable */
