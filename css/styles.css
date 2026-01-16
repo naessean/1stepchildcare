@@ -67,13 +67,16 @@ li{
 }
 
 /* Subtle checklist styling (What Parents Care About) */
-.checklist{
+/* Subtle checklist styling (Homepage / simple list only)
+   Use <ul class="checklist simple"> on pages that should use CSS checkmarks. */
+   
+.checklist.simple{
   list-style: none;
   padding-left: 0;
   margin: 14px 0 18px;
 }
 
-.checklist li{
+.checklist.simple li{
   position: relative;
   padding-left: 30px;
   margin: 10px 0;
@@ -81,7 +84,7 @@ li{
 }
 
 /* Soft blue checkmark */
-.checklist li::before{
+.checklist.simple li::before{
   content: "✓";
   position: absolute;
   left: 0;
@@ -89,9 +92,9 @@ li{
 
   font-weight: 900;
   font-size: 1.05rem;
-
   color: var(--primary);
 }
+
 
 .container{ width:min(1100px, 92vw); margin:0 auto; }
 
