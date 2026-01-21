@@ -115,7 +115,7 @@
 
     .divider{ height: 1px; background: var(--border); margin: 14px 0; }
 
-    /* Photo strip layout (no cropping, responsive, matches site cards) */
+    /* Photo strip layout */
     .image-row{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -126,13 +126,35 @@
     }
     .image-row img{
       width: 100%;
-      height: auto;              /* no cropping */
+      height: auto;
       display:block;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background: #fff;
       box-shadow: 0 2px 0 rgba(2,6,23,.04);
     }
+
+    /* Age table */
+    .age-table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background:#fff;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+    .age-table th, .age-table td{
+      text-align:left;
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .age-table th{
+      background: var(--card);
+      font-weight: 900;
+    }
+    .age-table tr:last-child td{ border-bottom: 0; }
   </style>
 
   <script type="application/ld+json">
@@ -188,14 +210,13 @@
   <header class="site-header">
     <div class="container header-inner">
 
-<a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-  <span class="brand-icon" aria-hidden="true">👣</span>
-  <span class="brand-text">
-    <span class="brand-name">First Step</span>
-    <span class="brand-sub">Child Care</span>
-  </span>
-</a>
-
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-icon" aria-hidden="true">👣</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
@@ -229,7 +250,6 @@
               <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
               <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
               <li><a href="../pages/schedules.html">Schedules</a></li>
-              <!-- ✅ ADDED -->
               <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
@@ -240,7 +260,6 @@
             </button>
             <ul class="dropdown">
               <li><a href="policies.html">Policies Overview</a></li>
-
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
@@ -296,6 +315,7 @@
 
           <div class="hero-actions">
             <a class="btn primary" href="#details">Program Details</a>
+            <a class="btn ghost" href="#schedule">Infant Schedule</a>
             <a class="btn ghost" href="#bring">Infant Room: Things to Bring</a>
           </div>
 
@@ -308,24 +328,17 @@
         </div>
 
         <div class="hero-media logo-box">
-          <img
-            src="../assets/img/logo.png"
-            alt="First Step Child Care logo"
-            loading="eager"
-            decoding="async"
-          >
+          <img src="../assets/img/logo.png" alt="First Step Child Care logo" loading="eager" decoding="async">
         </div>
       </div>
     </section>
 
-    <!-- ✅ Wave divider (Hero -> Photos) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
         <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
       </svg>
     </div>
 
-    <!-- Photos -->
     <section class="section">
       <div class="container">
         <div class="image-row">
@@ -335,23 +348,49 @@
       </div>
     </section>
 
-    <!-- ✅ Wave divider (Photos -> Details) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
         <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
       </svg>
     </div>
 
+    <!-- Details (2-column) -->
     <section class="section" id="details">
       <div class="container content">
         <div class="stack">
-          <h2 class="section-title">Program Details</h2>
-          <p class="section-sub">
-            Children foster attachment and a sense of security through one-on-one interaction with caregivers throughout
-            the caregiving routine.
-          </p>
+
+          <h2 class="section-title">Classroom Age Ranges</h2>
+          <p class="section-sub">Our infant rooms are grouped by age and development.</p>
+
+          <table class="age-table" aria-label="Infant classroom age ranges">
+            <thead>
+              <tr>
+                <th>Classroom</th>
+                <th>Age Range</th>
+                <th>Staffing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Infant I</strong></td>
+                <td>2 months – 9 months</td>
+                <td>7 children / 2 educators</td>
+              </tr>
+              <tr>
+                <td><strong>Infant II</strong></td>
+                <td>9 months – 15 months</td>
+                <td>7 children / 2 educators</td>
+              </tr>
+            </tbody>
+          </table>
 
           <div class="panel">
+            <h2 class="section-title" style="margin:0;">Program Details</h2>
+            <p class="section-sub" style="margin-top:6px;">
+              Children foster attachment and a sense of security through one-on-one interaction with caregivers throughout
+              the caregiving routine.
+            </p>
+
             <p>
               Throughout the day, children engage in physical activity and discovery through play on the floor with a variety
               of toys and materials that are age appropriate and stimulating.
@@ -403,6 +442,7 @@
               <li>Guidance and support in a safe, loving environment</li>
             </ul>
           </div>
+
         </div>
 
         <aside class="stack">
@@ -426,7 +466,72 @@
       </div>
     </section>
 
-    <!-- ✅ Wave divider (Details -> Bring alt section) -->
+    <!-- ✅ Wave divider (Details -> Schedule) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
+    <!-- ✅ Full-width Schedule section -->
+    <section class="section schedule-section" id="schedule">
+      <div class="container">
+        <h2 class="section-title">Infant Schedule</h2>
+        <p class="section-sub">
+          At First Step, we know and respect that each child is a unique individual with their own needs, especially young infants.
+          Therefore, our infant educators are responsive to these individual needs and follow the schedules established by each
+          individual child. Overtime, with growth and consistency, infants will follow First Step's daily schedule, which promotes
+          language, gross motor skills, cognitive development, and early independence to best foster a strong foundation of learning
+          and well-rounded development for each child in our program.
+        </p>
+
+        <div class="schedule-grid">
+          <div class="schedule-card" aria-label="Infant I daily schedule">
+            <h3>Infant I Daily Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:30</span><span class="schedule-activity">Drop Off</span></li>
+              <li><span class="schedule-time">8:30–9:00</span><span class="schedule-activity">Free Play</span></li>
+              <li><span class="schedule-time">9:00–9:15</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">9:15–9:30</span><span class="schedule-activity">Bottle Feeding</span></li>
+              <li><span class="schedule-time">9:30–11:00</span><span class="schedule-activity">Morning Nap</span></li>
+              <li><span class="schedule-time">11:00–11:30</span><span class="schedule-activity">Belly Time</span></li>
+              <li><span class="schedule-time">11:30–12:00</span><span class="schedule-activity">Lunch &amp; Individual Feeding</span></li>
+              <li><span class="schedule-time">12:00–12:30</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">12:30–1:00</span><span class="schedule-activity">Reading</span></li>
+              <li><span class="schedule-time">1:00–1:45</span><span class="schedule-activity">Outdoor Walk</span></li>
+              <li><span class="schedule-time">1:45–2:00</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">2:00–2:30</span><span class="schedule-activity">Bottle Feeding</span></li>
+              <li><span class="schedule-time">2:30–4:00</span><span class="schedule-activity">Afternoon Nap</span></li>
+              <li><span class="schedule-time">4:00–4:30</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">4:30–5:30</span><span class="schedule-activity">Free Play and Pick Up</span></li>
+            </ul>
+          </div>
+
+          <div class="schedule-card" aria-label="Infant II daily schedule">
+            <h3>Infant II Daily Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:30</span><span class="schedule-activity">Drop Off</span></li>
+              <li><span class="schedule-time">8:30–9:00</span><span class="schedule-activity">Free Play</span></li>
+              <li><span class="schedule-time">9:00–9:15</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">9:15–9:30</span><span class="schedule-activity">Morning Snack</span></li>
+              <li><span class="schedule-time">9:30–11:00</span><span class="schedule-activity">Morning Nap</span></li>
+              <li><span class="schedule-time">11:00–11:30</span><span class="schedule-activity">Sensory Play</span></li>
+              <li><span class="schedule-time">11:30–12:00</span><span class="schedule-activity">Lunch</span></li>
+              <li><span class="schedule-time">12:00–12:30</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">12:30–1:00</span><span class="schedule-activity">Reading</span></li>
+              <li><span class="schedule-time">1:00–1:45</span><span class="schedule-activity">Outdoor Walk</span></li>
+              <li><span class="schedule-time">1:45–2:00</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">2:00–2:30</span><span class="schedule-activity">Afternoon Snack</span></li>
+              <li><span class="schedule-time">2:30–4:00</span><span class="schedule-activity">Afternoon Nap</span></li>
+              <li><span class="schedule-time">4:00–4:30</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">4:30–5:30</span><span class="schedule-activity">Free Play and Pick Up</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Wave divider (Schedule -> Bring alt section) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
         <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
@@ -444,7 +549,7 @@
           <li><div class="check">✓</div><div><strong>1 handsfree sleepsack</strong><div class="muted">Labeled.</div></div></li>
           <li><div class="check">✓</div><div><strong>Diapers, wipes and diaper cream</strong><div class="muted">Labeled.</div></div></li>
           <li><div class="check">✓</div><div><strong>Bottles already made OR pre-measured</strong><div class="muted">In a plastic zip lock bag labeled.</div></div></li>
-          <li><div class="check">✓</div><div><strong>Sun block (infants over 5 months) & sun hat</strong><div class="muted">Labeled.</div></div></li>
+          <li><div class="check">✓</div><div><strong>Sun block (infants over 5 months) &amp; sun hat</strong><div class="muted">Labeled.</div></div></li>
           <li><div class="check">✓</div><div><strong>Baby food (if on solids)</strong><div class="muted">Labeled. Cheerios/snacks if on finger food (labeled).</div></div></li>
           <li><div class="check">✓</div><div><strong>Bibs (estimated 6)</strong><div class="muted">All labeled.</div></div></li>
           <li><div class="check">✓</div><div><strong>Extra pacifier (if used)</strong><div class="muted">In plastic bag labeled.</div></div></li>
@@ -480,9 +585,10 @@
         <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p class="muted">© <span id="year"></span> First Step Child Care</p>
-    </div>
+<div class="container footer-bottom">
+  <p class="muted">© <span id="year"></span> First Step Child Care</p>
+  <p class="muted footer-credit">Website built by <span class="credit-brand">KinderCam</span></p>
+</div>
   </footer>
 
   <script>
@@ -547,10 +653,7 @@
       const floaters = document.querySelectorAll(".fun-floaters .floater");
       if (!floaters.length) return;
 
-      // Respect reduced motion
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      // Desktop only (match your CSS breakpoint if you hide them on mobile)
       if (!window.matchMedia("(min-width: 901px)").matches) return;
 
       let ticking = false;

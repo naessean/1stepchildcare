@@ -188,14 +188,13 @@
     <div class="container header-inner">
 
       <!-- Brand -->
-<a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-  <span class="brand-icon" aria-hidden="true">👣</span>
-  <span class="brand-text">
-    <span class="brand-name">First Step</span>
-    <span class="brand-sub">Child Care</span>
-  </span>
-</a>
-
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-icon" aria-hidden="true">👣</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
 
       <!-- Mobile toggle -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
@@ -290,10 +289,10 @@
         <div class="hero-copy">
           <p class="breadcrumbs">
             <a href="../index.html">Home</a> <span aria-hidden="true">/</span>
-            <a href="../pages/program.html">Programs</a> <span aria-hidden="true">/</span> Preschool & Pre-K
+            <a href="../pages/program.html">Programs</a> <span aria-hidden="true">/</span> Preschool &amp; Pre-K
           </p>
 
-          <h1>Preschool & Pre-K</h1>
+          <h1>Preschool &amp; Pre-K</h1>
           <p class="lead">
             Children are engaged in daily activities, story time, arts and crafts, free play, clean up and outside time—
             while building confidence, self-esteem, and early literacy skills.
@@ -301,11 +300,12 @@
 
           <div class="hero-actions">
             <a class="btn primary" href="#details">Program Details</a>
+            <a class="btn ghost" href="#schedule">Preschool &amp; Pre-K Schedule</a>
             <a class="btn ghost" href="#bring">Preschool Room: Things to Bring</a>
           </div>
 
           <div class="tag-row">
-            <span class="tag">Preschool I: 2.9–4 years</span>
+            <span class="tag">Preschool: 2.9–4 years</span>
             <span class="tag">Pre-K: 4–5 years</span>
             <span class="tag">10 children / room</span>
             <span class="tag">1 teacher / room</span>
@@ -323,7 +323,7 @@
       </div>
     </section>
 
-    <!-- ✅ ADDED: Graduation photos (near top, side-by-side) -->
+    <!-- ✅ Graduation photos (near top, side-by-side) -->
     <section class="section">
       <div class="container">
         <div class="graduation-row">
@@ -367,14 +367,14 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Preschool I</strong></td>
+                <td><strong>Preschool</strong></td>
                 <td>2 years 9 months – 4 years old</td>
                 <td>10 children / 1 teacher</td>
               </tr>
               <tr>
                 <td><strong>Pre-K</strong></td>
                 <td>4 years old – 5 years old</td>
-                <td>10 children / 1 teacher</td>
+                <td>15 children / 2 teachers</td>
               </tr>
             </tbody>
           </table>
@@ -464,7 +464,73 @@
       </div>
     </section>
 
-    <!-- ✅ Wave divider (Details -> Bring alt section) -->
+    <!-- ✅ Wave divider (Details -> Schedule) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
+    <!-- ✅ NEW: Preschool / Pre-K Schedule (uses styles.css schedule component) -->
+    <section class="section schedule-section" id="schedule">
+      <div class="container">
+        <h2 class="section-title">Preschool &amp; Pre-K Schedule</h2>
+        <p class="section-sub">
+          Our daily routines balance learning, movement, outdoor time, and rest — supporting early literacy, confidence, and
+          independence throughout the day.
+        </p>
+
+        <div class="schedule-grid">
+          <!-- Preschool -->
+          <div class="schedule-card" aria-label="Preschool daily schedule">
+            <h3>Preschool Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:00</span><span class="schedule-activity">Arrival &amp; Free Play</span></li>
+              <li><span class="schedule-time">8:30–9:00</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">9:00–9:15</span><span class="schedule-activity">Circle Time</span></li>
+              <li><span class="schedule-time">9:15–10:15</span><span class="schedule-activity">STEAM Project &amp; Structured Play</span></li>
+              <li><span class="schedule-time">10:15–10:30</span><span class="schedule-activity">Potty Time</span></li>
+              <li><span class="schedule-time">10:30–11:00</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">11:00–11:30</span><span class="schedule-activity">Reading &amp; Literature</span></li>
+              <li><span class="schedule-time">11:30–12:15</span><span class="schedule-activity">Lunch Time</span></li>
+              <li><span class="schedule-time">12:15–12:30</span><span class="schedule-activity">Potty Time &amp; Nap Set Up</span></li>
+              <li><span class="schedule-time">12:30–2:30</span><span class="schedule-activity">Nap Time</span></li>
+              <li><span class="schedule-time">2:30–2:45</span><span class="schedule-activity">Potty Time &amp; Nap Clean Up</span></li>
+              <li><span class="schedule-time">2:45–3:15</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">3:15–3:45</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">3:45–4:00</span><span class="schedule-activity">Pack Up</span></li>
+              <li><span class="schedule-time">4:00–4:30</span><span class="schedule-activity">STEAM Project &amp; Structured Play</span></li>
+              <li><span class="schedule-time">4:30–5:00</span><span class="schedule-activity">Reading &amp; Pick Up</span></li>
+            </ul>
+          </div>
+
+          <!-- Pre-K -->
+          <div class="schedule-card" aria-label="Pre-K daily schedule">
+            <h3>Pre-K Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:00</span><span class="schedule-activity">Arrival &amp; Free Play</span></li>
+              <li><span class="schedule-time">8:30–9:00</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">9:00–9:30</span><span class="schedule-activity">Structured Play</span></li>
+              <li><span class="schedule-time">9:30–10:00</span><span class="schedule-activity">Circle Time</span></li>
+              <li><span class="schedule-time">10:00–10:45</span><span class="schedule-activity">STEAM Project &amp; Free Play</span></li>
+              <li><span class="schedule-time">10:45–11:00</span><span class="schedule-activity">Potty Time</span></li>
+              <li><span class="schedule-time">11:00–11:45</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">11:45–12:30</span><span class="schedule-activity">Lunch Time</span></li>
+              <li><span class="schedule-time">12:30–12:45</span><span class="schedule-activity">Potty Time &amp; Nap Set Up</span></li>
+              <li><span class="schedule-time">12:45–1:45</span><span class="schedule-activity">Nap Time</span></li>
+              <li><span class="schedule-time">1:45–2:00</span><span class="schedule-activity">Potty Time &amp; Nap Clean Up</span></li>
+              <li><span class="schedule-time">2:00–2:45</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">2:45–3:15</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">3:15–3:30</span><span class="schedule-activity">Pack Up</span></li>
+              <li><span class="schedule-time">3:30–4:15</span><span class="schedule-activity">STEAM Project &amp; Structured Play</span></li>
+              <li><span class="schedule-time">4:15–5:00</span><span class="schedule-activity">Reading &amp; Pick Up</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Wave divider (Schedule -> Bring alt section) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
         <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
@@ -506,7 +572,7 @@
             <div class="check">✓</div>
             <div>
               <strong>2 sippy cups</strong>
-              <div class="muted">One with water or juice & one with milk.</div>
+              <div class="muted">One with water or juice &amp; one with milk.</div>
             </div>
           </li>
 
@@ -525,7 +591,7 @@
 
           <li>
             <div class="check">✓</div>
-            <div><strong>Up-to-date physical & immunization form</strong></div>
+            <div><strong>Up-to-date physical &amp; immunization form</strong></div>
           </li>
         </ul>
 
@@ -553,9 +619,10 @@
         <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p class="muted">© <span id="year"></span> First Step Child Care</p>
-    </div>
+<div class="container footer-bottom">
+  <p class="muted">© <span id="year"></span> First Step Child Care</p>
+  <p class="muted footer-credit">Website built by <span class="credit-brand">KinderCam</span></p>
+</div>
   </footer>
 
   <script>

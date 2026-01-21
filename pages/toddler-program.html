@@ -131,6 +131,9 @@
       font-weight: 900;
     }
     .age-table tr:last-child td{ border-bottom: 0; }
+
+    /* Optional: a tiny spacing helper for schedule headings */
+    .schedule-card h3{ margin: 0 0 10px; }
   </style>
 
   <script type="application/ld+json">
@@ -186,14 +189,13 @@
   <header class="site-header">
     <div class="container header-inner">
 
-<a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-  <span class="brand-icon" aria-hidden="true">👣</span>
-  <span class="brand-text">
-    <span class="brand-name">First Step</span>
-    <span class="brand-sub">Child Care</span>
-  </span>
-</a>
-
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-icon" aria-hidden="true">👣</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
@@ -227,7 +229,6 @@
               <li><a href="../pages/toddler-program.html" aria-current="page">Toddler Program</a></li>
               <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
               <li><a href="../pages/schedules.html">Schedules</a></li>
-              <!-- ✅ ADDED -->
               <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
@@ -238,7 +239,6 @@
             </button>
             <ul class="dropdown">
               <li><a href="policies.html">Policies Overview</a></li>
-
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
               <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
@@ -297,6 +297,7 @@
 
           <div class="hero-actions">
             <a class="btn primary" href="#details">Program Details</a>
+            <a class="btn ghost" href="#schedule">Toddler Schedules</a>
             <a class="btn ghost" href="#bring">Toddler Room: Things to Bring</a>
           </div>
 
@@ -425,7 +426,95 @@
       </div>
     </section>
 
-    <!-- ✅ Wave divider (Details -> Bring alt section) -->
+    <!-- ✅ Wave divider (Details -> Schedules) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
+    <!-- ✅ Full-width SCHEDULES section (uses shared styles.css schedule component) -->
+    <section class="section schedule-section" id="schedule">
+      <div class="container">
+        <h2 class="section-title">Toddler Daily Schedules</h2>
+        <p class="section-sub">
+          Our toddler classrooms follow a predictable rhythm with flexibility to meet each child’s needs. Below are the daily schedules by classroom.
+        </p>
+
+        <div class="schedule-grid">
+          <!-- Infant-Toddler -->
+          <div class="schedule-card" aria-label="Infant-Toddler daily schedule">
+            <h3>Infant–Toddler Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:30</span><span class="schedule-activity">Arrival &amp; Free Play</span></li>
+              <li><span class="schedule-time">8:30–8:45</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">8:45–9:00</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">9:00–9:15</span><span class="schedule-activity">Circle Time</span></li>
+              <li><span class="schedule-time">9:15–10:00</span><span class="schedule-activity">STEAM Project &amp; Free Play</span></li>
+              <li><span class="schedule-time">10:00–10:30</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">10:30–11:15</span><span class="schedule-activity">Structured Play / Music &amp; Movement</span></li>
+              <li><span class="schedule-time">11:15–11:30</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">11:30–12:00</span><span class="schedule-activity">Lunch Time</span></li>
+              <li><span class="schedule-time">12:00–2:15</span><span class="schedule-activity">Nap Time</span></li>
+              <li><span class="schedule-time">2:15–2:30</span><span class="schedule-activity">Diapering</span></li>
+              <li><span class="schedule-time">2:30–2:45</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">2:45–3:45</span><span class="schedule-activity">Structured Play &amp; Tabletop Activities</span></li>
+              <li><span class="schedule-time">3:45–4:15</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">4:15–5:00</span><span class="schedule-activity">Free Play &amp; Pick Up</span></li>
+            </ul>
+          </div>
+
+          <!-- Toddler -->
+          <div class="schedule-card" aria-label="Toddler daily schedule">
+            <h3>Toddler Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:30</span><span class="schedule-activity">Arrival &amp; Free Play</span></li>
+              <li><span class="schedule-time">8:30–9:00</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">9:00–9:15</span><span class="schedule-activity">Diapering / Potty Time</span></li>
+              <li><span class="schedule-time">9:15–9:30</span><span class="schedule-activity">Circle Time</span></li>
+              <li><span class="schedule-time">9:30–10:00</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">10:00–10:30</span><span class="schedule-activity">STEAM Project &amp; Free Play</span></li>
+              <li><span class="schedule-time">10:30–11:15</span><span class="schedule-activity">Structured Play / Music &amp; Movement</span></li>
+              <li><span class="schedule-time">11:15–11:30</span><span class="schedule-activity">Diapering / Potty Time</span></li>
+              <li><span class="schedule-time">11:30–12:00</span><span class="schedule-activity">Lunch Time</span></li>
+              <li><span class="schedule-time">12:00–2:15</span><span class="schedule-activity">Nap Time</span></li>
+              <li><span class="schedule-time">2:15–2:30</span><span class="schedule-activity">Diapering / Potty Time</span></li>
+              <li><span class="schedule-time">2:30–2:45</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">2:45–3:15</span><span class="schedule-activity">STEAM Project &amp; Free Play</span></li>
+              <li><span class="schedule-time">3:15–4:15</span><span class="schedule-activity">Structured Play &amp; Tabletop Activities</span></li>
+              <li><span class="schedule-time">4:15–4:45</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">4:45–5:00</span><span class="schedule-activity">Free Play &amp; Pick Up</span></li>
+            </ul>
+          </div>
+
+          <!-- Toddler-Preschool (full-width on desktop by spanning 2 columns) -->
+          <div class="schedule-card" aria-label="Toddler-Preschool daily schedule" style="grid-column: 1 / -1;">
+            <h3>Toddler–Preschool Schedule</h3>
+            <ul class="schedule-timeline">
+              <li><span class="schedule-time">7:30–8:30</span><span class="schedule-activity">Arrival &amp; Free Play</span></li>
+              <li><span class="schedule-time">8:30–8:45</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">8:45–9:00</span><span class="schedule-activity">Diapering / Potty Time</span></li>
+              <li><span class="schedule-time">9:00–9:30</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">9:30–9:45</span><span class="schedule-activity">Circle Time</span></li>
+              <li><span class="schedule-time">9:45–10:30</span><span class="schedule-activity">STEAM Project &amp; Free Play</span></li>
+              <li><span class="schedule-time">10:30–11:15</span><span class="schedule-activity">Structured Play / Music &amp; Movement</span></li>
+              <li><span class="schedule-time">11:15–11:30</span><span class="schedule-activity">Diapering / Potty Time</span></li>
+              <li><span class="schedule-time">11:30–12:00</span><span class="schedule-activity">Lunch Time</span></li>
+              <li><span class="schedule-time">12:00–2:15</span><span class="schedule-activity">Nap Time</span></li>
+              <li><span class="schedule-time">2:15–2:30</span><span class="schedule-activity">Diapering / Potty Time</span></li>
+              <li><span class="schedule-time">2:30–2:45</span><span class="schedule-activity">Snack Time</span></li>
+              <li><span class="schedule-time">2:45–3:15</span><span class="schedule-activity">Structured Play &amp; Tabletop Activities</span></li>
+              <li><span class="schedule-time">3:15–3:45</span><span class="schedule-activity">Outside Time</span></li>
+              <li><span class="schedule-time">3:45–4:15</span><span class="schedule-activity">STEAM Project &amp; Story Time</span></li>
+              <li><span class="schedule-time">4:15–5:00</span><span class="schedule-activity">Free Play &amp; Pick Up</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ Wave divider (Schedules -> Bring alt section) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
         <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
@@ -509,9 +598,10 @@
         <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p class="muted">© <span id="year"></span> First Step Child Care</p>
-    </div>
+<div class="container footer-bottom">
+  <p class="muted">© <span id="year"></span> First Step Child Care</p>
+  <p class="muted footer-credit">Website built by <span class="credit-brand">KinderCam</span></p>
+</div>
   </footer>
 
   <script>
