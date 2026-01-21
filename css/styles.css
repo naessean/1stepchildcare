@@ -1149,3 +1149,28 @@ main, .site-footer{
   line-height: 1.3;
   transform: none;
 }
+
+/* Preschool page — Graduation photos: show FULL images, keep them level */
+.page-preschool .graduation-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.page-preschool .graduation-row img{
+  width: 100%;
+  height: 360px;          /* equal height */
+  object-fit: contain;     /* show entire photo */
+  background: var(--card); /* or #fff */
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+  padding: 10px;           /* optional framing */
+}
+
+@media (max-width: 700px){
+  .page-preschool .graduation-row{ grid-template-columns: 1fr; }
+  .page-preschool .graduation-row img{ height: 280px; }
+}
