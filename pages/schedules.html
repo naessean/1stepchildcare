@@ -315,5 +315,312 @@
     })();
   </script>
 
+  <!-- Parent Chat Widget (AI Bot via Cloudflare Worker) -->
+ 
+  <style>
+    :root{
+      --chat-accent:#2d6cdf;
+      --chat-bg:#ffffff;
+      --chat-text:#1f2937;
+      --chat-muted:#6b7280;
+      --chat-border:#e5e7eb;
+      --chat-shadow: 0 20px 45px rgba(0,0,0,.18);
+      --chat-radius:16px;
+      --chat-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    .fs-chat-launcher{
+      position:fixed; left:18px; bottom:18px; z-index:9999;
+      display:flex; align-items:center; gap:10px;
+    }
+
+    .fs-chat-pill{
+      background: var(--chat-bg);
+      border:1px solid var(--chat-border);
+      color: var(--chat-text);
+      padding:10px 12px;
+      border-radius:999px;
+      box-shadow: var(--chat-shadow);
+      font-family: var(--chat-font);
+      font-size:14px;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    /* ✅ slightly larger chat icon button */
+    .fs-chat-btn{
+      width:64px;
+      height:64px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      background: var(--chat-accent);
+      color:#fff;
+      box-shadow: var(--chat-shadow);
+      display:grid;
+      place-items:center;
+    }
+    .fs-chat-btn svg{ width:30px; height:30px; }
+
+    /* ✅ bottom-left chat window */
+    .fs-chat-window{
+      position:fixed; left:18px; bottom:88px; z-index:9999;
+      width:min(380px, calc(100vw - 36px));
+      height:560px;
+      background: var(--chat-bg);
+      border:1px solid var(--chat-border);
+      border-radius: var(--chat-radius);
+      box-shadow: var(--chat-shadow);
+      display:none;
+      overflow:hidden;
+      font-family: var(--chat-font);
+    }
+
+    .fs-chat-window.open{ display:flex; flex-direction:column; }
+
+    .fs-chat-header{
+      padding:14px 14px 10px;
+      background: linear-gradient(135deg, rgba(45,108,223,.12), rgba(45,108,223,.02));
+      border-bottom:1px solid var(--chat-border);
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    .fs-chat-title{ display:flex; flex-direction:column; gap:3px; }
+    .fs-chat-title strong{ font-size:15px; color:var(--chat-text); }
+    .fs-chat-title span{ font-size:12px; color:var(--chat-muted); line-height:1.2; }
+
+    .fs-chat-close{
+      border:none; background:transparent; cursor:pointer;
+      width:36px; height:36px; border-radius:10px;
+      display:grid; place-items:center;
+    }
+    .fs-chat-close:hover{ background: rgba(0,0,0,.05); }
+
+    .fs-chat-body{
+      padding:12px;
+      flex:1;
+      overflow:auto;
+      background: #fbfbfd;
+    }
+
+    .fs-msg{ display:flex; margin:10px 0; }
+    .fs-msg.bot{ justify-content:flex-start; }
+    .fs-msg.user{ justify-content:flex-end; }
+
+    .fs-bubble{
+      max-width: 85%;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--chat-border);
+      font-size:14px;
+      line-height:1.35;
+      color: var(--chat-text);
+      background:#fff;
+      white-space:pre-wrap;
+    }
+    .fs-msg.user .fs-bubble{
+      background: rgba(45,108,223,.12);
+      border-color: rgba(45,108,223,.25);
+    }
+
+    .fs-quick{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .fs-quick button{
+      font-family: var(--chat-font);
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--chat-border);
+      background:#fff;
+      cursor:pointer;
+    }
+    .fs-quick button:hover{ border-color: rgba(45,108,223,.5); }
+
+    .fs-chat-footer{
+      border-top:1px solid var(--chat-border);
+      padding:10px;
+      background:#fff;
+    }
+    .fs-chat-form{ display:flex; gap:8px; }
+    .fs-chat-input{
+      flex:1;
+      border:1px solid var(--chat-border);
+      border-radius:12px;
+      padding:10px 12px;
+      font-family: var(--chat-font);
+      font-size:14px;
+      outline:none;
+    }
+    .fs-chat-send{
+      border:none; cursor:pointer;
+      border-radius:12px;
+      padding:0 14px;
+      background: var(--chat-accent);
+      color:#fff;
+      font-weight:600;
+    }
+
+    .fs-chat-small{
+      margin-top:8px;
+      font-size:11px;
+      color: var(--chat-muted);
+      line-height:1.3;
+    }
+  </style>
+
+  <div class="fs-chat-launcher" aria-live="polite">
+    <div class="fs-chat-pill" id="fsChatPill">Questions? Chat with us</div>
+    <button class="fs-chat-btn" id="fsChatOpen" aria-label="Open chat">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 5.5C4 4.12 5.12 3 6.5 3h11C18.88 3 20 4.12 20 5.5v7C20 13.88 18.88 15 17.5 15H9l-4.2 3.15c-.5.38-1.2.02-1.2-.6V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M7 7.5h10M7 10.5h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="fs-chat-window" id="fsChatWindow" role="dialog" aria-label="Parent questions chat">
+    <div class="fs-chat-header">
+      <div class="fs-chat-title">
+        <strong>Parent Questions</strong>
+        <span>Ask about hours, tuition, enrollment, meals, naps, and more.</span>
+      </div>
+      <button class="fs-chat-close" id="fsChatClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="fs-chat-body" id="fsChatBody"></div>
+
+    <div class="fs-chat-footer">
+      <form class="fs-chat-form" id="fsChatForm">
+        <input class="fs-chat-input" id="fsChatInput" type="text" placeholder="Type your question..." autocomplete="off" />
+        <button class="fs-chat-send" type="submit">Send</button>
+      </form>
+      <div class="fs-chat-small">
+        Note: This chat provides general info. For anything specific, please contact the school.
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const WORKER_URL = "https://firststep-chat.naessean012.workers.dev";
+
+    const QUICK = [
+      { label: "Hours",  text: "What are your hours?" },
+      { label: "Tuition",text: "How much is tuition?" },
+      { label: "Ages",   text: "What ages do you accept?" },
+      { label: "Tour",   text: "How do I schedule a tour?" },
+      { label: "Meals",  text: "Do you provide meals and snacks?" }
+    ];
+
+    const els = {
+      pill: document.getElementById("fsChatPill"),
+      open: document.getElementById("fsChatOpen"),
+      close: document.getElementById("fsChatClose"),
+      win: document.getElementById("fsChatWindow"),
+      body: document.getElementById("fsChatBody"),
+      form: document.getElementById("fsChatForm"),
+      input: document.getElementById("fsChatInput"),
+    };
+
+    // ✅ pulse the CHAT icon button until opened
+    if (els.open) els.open.classList.add("pulse");
+
+    function openChat(){
+      els.win.classList.add("open");
+      if (els.open) els.open.classList.remove("pulse"); // stop pulsing after open
+      if (!els.body.dataset.inited){
+        boot();
+        els.body.dataset.inited = "1";
+      }
+      setTimeout(()=>els.input.focus(), 50);
+    }
+    function closeChat(){ els.win.classList.remove("open"); }
+
+    els.open.addEventListener("click", openChat);
+    els.pill.addEventListener("click", openChat);
+    els.close.addEventListener("click", closeChat);
+
+    function addMsg(role, text){
+      const wrap = document.createElement("div");
+      wrap.className = "fs-msg " + role;
+
+      const bubble = document.createElement("div");
+      bubble.className = "fs-bubble";
+      bubble.textContent = text;
+
+      wrap.appendChild(bubble);
+      els.body.appendChild(wrap);
+      els.body.scrollTop = els.body.scrollHeight;
+    }
+
+    function addQuickButtons(){
+      const wrap = document.createElement("div");
+      wrap.className = "fs-msg bot";
+
+      const bubble = document.createElement("div");
+      bubble.className = "fs-bubble";
+      bubble.textContent = "Popular questions:";
+
+      const quick = document.createElement("div");
+      quick.className = "fs-quick";
+
+      QUICK.forEach(btn=>{
+        const b = document.createElement("button");
+        b.type="button";
+        b.textContent = btn.label;
+        b.addEventListener("click", ()=>handleUser(btn.text));
+        quick.appendChild(b);
+      });
+
+      bubble.appendChild(quick);
+      wrap.appendChild(bubble);
+      els.body.appendChild(wrap);
+      els.body.scrollTop = els.body.scrollHeight;
+    }
+
+    async function askAI(userText){
+      const res = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userText })
+      });
+
+      const data = await res.json();
+      return (data && data.reply) ? String(data.reply) : "";
+    }
+
+    async function handleUser(text){
+      addMsg("user", text);
+      addMsg("bot", "One sec…");
+
+      try {
+        const reply = await askAI(text);
+        els.body.lastChild && els.body.lastChild.remove();
+        addMsg("bot", reply || "Sorry — I couldn’t answer that. Please contact the office.");
+      } catch (e) {
+        els.body.lastChild && els.body.lastChild.remove();
+        addMsg("bot", "Sorry — I’m having trouble right now. Please try again.");
+      }
+    }
+
+    els.form.addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const text = els.input.value.trim();
+      if (!text) return;
+      els.input.value = "";
+      handleUser(text);
+    });
+
+    function boot(){
+      addMsg("bot", "Hi! 👋 I’m here to help answer parent questions.");
+      addMsg("bot", "What would you like to know?");
+      addQuickButtons();
+    }
+  })();
+  </script>
+  <!-- /Parent Chat Widget (AI Bot) -->
+
 </body>
 </html>
