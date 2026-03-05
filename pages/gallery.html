@@ -832,11 +832,31 @@
       handleUser(text);
     });
 
+    // ✅ Updated greeting flow
     function boot(){
-      addMsg("bot", "Hi! 👋 I’m here to help answer parent questions.");
-      addMsg("bot", "What would you like to know?");
+      addMsg("bot", "👋 Hi there! Welcome to First Step Child Care.");
+
+      addMsg(
+        "bot",
+        "Parents often ask about openings, tours, programs, and hours. I'm happy to help!"
+      );
+
+      addMsg(
+        "bot",
+        "If you're interested in enrollment, we recommend scheduling a tour or contacting the office so we can confirm availability."
+      );
+
       addQuickButtons();
     }
+
+    // ✅ Auto-open chat after 4 seconds (only once per visit)
+    setTimeout(() => {
+      if (!sessionStorage.getItem("fsChatShown")) {
+        openChat();
+        sessionStorage.setItem("fsChatShown", "1");
+      }
+    }, 4000);
+
   })();
   </script>
   <!-- /Parent Chat Widget (AI Bot) -->
