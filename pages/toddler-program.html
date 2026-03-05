@@ -890,6 +890,38 @@
       color: var(--chat-muted);
       line-height:1.3;
     }
+.fs-action-btn{
+  margin-top:8px;
+  margin-right:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  border:none;
+  background:#2d6cdf;
+  color:#fff;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.fs-action-btn:hover{
+  background:#1f4fbf;
+}
+
+.fs-action-btn{
+  margin-top:8px;
+  margin-right:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  border:none;
+  background:#2d6cdf;
+  color:#fff;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.fs-action-btn:hover{
+  background:#1f4fbf;
+}
+    
   </style>
 
   <div class="fs-chat-launcher" aria-live="polite">
@@ -969,17 +1001,23 @@
     els.close.addEventListener("click", closeChat);
 
     function addMsg(role, text){
-      const wrap = document.createElement("div");
-      wrap.className = "fs-msg " + role;
+  const wrap = document.createElement("div");
+  wrap.className = "fs-msg " + role;
 
-      const bubble = document.createElement("div");
-      bubble.className = "fs-bubble";
-      bubble.textContent = text;
+  const bubble = document.createElement("div");
+  bubble.className = "fs-bubble";
 
-      wrap.appendChild(bubble);
-      els.body.appendChild(wrap);
-      els.body.scrollTop = els.body.scrollHeight;
-    }
+  let html = text
+    .replace("[CALL]", '<button class="fs-action-btn" onclick="window.location.href=\'tel:16179246952\'">📞 Call</button>')
+    .replace("[EMAIL]", '<button class="fs-action-btn" onclick="window.location.href=\'mailto:sonia_firststep@comcast.net\'">✉️ Email</button>')
+    .replace(/\n/g,"<br>");
+
+  bubble.innerHTML = html;
+
+  wrap.appendChild(bubble);
+  els.body.appendChild(wrap);
+  els.body.scrollTop = els.body.scrollHeight;
+}
 
     function addQuickButtons(){
       const wrap = document.createElement("div");
@@ -1067,5 +1105,7 @@
   })();
   </script>
   <!-- /Parent Chat Widget (AI Bot) -->
+
+
 </body>
 </html>

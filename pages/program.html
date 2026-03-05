@@ -94,6 +94,22 @@
     .cta-box h3{ margin: 0 0 8px; }
     .cta-box p{ margin: 0 0 12px; color: var(--muted); }
     .cta-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
+
+    .fs-action-btn{
+  margin-top:8px;
+  margin-right:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  border:none;
+  background:#2d6cdf;
+  color:#fff;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.fs-action-btn:hover{
+  background:#1f4fbf;
+}
   </style>
 
   <script type="application/ld+json">
@@ -783,17 +799,23 @@
     els.close.addEventListener("click", closeChat);
 
     function addMsg(role, text){
-      const wrap = document.createElement("div");
-      wrap.className = "fs-msg " + role;
+  const wrap = document.createElement("div");
+  wrap.className = "fs-msg " + role;
 
-      const bubble = document.createElement("div");
-      bubble.className = "fs-bubble";
-      bubble.textContent = text;
+  const bubble = document.createElement("div");
+  bubble.className = "fs-bubble";
 
-      wrap.appendChild(bubble);
-      els.body.appendChild(wrap);
-      els.body.scrollTop = els.body.scrollHeight;
-    }
+  let html = text
+    .replace("[CALL]", '<button class="fs-action-btn" onclick="window.location.href=\'tel:16179246952\'">📞 Call</button>')
+    .replace("[EMAIL]", '<button class="fs-action-btn" onclick="window.location.href=\'mailto:sonia_firststep@comcast.net\'">✉️ Email</button>')
+    .replace(/\n/g,"<br>");
+
+  bubble.innerHTML = html;
+
+  wrap.appendChild(bubble);
+  els.body.appendChild(wrap);
+  els.body.scrollTop = els.body.scrollHeight;
+}
 
     function addQuickButtons(){
       const wrap = document.createElement("div");
@@ -881,6 +903,7 @@
   })();
   </script>
   <!-- /Parent Chat Widget (AI Bot) -->
+
 
 </body>
 </html>
