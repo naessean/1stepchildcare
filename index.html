@@ -451,25 +451,41 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>First Step Child Care</strong>
-        <p class="muted">Early care and education for ages 3 months – 5 years.</p>
-      </div>
-      <div class="footer-links">
-        <a href="pages/about.html">About</a>
-        <a href="pages/program.html">Programs</a>
-        <a href="pages/policies.html">Policies</a>
-        <a href="pages/gallery.html">Gallery</a>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>First Step Child Care</strong>
+      <p class="muted">Early care and education for ages 3 months – 5 years.</p>
+
+      <!-- Facebook Link -->
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=100057337816352"
+           target="_blank"
+           rel="noopener"
+           aria-label="First Step Child Care Facebook">
+
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.016 4.388 10.999 10.125 11.904v-8.43H7.078v-3.474h3.047V9.412c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.926-1.956 1.874v2.248h3.328l-.532 3.474h-2.796v8.43C19.612 23.072 24 18.089 24 12.073z" fill="blue"/>
+          </svg>
+
+          <span class="footer-facebook-text">Follow us on Facebook</span>
+        </a>
       </div>
     </div>
 
-    <div class="container footer-bottom">
-      <p class="muted">© <span id="year"></span> First Step Child Care</p>
-      <p class="muted footer-credit">Website built by <span class="credit-brand">KinderCam</span></p>
+    <div class="footer-links">
+      <a href="pages/about.html">About</a>
+      <a href="pages/program.html">Programs</a>
+      <a href="pages/policies.html">Policies</a>
+      <a href="pages/gallery.html">Gallery</a>
     </div>
-  </footer>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="muted">© <span id="year"></span> First Step Child Care</p>
+    <p class="muted footer-credit">Website built by <span class="credit-brand">KinderCam</span></p>
+  </div>
+</footer>
 
   <script>
     // year
@@ -815,6 +831,27 @@
       color: var(--chat-muted);
       line-height:1.3;
     }
+
+    .footer-social{
+  margin-top:10px;
+}
+
+.footer-social a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:#1f2937;
+  font-size:14px;
+}
+
+.footer-social a:hover{
+  opacity:.8;
+}
+
+.footer-facebook-text{
+  font-weight:600;
+}
   </style>
 
   <div class="fs-chat-launcher" aria-live="polite">
