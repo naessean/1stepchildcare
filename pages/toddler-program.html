@@ -122,6 +122,31 @@
     .divider{ height: 1px; background: var(--border); margin: 14px 0; }
     .note{ color: var(--muted); margin-top: 10px; font-weight: 700; }
 
+
+    /* Photo strip layout */
+    .image-row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .image-row img{
+      width: 50%;
+      height: auto;
+      display:block;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 2px 0 rgba(2,6,23,.04);
+    }
+
+    @media (max-width: 768px){
+      .image-row img{
+        width: 90%;
+      }
+    }
+
     .age-table{
       width:100%;
       border-collapse: collapse;
@@ -334,6 +359,27 @@
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
         <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      </svg>
+    </div>
+
+    <!-- ✅ Toddler Image Section -->
+    <section class="section">
+      <div class="container">
+        <div class="image-row">
+          <img
+            src="../assets/img/toddler.jpg"
+            alt="Toddler classroom activities at First Step Child Care"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Wave divider (Image -> Details) -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
+        <path d="M0,55 C260,10 520,95 760,50 C980,15 1210,85 1440,40 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
       </svg>
     </div>
 
