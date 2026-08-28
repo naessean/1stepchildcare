@@ -12,1003 +12,4102 @@
   gtag('config', 'G-4MKBBYRGPL');
 </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calendar | First Step Child Care</title>
-  <meta name="description" content="Calendar themes, events, and closures for March 2026 through August 2026 at First Step Child Care." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta property="og:title" content="Calendar | First Step Child Care" />
-  <meta property="og:description" content="Calendar themes, events, and closures (March 2026 – August 2026)." />
-  <meta property="og:type" content="website" />
+<title>Calendar 2026–2027 | First Step Child Care</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<meta
+  name="description"
+  content="View the 2026–2027 First Step Child Care calendar with weekly classroom themes, special events, holidays, and school closure dates from September 2026 through August 2027."
+/>
 
-  <!-- calendar.html is in /pages, and CSS is in /css -->
-  <link rel="stylesheet" href="../css/styles.css" />
+<meta property="og:title" content="Calendar 2026–2027 | First Step Child Care" />
 
-  <style>
-    /* Page-only helpers (pattern matches program.html) */
-    .page-hero { padding: 34px 0; }
+<meta
+  property="og:description"
+  content="Weekly classroom themes, holidays, events, and closure dates for September 2026 through August 2027."
+/>
 
-    .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
-    .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
-    .breadcrumbs a:hover { text-decoration: underline; }
+<meta property="og:type" content="website" />
 
-    .month-grid{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 900px){
-      .month-grid{ grid-template-columns: 1fr; }
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    .month-card{
-      background:#fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 2px 0 rgba(2,6,23,.04);
-    }
-    .month-card h3{
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-    }
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
-    .event-list{
-      list-style:none;
-      margin:0;
-      padding:0;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-    }
-    .event{
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--card);
-    }
+<link
+  href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap"
+  rel="stylesheet"
+>
 
-    .event .date{
-      flex: 0 0 auto;
-      font-weight: 900;
-      color: var(--text);
-      min-width: 118px;
-      line-height:1.25;
-    }
-    .event .desc{
-      flex: 1 1 auto;
-      color: var(--muted);
-      font-weight: 700;
-      line-height:1.35;
-    }
+<!-- calendar.html is in /pages, and CSS is in /css -->
+<link rel="stylesheet" href="../css/styles.css" />
 
-    /* Closed highlight */
-    .event.is-closed{
-      background: rgba(239, 68, 68, .08);
-      border-color: rgba(239, 68, 68, .25);
-    }
-    .event.is-closed .desc{
-      color: #7f1d1d; /* dark red */
-      font-weight: 900;
-    }
 
-    .pill-row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 10px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      font-weight: 800;
-      color: var(--text);
-      font-size: .92rem;
-    }
+<style>
 
-    /* ---------- PRINT STYLES ---------- */
-    @media print {
+/* =====================================================
+   PAGE
+===================================================== */
 
-      @page {
-        size: landscape;
-        margin: 0.5in;
-      }
-
-      header,
-      footer,
-      .hero,
-      .hero-actions,
-      .pill-row,
-      .breadcrumbs,
-      .skip-link,
-      .wave-divider,
-      .floating-contact,
-      .fun-floaters {
-        display: none !important;
-      }
-
-      body {
-        background: #fff !important;
-        color: #000 !important;
-      }
-
-      .section.alt {
-        padding: 0 !important;
-      }
-
-      .container {
-        max-width: 100% !important;
-        padding: 0 12px !important;
-      }
-
-      .month-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-      }
-
-      .month-card {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        border: 1px solid #ccc !important;
-        box-shadow: none !important;
-        padding: 14px !important;
-      }
-
-      .month-card h3 {
-        margin-bottom: 8px !important;
-      }
-
-      .event {
-        background: #fff !important;
-        border-color: #ddd !important;
-        padding: 8px 10px !important;
-      }
-
-      .event.is-closed {
-        background: #fce8e8 !important;
-        border-color: #f5a5a5 !important;
-      }
-
-      .event .date {
-        min-width: 105px !important;
-        font-weight: 700 !important;
-      }
-    }
-
-    .fs-action-btn{
-  margin-top:8px;
-  margin-right:8px;
-  padding:8px 12px;
-  border-radius:10px;
-  border:none;
-  background:#2d6cdf;
-  color:#fff;
-  font-size:13px;
-  cursor:pointer;
+.page-hero {
+  padding: 34px 0;
 }
 
-.fs-action-btn:hover{
-  background:#1f4fbf;
+.breadcrumbs {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: .95rem;
 }
-  </style>
+
+.breadcrumbs a {
+  color: var(--primary-2);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   CALENDAR GRID
+   2 columns desktop
+   1 column mobile
+===================================================== */
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+
+/* =====================================================
+   MONTH CARDS
+===================================================== */
+
+.month-card {
+  background: #fff;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  padding: 20px;
+
+  box-shadow:
+    0 2px 0 rgba(2,6,23,.04);
+}
+
+
+.month-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 1.3rem;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   EVENT LIST
+===================================================== */
+
+.event-list {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* Each calendar entry stays on ONE LINE */
+
+.event {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: center;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  background: var(--card);
+
+  min-height: 46px;
+
+  white-space: nowrap;
+}
+
+
+/* Date */
+
+.event .date {
+  flex: 0 0 100px;
+
+  min-width: 100px;
+
+  font-weight: 900;
+
+  color: var(--text);
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+
+/* Description */
+
+.event .desc {
+  flex: 1 1 auto;
+
+  color: var(--muted);
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   CLOSED DAYS
+===================================================== */
+
+.event.is-closed {
+  background:
+    rgba(239, 68, 68, .08);
+
+  border-color:
+    rgba(239, 68, 68, .25);
+}
+
+
+.event.is-closed .desc {
+  color: #7f1d1d;
+
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   LEGEND
+===================================================== */
+
+.pill-row {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-top: 10px;
+}
+
+
+.pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  border: 1px solid var(--border);
+
+  background: var(--card);
+
+  font-weight: 800;
+
+  color: var(--text);
+
+  font-size: .92rem;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .month-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .month-card {
+    padding: 14px;
+  }
+
+
+  .event {
+    gap: 8px;
+
+    padding: 9px 10px;
+
+    font-size: .92rem;
+  }
+
+
+  .event .date {
+    flex: 0 0 86px;
+
+    min-width: 86px;
+  }
+
+}
+
+
+/*
+ On very narrow phones we allow wrapping so
+ longer descriptions never get cut off.
+*/
+
+@media (max-width: 430px) {
+
+  .event {
+    white-space: normal;
+
+    align-items: flex-start;
+  }
+
+
+  .event .desc {
+    white-space: normal;
+  }
+
+}
+
+
+/* =====================================================
+   PRINT STYLES
+===================================================== */
+
+@media print {
+
+  @page {
+    size: landscape;
+    margin: 0.4in;
+  }
+
+
+  header,
+  footer,
+  .hero,
+  .hero-actions,
+  .pill-row,
+  .breadcrumbs,
+  .skip-link,
+  .wave-divider,
+  .floating-contact,
+  .fun-floaters,
+  .fs-chat-launcher,
+  .fs-chat-window {
+
+    display: none !important;
+
+  }
+
+
+  body {
+    background: #fff !important;
+
+    color: #000 !important;
+  }
+
+
+  .section.alt {
+    padding: 0 !important;
+  }
+
+
+  .container {
+    max-width: 100% !important;
+
+    padding: 0 10px !important;
+  }
+
+
+  .section-title {
+    margin-top: 0 !important;
+  }
+
+
+  .month-grid {
+    grid-template-columns:
+      repeat(2, 1fr) !important;
+
+    gap: 10px !important;
+  }
+
+
+  .month-card {
+    break-inside: avoid;
+
+    page-break-inside: avoid;
+
+    border:
+      1px solid #ccc !important;
+
+    box-shadow:
+      none !important;
+
+    padding:
+      10px !important;
+  }
+
+
+  .month-card h3 {
+    margin-bottom:
+      6px !important;
+
+    font-size:
+      1rem !important;
+  }
+
+
+  .event-list {
+    gap:
+      5px !important;
+  }
+
+
+  .event {
+    background:
+      #fff !important;
+
+    border-color:
+      #ddd !important;
+
+    padding:
+      5px 6px !important;
+
+    font-size:
+      .76rem !important;
+
+    min-height:
+      auto !important;
+
+    white-space:
+      nowrap !important;
+  }
+
+
+  .event.is-closed {
+    background:
+      #fce8e8 !important;
+
+    border-color:
+      #f5a5a5 !important;
+  }
+
+
+  .event .date {
+    min-width:
+      72px !important;
+
+    flex-basis:
+      72px !important;
+
+    font-weight:
+      700 !important;
+  }
+
+
+  .event .desc {
+    white-space:
+      nowrap !important;
+  }
+
+}
+
+
+/* =====================================================
+   CHAT ACTION BUTTON
+===================================================== */
+
+.fs-action-btn {
+
+  margin-top: 8px;
+
+  margin-right: 8px;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  background: #2d6cdf;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.fs-action-btn:hover {
+
+  background: #1f4fbf;
+
+}
+
+</style>
+
 </head>
 
+
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Floating playful icons (match index.html) -->
-  <div class="fun-floaters" aria-hidden="true">
-    <span class="floater f1" data-speed="0.10">★</span>
-    <span class="floater f2" data-speed="0.18">☁️</span>
-    <span class="floater f3" data-speed="0.14">🧸</span>
-    <span class="floater f4" data-speed="0.22">✨</span>
-    <span class="floater f5" data-speed="0.16">🎈</span>
-    <span class="floater f6" data-speed="0.20">🧩</span>
-  </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
+<a
+  class="skip-link"
+  href="#main"
+>
+  Skip to content
+</a>
 
-      <!-- Brand -->
-      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-        <span class="brand-icon" aria-hidden="true">👣</span>
-        <span class="brand-text">
-          <span class="brand-name">First Step</span>
-          <span class="brand-sub">Child Care</span>
+
+
+<!-- =====================================================
+     FLOATING PLAYFUL ICONS
+===================================================== -->
+
+<div
+  class="fun-floaters"
+  aria-hidden="true"
+>
+
+  <span
+    class="floater f1"
+    data-speed="0.10"
+  >
+    ★
+  </span>
+
+
+  <span
+    class="floater f2"
+    data-speed="0.18"
+  >
+    ☁️
+  </span>
+
+
+  <span
+    class="floater f3"
+    data-speed="0.14"
+  >
+    🧸
+  </span>
+
+
+  <span
+    class="floater f4"
+    data-speed="0.22"
+  >
+    ✨
+  </span>
+
+
+  <span
+    class="floater f5"
+    data-speed="0.16"
+  >
+    🎈
+  </span>
+
+
+  <span
+    class="floater f6"
+    data-speed="0.20"
+  >
+    🧩
+  </span>
+
+</div>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+
+    <!-- BRAND -->
+
+    <a
+      class="brand"
+      href="../index.html"
+      aria-label="First Step Child Care Home"
+    >
+
+      <span
+        class="brand-icon"
+        aria-hidden="true"
+      >
+        👣
+      </span>
+
+
+      <span class="brand-text">
+
+        <span class="brand-name">
+          First Step
         </span>
+
+        <span class="brand-sub">
+          Child Care
+        </span>
+
+      </span>
+
+    </a>
+
+
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+
+      <span class="sr-only">
+        Open menu
+      </span>
+
+      ☰
+
+    </button>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav
+      id="site-nav"
+      class="site-nav"
+      aria-label="Primary"
+    >
+
+      <ul class="nav-list">
+
+
+        <li>
+
+          <a
+            class="nav-link"
+            href="../index.html"
+          >
+            Home
+          </a>
+
+        </li>
+
+
+
+        <!-- ABOUT -->
+
+        <li class="has-dropdown">
+
+          <button
+            class="nav-link dropdown-btn"
+            aria-expanded="false"
+          >
+
+            About
+
+            <span aria-hidden="true">
+              ▾
+            </span>
+
+          </button>
+
+
+          <ul class="dropdown">
+
+            <li>
+              <a href="../pages/about.html">
+                About Us
+              </a>
+            </li>
+
+
+            <li>
+              <a href="../pages/prices.html">
+                Prices
+              </a>
+            </li>
+
+
+            <li>
+              <a href="../pages/kindercam.html">
+                Kinder Cam
+              </a>
+            </li>
+
+
+            <li>
+
+              <a
+                aria-current="page"
+                href="../pages/calendar.html"
+              >
+                Calendar
+              </a>
+
+            </li>
+
+
+            <li>
+              <a href="../pages/gallery.html">
+                Gallery
+              </a>
+            </li>
+
+          </ul>
+
+        </li>
+
+
+
+        <!-- PROGRAMS -->
+
+        <li class="has-dropdown">
+
+          <button
+            class="nav-link dropdown-btn"
+            aria-expanded="false"
+          >
+
+            Programs
+
+            <span aria-hidden="true">
+              ▾
+            </span>
+
+          </button>
+
+
+          <ul class="dropdown">
+
+            <li>
+              <a href="../pages/program.html">
+                Overview
+              </a>
+            </li>
+
+
+            <li>
+              <a href="../pages/infant-program.html">
+                Infant Program
+              </a>
+            </li>
+
+
+            <li>
+              <a href="../pages/toddler-program.html">
+                Toddler Program
+              </a>
+            </li>
+
+
+            <li>
+              <a href="../pages/preschool-program.html">
+                Preschool / Pre-K
+              </a>
+            </li>
+
+
+            <li>
+              <a href="../pages/schedules.html">
+                Schedules
+              </a>
+            </li>
+
+
+            <li>
+
+              <a href="../pages/lunch-and-snack-schedule.html">
+                Lunch &amp; Snack Schedule
+              </a>
+
+            </li>
+
+          </ul>
+
+        </li>
+
+
+
+        <!-- POLICIES -->
+
+        <li class="has-dropdown">
+
+          <button
+            class="nav-link dropdown-btn"
+            aria-expanded="false"
+          >
+
+            Policies
+
+            <span aria-hidden="true">
+              ▾
+            </span>
+
+          </button>
+
+
+          <ul class="dropdown">
+
+
+            <li>
+
+              <a href="../pages/policies.html">
+                Policies Overview
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/allergy-policy.html">
+                Allergy Policy
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/behavior-management.html">
+                Behavior Management
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/emergency-procedures.html">
+                Emergency Procedures
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/first-aid-injury-prevention.html">
+                First Aid &amp; Injury Prevention
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/healthcare-policy.html">
+                Healthcare Policy
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/holiday-inclement-weather.html">
+                Holiday &amp; Inclement Weather
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/medication-policy.html">
+                Medication Policy
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="../policies/suspected-child-abuse-policy.html">
+                Suspected Child Abuse Policy
+              </a>
+
+            </li>
+
+
+          </ul>
+
+        </li>
+
+
+
+        <li>
+
+          <a
+            class="nav-link"
+            href="../pages/gallery.html"
+          >
+            Gallery
+          </a>
+
+        </li>
+
+
+
+        <!-- CONTACT -->
+
+        <li class="has-dropdown">
+
+          <button
+            class="nav-link dropdown-btn"
+            aria-expanded="false"
+          >
+
+            Contact
+
+            <span aria-hidden="true">
+              ▾
+            </span>
+
+          </button>
+
+
+          <ul class="dropdown">
+
+
+            <li>
+
+              <a href="tel:+16174846688">
+                📞 Call (617) 484-6688
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a href="mailto:sonia_firststep@comcast.net">
+                ✉️ Email Sonia
+              </a>
+
+            </li>
+
+
+            <li>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+                target="_blank"
+                rel="noopener"
+              >
+                📍 Directions
+              </a>
+
+            </li>
+
+
+          </ul>
+
+        </li>
+
+
+      </ul>
+
+    </nav>
+
+
+
+    <!-- HEADER CTA -->
+
+    <div class="header-cta">
+
+      <a
+        class="mini-link"
+        href="tel:+16174846688"
+      >
+        📞 (617) 484-6688
       </a>
 
-      <!-- Mobile toggle -->
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Open menu</span>
-        ☰
-      </button>
 
-      <!-- Navigation -->
-      <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="../index.html">Home</a></li>
+      <a
+        class="mini-link"
+        href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+        target="_blank"
+        rel="noopener"
+      >
+        📍 Get Directions
+      </a>
 
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-btn" aria-expanded="false">
-              About <span aria-hidden="true">▾</span>
-            </button>
-            <ul class="dropdown">
-              <li><a href="../pages/about.html">About Us</a></li>
-              <li><a href="../pages/prices.html">Prices</a></li>
-              <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
-              <li><a aria-current="page" href="../pages/calendar.html">Calendar</a></li>
-              <li><a href="../pages/gallery.html">Gallery</a></li>
-            </ul>
-          </li>
+    </div>
 
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-btn" aria-expanded="false">
-              Programs <span aria-hidden="true">▾</span>
-            </button>
-            <ul class="dropdown">
-              <li><a href="../pages/program.html">Overview</a></li>
-              <li><a href="../pages/infant-program.html">Infant Program</a></li>
-              <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
-              <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
-              <li><a href="../pages/schedules.html">Schedules</a></li>
 
-              <!-- ✅ ADDED -->
-              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
-            </ul>
-          </li>
+  </div>
 
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-btn" aria-expanded="false">
-              Policies <span aria-hidden="true">▾</span>
-            </button>
-            <ul class="dropdown">
-              <!-- ✅ FIXED PATH -->
-              <li><a href="../pages/policies.html">Policies Overview</a></li>
+</header>
 
-              <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
-              <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
-              <li><a href="../policies/emergency-procedures.html">Emergency Procedures</a></li>
-              <li><a href="../policies/first-aid-injury-prevention.html">First Aid &amp; Injury Prevention</a></li>
-              <li><a href="../policies/healthcare-policy.html">Healthcare Policy</a></li>
-              <li><a href="../policies/holiday-inclement-weather.html">Holiday &amp; Inclement Weather</a></li>
-              <li><a href="../policies/medication-policy.html">Medication Policy</a></li>
-              <li><a href="../policies/suspected-child-abuse-policy.html">Suspected Child Abuse Policy</a></li>
-            </ul>
-          </li>
 
-          <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
 
-          <li class="has-dropdown">
-            <button class="nav-link dropdown-btn" aria-expanded="false">
-              Contact <span aria-hidden="true">▾</span>
-            </button>
-            <ul class="dropdown">
-              <li><a href="tel:+16174846688">📞 Call (617) 484-6688</a></li>
-              <li><a href="mailto:sonia_firststep@comcast.net">✉️ Email Sonia</a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">📍 Directions</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
-      <!-- Header CTA -->
-      <div class="header-cta">
-        <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
+<main id="main">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero page-hero">
+
+  <div class="container hero-inner">
+
+
+    <div class="hero-copy">
+
+
+      <p class="breadcrumbs">
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <span aria-hidden="true">
+          /
+        </span>
+
+        Calendar
+
+      </p>
+
+
+
+      <h1>
+        Academic Calendar
+        (September 2026 – August 2027)
+      </h1>
+
+
+
+      <p class="lead">
+
+        Classroom themes, special events, and closures.
+        “Closed” dates are highlighted for quick scanning.
+
+      </p>
+
+
+
+      <div class="hero-actions">
+
+
         <a
-          class="mini-link"
-          href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
-          target="_blank"
-          rel="noopener"
-        >📍 Get Directions</a>
+          class="btn primary"
+          href="#dates"
+        >
+          View Dates
+        </a>
+
+
+        <button
+          class="btn ghost"
+          type="button"
+          onclick="window.print()"
+        >
+          🖨️ Print Calendar
+        </button>
+
+
+        <a
+          class="btn ghost"
+          href="mailto:sonia_firststep@comcast.net"
+        >
+          Questions? Email Us
+        </a>
+
+
       </div>
+
+
+
+      <!-- LEGEND -->
+
+      <div
+        class="pill-row"
+        aria-label="Legend"
+      >
+
+        <span class="pill">
+          📚 Weekly Themes
+        </span>
+
+
+        <span
+          class="pill"
+          style="
+            background: rgba(239,68,68,.08);
+            border-color: rgba(239,68,68,.25);
+          "
+        >
+          ❌ Closed Days
+        </span>
+
+      </div>
+
+
+
+      <div
+        class="hero-contact"
+        style="
+          display:flex;
+          gap:16px;
+          margin-top:14px;
+          font-weight:700;
+          color:var(--muted);
+          flex-wrap:wrap;
+        "
+      >
+
+        <span>
+          📍 1078 Belmont St, Watertown, MA
+        </span>
+
+        <span>
+          📞 (617) 484-6688
+        </span>
+
+      </div>
+
 
     </div>
-  </header>
 
-  <main id="main">
-    <!-- Page hero -->
-    <section class="hero page-hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="breadcrumbs">
-            <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Calendar
-          </p>
 
-          <h1>Academic Calendar (March 2026 – August 2026)</h1>
-          <p class="lead">
-            Classroom themes, special events, and closures. “Closed” dates are highlighted for quick scanning.
-          </p>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#dates">View Dates</a>
-            <button class="btn ghost" type="button" onclick="window.print()">🖨️ Print Calendar</button>
-            <a class="btn ghost" href="mailto:sonia_firststep@comcast.net">Questions? Email Us</a>
-          </div>
+    <div class="hero-media logo-box">
 
-          <div class="pill-row" aria-label="Legend">
-            <span class="pill">📚 Weekly Themes</span>
-            <span class="pill" style="background: rgba(239, 68, 68, .08); border-color: rgba(239, 68, 68, .25);">
-              ❌ Closed Days
-            </span>
-          </div>
+      <img
+        src="../assets/img/logo.png"
+        alt="First Step Child Care logo"
+        loading="eager"
+        decoding="async"
+      >
 
-          <div class="hero-contact" style="display:flex; gap:16px; margin-top:14px; font-weight:700; color: var(--muted); flex-wrap:wrap;">
-            <span>📍 1078 Belmont St, Watertown, MA</span>
-            <span>📞 (617) 484-6688</span>
-          </div>
-        </div>
-
-        <div class="hero-media logo-box">
-          <img
-            src="../assets/img/logo.png"
-            alt="First Step Child Care logo"
-            loading="eager"
-            decoding="async"
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ WAVE DIVIDER: hero -> dates (alt blue) -->
-    <div class="wave-divider" aria-hidden="true">
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#dbe9fb" d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"></path>
-      </svg>
     </div>
 
-    <!-- Dates -->
-    <section class="section alt" id="dates">
-      <div class="container">
-        <h2 class="section-title">Important Dates</h2>
-        <p class="section-sub">March 2026 through August 2026</p>
 
-        <div class="month-grid">
-
-          <!-- March 2026 -->
-          <article class="month-card" aria-label="March 2026">
-            <h3>March 2026</h3>
-            <ul class="event-list">
-              <li class="event">
-                <div class="date">3/2 – 3/6</div>
-                <div class="desc">Eric Carle Week</div>
-              </li>
-              <li class="event">
-                <div class="date">3/9 – 3/13</div>
-                <div class="desc">Fabulous Female Authors</div>
-              </li>
-              <li class="event">
-                <div class="date">3/16 – 3/20</div>
-                <div class="desc">Our Favorite Books</div>
-              </li>
-              <li class="event">
-                <div class="date">3/23 – 3/27</div>
-                <div class="desc">Spring</div>
-              </li>
-              <li class="event">
-                <div class="date">3/30 – 4/3</div>
-                <div class="desc">Gardens &amp; Veggies</div>
-              </li>
-            </ul>
-          </article>
-
-          <!-- April 2026 -->
-          <article class="month-card" aria-label="April 2026">
-            <h3>April 2026</h3>
-            <ul class="event-list">
-              <li class="event">
-                <div class="date">4/6 – 4/10</div>
-                <div class="desc">Birds</div>
-              </li>
-              <li class="event">
-                <div class="date">4/13 – 4/17</div>
-                <div class="desc">Insects</div>
-              </li>
-              <li class="event">
-                <div class="date">4/20 – 4/24</div>
-                <div class="desc">Happy Earth Week</div>
-              </li>
-              <li class="event is-closed">
-                <div class="date">4/20</div>
-                <div class="desc">Closed for Patriots Day*</div>
-              </li>
-              <li class="event">
-                <div class="date">4/27 – 5/1</div>
-                <div class="desc">Pond/Pond Life</div>
-              </li>
-            </ul>
-          </article>
-
-          <!-- May 2026 -->
-          <article class="month-card" aria-label="May 2026">
-            <h3>May 2026</h3>
-            <ul class="event-list">
-              <li class="event">
-                <div class="date">5/4 – 5/8</div>
-                <div class="desc">Ocean/Ocean Life</div>
-              </li>
-              <li class="event">
-                <div class="date">5/11 – 5/15</div>
-                <div class="desc">Space</div>
-              </li>
-              <li class="event">
-                <div class="date">5/18 – 5/22</div>
-                <div class="desc">Dinosaurs</div>
-              </li>
-              <li class="event">
-                <div class="date">5/25 – 5/29</div>
-                <div class="desc">Sports</div>
-              </li>
-              <li class="event is-closed">
-                <div class="date">5/25</div>
-                <div class="desc">Closed for Memorial Day*</div>
-              </li>
-            </ul>
-          </article>
-
-          <!-- June 2026 -->
-          <article class="month-card" aria-label="June 2026">
-            <h3>June 2026</h3>
-            <ul class="event-list">
-              <li class="event">
-                <div class="date">6/1 – 6/5</div>
-                <div class="desc">Cooking and Baking</div>
-              </li>
-              <li class="event">
-                <div class="date">6/8 – 6/12</div>
-                <div class="desc">Weather</div>
-              </li>
-              <li class="event">
-                <div class="date">6/15 – 6/19</div>
-                <div class="desc">Summer</div>
-              </li>
-              <li class="event is-closed">
-                <div class="date">6/19</div>
-                <div class="desc">Closed for Juneteenth*</div>
-              </li>
-              <li class="event">
-                <div class="date">6/22 – 6/26</div>
-                <div class="desc">At the Beach</div>
-              </li>
-              <li class="event">
-                <div class="date">6/29 – 7/3</div>
-                <div class="desc">Red, White and Blue</div>
-              </li>
-            </ul>
-          </article>
-
-          <!-- July 2026 -->
-          <article class="month-card" aria-label="July 2026">
-            <h3>July 2026</h3>
-            <ul class="event-list">
-              <li class="event is-closed">
-                <div class="date">7/3</div>
-                <div class="desc">Closed for Independence Day</div>
-              </li>
-              <li class="event">
-                <div class="date">7/6 – 7/10</div>
-                <div class="desc">Colors and Rainbow</div>
-              </li>
-              <li class="event">
-                <div class="date">7/13 – 7/17</div>
-                <div class="desc">Shapes</div>
-              </li>
-              <li class="event">
-                <div class="date">7/20 – 7/24</div>
-                <div class="desc">Numbers</div>
-              </li>
-              <li class="event">
-                <div class="date">7/27 – 7/31</div>
-                <div class="desc">Alphabet Week 1</div>
-              </li>
-            </ul>
-          </article>
-
-          <!-- August 2026 -->
-          <article class="month-card" aria-label="August 2026">
-            <h3>August 2026</h3>
-            <ul class="event-list">
-              <li class="event">
-                <div class="date">8/3 – 8/7</div>
-                <div class="desc">Alphabet Week 2</div>
-              </li>
-              <li class="event">
-                <div class="date">8/10 – 8/14</div>
-                <div class="desc">Alphabet Week 3</div>
-              </li>
-              <li class="event">
-                <div class="date">8/17 – 8/21</div>
-                <div class="desc">Wonderful Water</div>
-              </li>
-              <li class="event">
-                <div class="date">8/24 – 8/28</div>
-                <div class="desc">Discovery Week</div>
-              </li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>First Step Child Care</strong>
-        <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
-      </div>
-      <div class="footer-links">
-        <a href="../pages/about.html">About</a>
-        <a href="../pages/program.html">Programs</a>
-        <a href="../pages/policies.html">Policies</a>
-        <a href="../pages/gallery.html">Gallery</a>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p class="muted">© <span id="year"></span> First Step Child Care</p>
-      <p class="muted footer-credit">Website built by <span class="credit-brand">KinderCam</span></p>
-    </div>
-  </footer>
-
-  <!-- Floating Contact Button (match index.html) -->
-  <a class="floating-contact"
-     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-     aria-label="Email First Step Child Care">
-    ✉️ Contact
-  </a>
-
-  <script>
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // mobile nav toggle
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.getElementById("site-nav");
-
-    if (toggle && nav){
-      toggle.addEventListener("click", () => {
-        const open = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!open));
-        nav.classList.toggle("open");
-      });
-    }
-
-    // dropdowns: mobile/touch = click, desktop = hover (no sticky click)
-    const dropdowns = document.querySelectorAll(".has-dropdown");
-    const isTouch = window.matchMedia("(hover: none)").matches;
-
-    function closeAllDropdowns(except = null){
-      dropdowns.forEach(d => {
-        if (d !== except) {
-          d.classList.remove("open");
-          const b = d.querySelector(".dropdown-btn");
-          if (b) b.setAttribute("aria-expanded", "false");
-        }
-      });
-    }
-
-    dropdowns.forEach(drop => {
-      const btn = drop.querySelector(".dropdown-btn");
-      if (!btn) return;
-
-      btn.addEventListener("click", (e) => {
-        if (!isTouch) return; // desktop: ignore click so it doesn't stick
-        e.preventDefault();
-        e.stopPropagation();
-
-        const isOpen = drop.classList.contains("open");
-        closeAllDropdowns(drop);
-
-        drop.classList.toggle("open", !isOpen);
-        btn.setAttribute("aria-expanded", String(!isOpen));
-      });
-    });
-
-    document.addEventListener("click", () => closeAllDropdowns());
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAllDropdowns(); });
-    document.querySelectorAll(".dropdown a").forEach(link => link.addEventListener("click", () => closeAllDropdowns()));
-  </script>
-
-  <!-- ✅ Scroll-reactive floaters (light parallax) -->
-  <script>
-    (function(){
-      const floaters = document.querySelectorAll(".fun-floaters .floater");
-      if (!floaters.length) return;
-
-      // Respect reduced motion
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      // Desktop only (matches CSS hide breakpoint)
-      if (!window.matchMedia("(min-width: 901px)").matches) return;
-
-      let ticking = false;
-
-      function update(){
-        ticking = false;
-        const y = window.scrollY || 0;
-
-        floaters.forEach(el => {
-          const speed = parseFloat(el.dataset.speed || "0.12");
-          const drift = y * speed;
-          const twist = drift * 0.015;
-          el.style.transform = `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
-        });
-      }
-
-      function onScroll(){
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(update);
-      }
-
-      window.addEventListener("scroll", onScroll, { passive: true });
-      update();
-    })();
-  </script>
-
-  <!-- ✅ Pulse floating button only after user scrolls -->
-  <script>
-    (function(){
-      const btn = document.querySelector('.floating-contact');
-      if(!btn) return;
-
-      let activated = false;
-
-      window.addEventListener('scroll', () => {
-        if (activated) return;
-
-        if (window.scrollY > 120) {
-          btn.classList.add('pulse');
-          activated = true;
-        }
-      }, { passive: true });
-    })();
-  </script>
-
-  <!-- Parent Chat Widget (AI Bot via Cloudflare Worker) -->
- 
-  <style>
-    :root{
-      --chat-accent:#2d6cdf;
-      --chat-bg:#ffffff;
-      --chat-text:#1f2937;
-      --chat-muted:#6b7280;
-      --chat-border:#e5e7eb;
-      --chat-shadow: 0 20px 45px rgba(0,0,0,.18);
-      --chat-radius:16px;
-      --chat-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
-
-    .fs-chat-launcher{
-      position:fixed; left:18px; bottom:18px; z-index:9999;
-      display:flex; align-items:center; gap:10px;
-    }
-
-    .fs-chat-pill{
-      background: var(--chat-bg);
-      border:1px solid var(--chat-border);
-      color: var(--chat-text);
-      padding:10px 12px;
-      border-radius:999px;
-      box-shadow: var(--chat-shadow);
-      font-family: var(--chat-font);
-      font-size:14px;
-      cursor:pointer;
-      user-select:none;
-    }
-
-    /* ✅ slightly larger chat icon button */
-    .fs-chat-btn{
-      width:64px;
-      height:64px;
-      border-radius:999px;
-      border:none;
-      cursor:pointer;
-      background: var(--chat-accent);
-      color:#fff;
-      box-shadow: var(--chat-shadow);
-      display:grid;
-      place-items:center;
-    }
-    .fs-chat-btn svg{ width:30px; height:30px; }
-
-    /* ✅ bottom-left chat window */
-    .fs-chat-window{
-      position:fixed; left:18px; bottom:88px; z-index:9999;
-      width:min(380px, calc(100vw - 36px));
-      height:560px;
-      background: var(--chat-bg);
-      border:1px solid var(--chat-border);
-      border-radius: var(--chat-radius);
-      box-shadow: var(--chat-shadow);
-      display:none;
-      overflow:hidden;
-      font-family: var(--chat-font);
-    }
-
-    .fs-chat-window.open{ display:flex; flex-direction:column; }
-
-    .fs-chat-header{
-      padding:14px 14px 10px;
-      background: linear-gradient(135deg, rgba(45,108,223,.12), rgba(45,108,223,.02));
-      border-bottom:1px solid var(--chat-border);
-      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
-    }
-    .fs-chat-title{ display:flex; flex-direction:column; gap:3px; }
-    .fs-chat-title strong{ font-size:15px; color:var(--chat-text); }
-    .fs-chat-title span{ font-size:12px; color:var(--chat-muted); line-height:1.2; }
-
-    .fs-chat-close{
-      border:none; background:transparent; cursor:pointer;
-      width:36px; height:36px; border-radius:10px;
-      display:grid; place-items:center;
-    }
-    .fs-chat-close:hover{ background: rgba(0,0,0,.05); }
-
-    .fs-chat-body{
-      padding:12px;
-      flex:1;
-      overflow:auto;
-      background: #fbfbfd;
-    }
-
-    .fs-msg{ display:flex; margin:10px 0; }
-    .fs-msg.bot{ justify-content:flex-start; }
-    .fs-msg.user{ justify-content:flex-end; }
-
-    .fs-bubble{
-      max-width: 85%;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--chat-border);
-      font-size:14px;
-      line-height:1.35;
-      color: var(--chat-text);
-      background:#fff;
-      white-space:pre-wrap;
-    }
-    .fs-msg.user .fs-bubble{
-      background: rgba(45,108,223,.12);
-      border-color: rgba(45,108,223,.25);
-    }
-
-    .fs-quick{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-    .fs-quick button{
-      font-family: var(--chat-font);
-      font-size:12px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--chat-border);
-      background:#fff;
-      cursor:pointer;
-    }
-    .fs-quick button:hover{ border-color: rgba(45,108,223,.5); }
-
-    .fs-chat-footer{
-      border-top:1px solid var(--chat-border);
-      padding:10px;
-      background:#fff;
-    }
-    .fs-chat-form{ display:flex; gap:8px; }
-    .fs-chat-input{
-      flex:1;
-      border:1px solid var(--chat-border);
-      border-radius:12px;
-      padding:10px 12px;
-      font-family: var(--chat-font);
-      font-size:14px;
-      outline:none;
-    }
-    .fs-chat-send{
-      border:none; cursor:pointer;
-      border-radius:12px;
-      padding:0 14px;
-      background: var(--chat-accent);
-      color:#fff;
-      font-weight:600;
-    }
-
-    .fs-chat-small{
-      margin-top:8px;
-      font-size:11px;
-      color: var(--chat-muted);
-      line-height:1.3;
-    }
-  </style>
-
-  <div class="fs-chat-launcher" aria-live="polite">
-    <div class="fs-chat-pill" id="fsChatPill">Questions? Chat with us</div>
-    <button class="fs-chat-btn" id="fsChatOpen" aria-label="Open chat">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 5.5C4 4.12 5.12 3 6.5 3h11C18.88 3 20 4.12 20 5.5v7C20 13.88 18.88 15 17.5 15H9l-4.2 3.15c-.5.38-1.2.02-1.2-.6V5.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M7 7.5h10M7 10.5h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </button>
   </div>
 
-  <div class="fs-chat-window" id="fsChatWindow" role="dialog" aria-label="Parent questions chat">
-    <div class="fs-chat-header">
-      <div class="fs-chat-title">
-        <strong>Parent Questions</strong>
-        <span>Ask about hours, tuition, enrollment, meals, naps, and more.</span>
-      </div>
-      <button class="fs-chat-close" id="fsChatClose" aria-label="Close chat">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
-          <path d="M6 6l12 12M18 6L6 18" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
+</section>
 
-    <div class="fs-chat-body" id="fsChatBody"></div>
 
-    <div class="fs-chat-footer">
-      <form class="fs-chat-form" id="fsChatForm">
-        <input class="fs-chat-input" id="fsChatInput" type="text" placeholder="Type your question..." autocomplete="off" />
-        <button class="fs-chat-send" type="submit">Send</button>
-      </form>
-      <div class="fs-chat-small">
-        Note: This chat provides general info. For anything specific, please contact the school.
-      </div>
-    </div>
+
+<!-- =====================================================
+     WAVE
+===================================================== -->
+
+<div
+  class="wave-divider"
+  aria-hidden="true"
+>
+
+  <svg
+    viewBox="0 0 1440 90"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
+    <path
+      fill="#dbe9fb"
+      d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"
+    >
+    </path>
+
+  </svg>
+
+</div>
+
+
+
+<!-- =====================================================
+     CALENDAR
+===================================================== -->
+
+<section
+  class="section alt"
+  id="dates"
+>
+
+<div class="container">
+
+
+<h2 class="section-title">
+  Important Dates
+</h2>
+
+
+<p class="section-sub">
+  September 2026 through August 2027
+</p>
+
+
+
+<div class="month-grid">
+
+
+
+<!-- =====================================================
+     SEPTEMBER 2026
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="September 2026"
+>
+
+<h3>September 2026</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    8/31 – 9/4
   </div>
 
-  <script>
-  (function(){
-    const WORKER_URL = "https://firststep-chat.naessean012.workers.dev";
+  <div class="desc">
+    Welcome to School!
+  </div>
 
-    const QUICK = [
-      { label: "Hours",  text: "What are your hours?" },
-      { label: "Tuition",text: "How much is tuition?" },
-      { label: "Ages",   text: "What ages do you accept?" },
-      { label: "Tour",   text: "How do I schedule a tour?" },
-      { label: "Meals",  text: "Do you provide meals and snacks?" }
-    ];
+</li>
 
-    const els = {
-      pill: document.getElementById("fsChatPill"),
-      open: document.getElementById("fsChatOpen"),
-      close: document.getElementById("fsChatClose"),
-      win: document.getElementById("fsChatWindow"),
-      body: document.getElementById("fsChatBody"),
-      form: document.getElementById("fsChatForm"),
-      input: document.getElementById("fsChatInput"),
-    };
 
-    // ✅ pulse the CHAT icon button until opened
-    if (els.open) els.open.classList.add("pulse");
 
-    function openChat(){
-      els.win.classList.add("open");
-      if (els.open) els.open.classList.remove("pulse"); // stop pulsing after open
-      if (!els.body.dataset.inited){
-        boot();
-        els.body.dataset.inited = "1";
-      }
-      setTimeout(()=>els.input.focus(), 50);
+<li class="event">
+
+  <div class="date">
+    9/7 – 9/11
+  </div>
+
+  <div class="desc">
+    All About Me
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    9/7
+  </div>
+
+  <div class="desc">
+    Closed for Labor Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    9/14 – 9/18
+  </div>
+
+  <div class="desc">
+    My Feelings
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    9/21 – 9/25
+  </div>
+
+  <div class="desc">
+    My Body / 5 Senses
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    9/28 – 10/2
+  </div>
+
+  <div class="desc">
+    Autumn
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     OCTOBER 2026
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="October 2026"
+>
+
+<h3>October 2026</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    10/5 – 10/9
+  </div>
+
+  <div class="desc">
+    Fire Safety Week
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    10/12 – 10/16
+  </div>
+
+  <div class="desc">
+    Apples &amp; Pumpkins
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    10/12
+  </div>
+
+  <div class="desc">
+    Closed for Indigenous Peoples' Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    10/19 – 10/23
+  </div>
+
+  <div class="desc">
+    Farm
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    10/26 – 10/30
+  </div>
+
+  <div class="desc">
+    Halloween
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     NOVEMBER 2026
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="November 2026"
+>
+
+<h3>November 2026</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    11/2 – 11/6
+  </div>
+
+  <div class="desc">
+    My Community and Community Helpers
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    11/9 – 11/13
+  </div>
+
+  <div class="desc">
+    Construction
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    11/11
+  </div>
+
+  <div class="desc">
+    Closed for Veterans Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    11/16 – 11/20
+  </div>
+
+  <div class="desc">
+    Transportation
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    11/23 – 11/27
+  </div>
+
+  <div class="desc">
+    Thanksgiving
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    11/26
+  </div>
+
+  <div class="desc">
+    Closed for Thanksgiving
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    11/27
+  </div>
+
+  <div class="desc">
+    Closed – Day After Thanksgiving
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     DECEMBER 2026
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="December 2026"
+>
+
+<h3>December 2026</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    11/30 – 12/4
+  </div>
+
+  <div class="desc">
+    Around the World
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    12/7 – 12/11
+  </div>
+
+  <div class="desc">
+    Hanukkah
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    12/14 – 12/18
+  </div>
+
+  <div class="desc">
+    Holidays of the World
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    12/21 – 12/25
+  </div>
+
+  <div class="desc">
+    Christmas
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    12/25
+  </div>
+
+  <div class="desc">
+    Closed for Christmas
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     JANUARY 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="January 2027"
+>
+
+<h3>January 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    12/28 – 1/1
+  </div>
+
+  <div class="desc">
+    New Year's Week
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    1/1
+  </div>
+
+  <div class="desc">
+    Closed for New Year's Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    1/4 – 1/8
+  </div>
+
+  <div class="desc">
+    Winter
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    1/11 – 1/15
+  </div>
+
+  <div class="desc">
+    Intro to Animals
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    1/18 – 1/22
+  </div>
+
+  <div class="desc">
+    Animals of the World
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    1/18
+  </div>
+
+  <div class="desc">
+    Closed for MLK Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    1/25 – 1/29
+  </div>
+
+  <div class="desc">
+    Rainforests &amp; Deserts
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     FEBRUARY 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="February 2027"
+>
+
+<h3>February 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    2/1 – 2/5
+  </div>
+
+  <div class="desc">
+    Jungles &amp; Arctics
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    2/8 – 2/12
+  </div>
+
+  <div class="desc">
+    Kindness / Valentine's
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    2/15 – 2/19
+  </div>
+
+  <div class="desc">
+    Make Believe
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    2/15
+  </div>
+
+  <div class="desc">
+    Closed for Presidents' Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    2/22 – 2/26
+  </div>
+
+  <div class="desc">
+    Fairytales &amp; Nursery Rhymes
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     MARCH 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="March 2027"
+>
+
+<h3>March 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    3/1 – 3/5
+  </div>
+
+  <div class="desc">
+    Eric Carle Week
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    3/8 – 3/12
+  </div>
+
+  <div class="desc">
+    Lois Ehlert Week
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    3/15 – 3/19
+  </div>
+
+  <div class="desc">
+    Our Favorite Books
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    3/22 – 3/26
+  </div>
+
+  <div class="desc">
+    Spring
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    3/29 – 4/2
+  </div>
+
+  <div class="desc">
+    Gardens &amp; Veggies
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     APRIL 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="April 2027"
+>
+
+<h3>April 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    4/5 – 4/9
+  </div>
+
+  <div class="desc">
+    Birds
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    4/12 – 4/16
+  </div>
+
+  <div class="desc">
+    Insects
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    4/19 – 4/23
+  </div>
+
+  <div class="desc">
+    Happy Earth Week!
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    4/19
+  </div>
+
+  <div class="desc">
+    Closed for Patriots' Day
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    4/26 – 4/30
+  </div>
+
+  <div class="desc">
+    Ponds &amp; Pond Life
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     MAY 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="May 2027"
+>
+
+<h3>May 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    5/3 – 5/7
+  </div>
+
+  <div class="desc">
+    Oceans / Ocean Life
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    5/10 – 5/14
+  </div>
+
+  <div class="desc">
+    Space
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    5/17 – 5/21
+  </div>
+
+  <div class="desc">
+    Dinosaurs
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    5/24 – 5/28
+  </div>
+
+  <div class="desc">
+    Sports
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    5/31 – 6/4
+  </div>
+
+  <div class="desc">
+    Cooking &amp; Baking
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    5/31
+  </div>
+
+  <div class="desc">
+    Closed for Memorial Day
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     JUNE 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="June 2027"
+>
+
+<h3>June 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    6/7 – 6/11
+  </div>
+
+  <div class="desc">
+    Weather
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    6/14 – 6/18
+  </div>
+
+  <div class="desc">
+    Summer
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    6/18
+  </div>
+
+  <div class="desc">
+    Closed – Juneteenth Observed
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    6/21 – 6/25
+  </div>
+
+  <div class="desc">
+    At the Beach
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     JULY 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="July 2027"
+>
+
+<h3>July 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    6/28 – 7/2
+  </div>
+
+  <div class="desc">
+    Red, White &amp; Blue
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    7/5 – 7/9
+  </div>
+
+  <div class="desc">
+    Colors &amp; Rainbow
+  </div>
+
+</li>
+
+
+
+<li class="event is-closed">
+
+  <div class="date">
+    7/5
+  </div>
+
+  <div class="desc">
+    Closed – Independence Day Observed
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    7/12 – 7/16
+  </div>
+
+  <div class="desc">
+    Shapes
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    7/19 – 7/23
+  </div>
+
+  <div class="desc">
+    Numbers
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    7/26 – 7/30
+  </div>
+
+  <div class="desc">
+    Alphabet Week 1
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+<!-- =====================================================
+     AUGUST 2027
+===================================================== -->
+
+<article
+  class="month-card"
+  aria-label="August 2027"
+>
+
+<h3>August 2027</h3>
+
+
+<ul class="event-list">
+
+
+<li class="event">
+
+  <div class="date">
+    8/2 – 8/6
+  </div>
+
+  <div class="desc">
+    Alphabet Week 2
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    8/9 – 8/13
+  </div>
+
+  <div class="desc">
+    Alphabet Week 3
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    8/16 – 8/20
+  </div>
+
+  <div class="desc">
+    Wonderful Water
+  </div>
+
+</li>
+
+
+
+<li class="event">
+
+  <div class="date">
+    8/23 – 8/27
+  </div>
+
+  <div class="desc">
+    Discovery Week
+  </div>
+
+</li>
+
+
+</ul>
+
+</article>
+
+
+
+</div>
+
+
+
+<p
+  class="muted"
+  style="
+    text-align:center;
+    margin-top:26px;
+    font-weight:700;
+  "
+>
+
+  Calendar is subject to change.
+  All dates shown are for weekly themes unless otherwise noted.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+
+<div class="container footer-inner">
+
+
+<div>
+
+<strong>
+  First Step Child Care
+</strong>
+
+
+<p class="muted">
+  1078 Belmont St, Watertown, MA 02472 • (617) 484-6688
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<a href="../pages/about.html">
+  About
+</a>
+
+<a href="../pages/program.html">
+  Programs
+</a>
+
+<a href="../pages/policies.html">
+  Policies
+</a>
+
+<a href="../pages/gallery.html">
+  Gallery
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="container footer-bottom">
+
+
+<p class="muted">
+
+©
+<span id="year"></span>
+First Step Child Care
+
+</p>
+
+
+
+<p class="muted footer-credit">
+
+Website built by
+
+<span class="credit-brand">
+KinderCam
+</span>
+
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     FLOATING CONTACT
+===================================================== -->
+
+<a
+  class="floating-contact"
+  href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+  aria-label="Email First Step Child Care"
+>
+
+✉️ Contact
+
+</a>
+
+
+
+<!-- =====================================================
+     NAVIGATION JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+
+const toggle =
+  document.querySelector(".nav-toggle");
+
+
+const nav =
+  document.getElementById("site-nav");
+
+
+
+if (toggle && nav) {
+
+  toggle.addEventListener(
+    "click",
+    () => {
+
+      const open =
+        toggle.getAttribute("aria-expanded") === "true";
+
+
+      toggle.setAttribute(
+        "aria-expanded",
+        String(!open)
+      );
+
+
+      nav.classList.toggle("open");
+
     }
-    function closeChat(){ els.win.classList.remove("open"); }
+  );
 
-    els.open.addEventListener("click", openChat);
-    els.pill.addEventListener("click", openChat);
-    els.close.addEventListener("click", closeChat);
-
-    function addMsg(role, text){
-  const wrap = document.createElement("div");
-  wrap.className = "fs-msg " + role;
-
-  const bubble = document.createElement("div");
-  bubble.className = "fs-bubble";
-
-  let html = text
-    .replace("[CALL]", '<button class="fs-action-btn" onclick="window.location.href=\'tel:16179246952\'">📞 Call</button>')
-    .replace("[EMAIL]", '<button class="fs-action-btn" onclick="window.location.href=\'mailto:sonia_firststep@comcast.net\'">✉️ Email</button>')
-    .replace(/\n/g,"<br>");
-
-  bubble.innerHTML = html;
-
-  wrap.appendChild(bubble);
-  els.body.appendChild(wrap);
-  els.body.scrollTop = els.body.scrollHeight;
 }
 
-    function addQuickButtons(){
-      const wrap = document.createElement("div");
-      wrap.className = "fs-msg bot";
 
-      const bubble = document.createElement("div");
-      bubble.className = "fs-bubble";
-      bubble.textContent = "Popular questions:";
 
-      const quick = document.createElement("div");
-      quick.className = "fs-quick";
+const dropdowns =
+  document.querySelectorAll(".has-dropdown");
 
-      QUICK.forEach(btn=>{
-        const b = document.createElement("button");
-        b.type="button";
-        b.textContent = btn.label;
-        b.addEventListener("click", ()=>handleUser(btn.text));
-        quick.appendChild(b);
-      });
 
-      bubble.appendChild(quick);
-      wrap.appendChild(bubble);
-      els.body.appendChild(wrap);
-      els.body.scrollTop = els.body.scrollHeight;
-    }
+const isTouch =
+  window.matchMedia("(hover: none)").matches;
 
-    async function askAI(userText){
-      const res = await fetch(WORKER_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userText })
-      });
 
-      const data = await res.json();
-      return (data && data.reply) ? String(data.reply) : "";
-    }
 
-    async function handleUser(text){
-      addMsg("user", text);
-      addMsg("bot", "One sec…");
+function closeAllDropdowns(except = null) {
 
-      try {
-        const reply = await askAI(text);
-        els.body.lastChild && els.body.lastChild.remove();
-        addMsg("bot", reply || "Sorry — I couldn’t answer that. Please contact the office.");
-      } catch (e) {
-        els.body.lastChild && els.body.lastChild.remove();
-        addMsg("bot", "Sorry — I’m having trouble right now. Please try again.");
+  dropdowns.forEach(d => {
+
+    if (d !== except) {
+
+      d.classList.remove("open");
+
+
+      const b =
+        d.querySelector(".dropdown-btn");
+
+
+      if (b) {
+
+        b.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
       }
+
     }
 
-    els.form.addEventListener("submit", (e)=>{
+  });
+
+}
+
+
+
+dropdowns.forEach(drop => {
+
+
+  const btn =
+    drop.querySelector(".dropdown-btn");
+
+
+  if (!btn) return;
+
+
+
+  btn.addEventListener(
+    "click",
+    (e) => {
+
+
+      if (!isTouch) return;
+
+
       e.preventDefault();
-      const text = els.input.value.trim();
-      if (!text) return;
-      els.input.value = "";
-      handleUser(text);
-    });
 
-    // ✅ Updated greeting flow
-    function boot(){
-      addMsg("bot", "👋 Hi there! Welcome to First Step Child Care.");
+      e.stopPropagation();
 
-      addMsg(
-        "bot",
-        "Parents often ask about openings, tours, programs, and hours. I'm happy to help!"
+
+      const isOpen =
+        drop.classList.contains("open");
+
+
+      closeAllDropdowns(drop);
+
+
+      drop.classList.toggle(
+        "open",
+        !isOpen
       );
 
-      addMsg(
-        "bot",
-        "If you're interested in enrollment, we recommend scheduling a tour or contacting the office so we can confirm availability."
+
+      btn.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
       );
 
-      addQuickButtons();
+
+    }
+  );
+
+
+});
+
+
+
+document.addEventListener(
+  "click",
+  () => closeAllDropdowns()
+);
+
+
+
+document.addEventListener(
+  "keydown",
+  (e) => {
+
+    if (e.key === "Escape") {
+
+      closeAllDropdowns();
+
     }
 
-    // ✅ Auto-open chat after 4 seconds (only once per visit)
-    setTimeout(() => {
-      if (!sessionStorage.getItem("fsChatShown")) {
-        openChat();
-        sessionStorage.setItem("fsChatShown", "1");
-      }
-    }, 4000);
+  }
+);
 
-  })();
-  </script>
-  <!-- /Parent Chat Widget (AI Bot) -->
+
+
+document
+  .querySelectorAll(".dropdown a")
+  .forEach(link =>
+
+    link.addEventListener(
+      "click",
+      () => closeAllDropdowns()
+    )
+
+  );
+
+
+</script>
+
+
+
+<!-- =====================================================
+     FLOATING ICON PARALLAX
+===================================================== -->
+
+<script>
+
+(function(){
+
+
+const floaters =
+  document.querySelectorAll(
+    ".fun-floaters .floater"
+  );
+
+
+if (!floaters.length)
+  return;
+
+
+
+if (
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches
+)
+  return;
+
+
+
+if (
+  !window.matchMedia(
+    "(min-width: 901px)"
+  ).matches
+)
+  return;
+
+
+
+let ticking = false;
+
+
+
+function update(){
+
+
+ticking = false;
+
+
+const y =
+  window.scrollY || 0;
+
+
+
+floaters.forEach(el => {
+
+
+const speed =
+  parseFloat(
+    el.dataset.speed || "0.12"
+  );
+
+
+const drift =
+  y * speed;
+
+
+const twist =
+  drift * 0.015;
+
+
+
+el.style.transform =
+  `translate3d(0, ${drift}px, 0) rotate(${twist}deg)`;
+
+
+});
+
+
+}
+
+
+
+function onScroll(){
+
+
+if (ticking)
+  return;
+
+
+ticking = true;
+
+
+requestAnimationFrame(update);
+
+
+}
+
+
+
+window.addEventListener(
+  "scroll",
+  onScroll,
+  { passive: true }
+);
+
+
+update();
+
+
+})();
+
+</script>
+
+
+
+<!-- =====================================================
+     CONTACT BUTTON PULSE
+===================================================== -->
+
+<script>
+
+(function(){
+
+
+const btn =
+  document.querySelector(
+    ".floating-contact"
+  );
+
+
+if (!btn)
+  return;
+
+
+
+let activated =
+  false;
+
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+
+    if (activated)
+      return;
+
+
+
+    if (window.scrollY > 120) {
+
+
+      btn.classList.add(
+        "pulse"
+      );
+
+
+      activated =
+        true;
+
+
+    }
+
+
+  },
+  { passive: true }
+);
+
+
+})();
+
+</script>
+
+
+
+<!-- =====================================================
+     PARENT CHAT WIDGET
+===================================================== -->
+
+<style>
+
+
+:root {
+
+--chat-accent:#2d6cdf;
+
+--chat-bg:#ffffff;
+
+--chat-text:#1f2937;
+
+--chat-muted:#6b7280;
+
+--chat-border:#e5e7eb;
+
+--chat-shadow:
+  0 20px 45px rgba(0,0,0,.18);
+
+--chat-radius:16px;
+
+--chat-font:
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  Segoe UI,
+  Roboto,
+  Helvetica,
+  Arial,
+  "Apple Color Emoji",
+  "Segoe UI Emoji";
+
+}
+
+
+
+.fs-chat-launcher {
+
+position:fixed;
+
+left:18px;
+
+bottom:18px;
+
+z-index:9999;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+
+.fs-chat-pill {
+
+background:
+  var(--chat-bg);
+
+border:
+  1px solid var(--chat-border);
+
+color:
+  var(--chat-text);
+
+padding:
+  10px 12px;
+
+border-radius:
+  999px;
+
+box-shadow:
+  var(--chat-shadow);
+
+font-family:
+  var(--chat-font);
+
+font-size:
+  14px;
+
+cursor:
+  pointer;
+
+user-select:
+  none;
+
+}
+
+
+
+.fs-chat-btn {
+
+width:
+  64px;
+
+height:
+  64px;
+
+border-radius:
+  999px;
+
+border:
+  none;
+
+cursor:
+  pointer;
+
+background:
+  var(--chat-accent);
+
+color:
+  #fff;
+
+box-shadow:
+  var(--chat-shadow);
+
+display:
+  grid;
+
+place-items:
+  center;
+
+}
+
+
+
+.fs-chat-btn svg {
+
+width:
+  30px;
+
+height:
+  30px;
+
+}
+
+
+
+.fs-chat-window {
+
+position:
+  fixed;
+
+left:
+  18px;
+
+bottom:
+  88px;
+
+z-index:
+  9999;
+
+width:
+  min(380px, calc(100vw - 36px));
+
+height:
+  560px;
+
+background:
+  var(--chat-bg);
+
+border:
+  1px solid var(--chat-border);
+
+border-radius:
+  var(--chat-radius);
+
+box-shadow:
+  var(--chat-shadow);
+
+display:
+  none;
+
+overflow:
+  hidden;
+
+font-family:
+  var(--chat-font);
+
+}
+
+
+
+.fs-chat-window.open {
+
+display:
+  flex;
+
+flex-direction:
+  column;
+
+}
+
+
+
+.fs-chat-header {
+
+padding:
+  14px 14px 10px;
+
+background:
+  linear-gradient(
+    135deg,
+    rgba(45,108,223,.12),
+    rgba(45,108,223,.02)
+  );
+
+border-bottom:
+  1px solid var(--chat-border);
+
+display:
+  flex;
+
+align-items:
+  flex-start;
+
+justify-content:
+  space-between;
+
+gap:
+  10px;
+
+}
+
+
+
+.fs-chat-title {
+
+display:
+  flex;
+
+flex-direction:
+  column;
+
+gap:
+  3px;
+
+}
+
+
+
+.fs-chat-title strong {
+
+font-size:
+  15px;
+
+color:
+  var(--chat-text);
+
+}
+
+
+
+.fs-chat-title span {
+
+font-size:
+  12px;
+
+color:
+  var(--chat-muted);
+
+line-height:
+  1.2;
+
+}
+
+
+
+.fs-chat-close {
+
+border:
+  none;
+
+background:
+  transparent;
+
+cursor:
+  pointer;
+
+width:
+  36px;
+
+height:
+  36px;
+
+border-radius:
+  10px;
+
+display:
+  grid;
+
+place-items:
+  center;
+
+}
+
+
+
+.fs-chat-close:hover {
+
+background:
+  rgba(0,0,0,.05);
+
+}
+
+
+
+.fs-chat-body {
+
+padding:
+  12px;
+
+flex:
+  1;
+
+overflow:
+  auto;
+
+background:
+  #fbfbfd;
+
+}
+
+
+
+.fs-msg {
+
+display:
+  flex;
+
+margin:
+  10px 0;
+
+}
+
+
+
+.fs-msg.bot {
+
+justify-content:
+  flex-start;
+
+}
+
+
+
+.fs-msg.user {
+
+justify-content:
+  flex-end;
+
+}
+
+
+
+.fs-bubble {
+
+max-width:
+  85%;
+
+padding:
+  10px 12px;
+
+border-radius:
+  14px;
+
+border:
+  1px solid var(--chat-border);
+
+font-size:
+  14px;
+
+line-height:
+  1.35;
+
+color:
+  var(--chat-text);
+
+background:
+  #fff;
+
+white-space:
+  pre-wrap;
+
+}
+
+
+
+.fs-msg.user .fs-bubble {
+
+background:
+  rgba(45,108,223,.12);
+
+border-color:
+  rgba(45,108,223,.25);
+
+}
+
+
+
+.fs-quick {
+
+display:
+  flex;
+
+flex-wrap:
+  wrap;
+
+gap:
+  8px;
+
+margin-top:
+  10px;
+
+}
+
+
+
+.fs-quick button {
+
+font-family:
+  var(--chat-font);
+
+font-size:
+  12px;
+
+padding:
+  8px 10px;
+
+border-radius:
+  999px;
+
+border:
+  1px solid var(--chat-border);
+
+background:
+  #fff;
+
+cursor:
+  pointer;
+
+}
+
+
+
+.fs-quick button:hover {
+
+border-color:
+  rgba(45,108,223,.5);
+
+}
+
+
+
+.fs-chat-footer {
+
+border-top:
+  1px solid var(--chat-border);
+
+padding:
+  10px;
+
+background:
+  #fff;
+
+}
+
+
+
+.fs-chat-form {
+
+display:
+  flex;
+
+gap:
+  8px;
+
+}
+
+
+
+.fs-chat-input {
+
+flex:
+  1;
+
+border:
+  1px solid var(--chat-border);
+
+border-radius:
+  12px;
+
+padding:
+  10px 12px;
+
+font-family:
+  var(--chat-font);
+
+font-size:
+  14px;
+
+outline:
+  none;
+
+}
+
+
+
+.fs-chat-send {
+
+border:
+  none;
+
+cursor:
+  pointer;
+
+border-radius:
+  12px;
+
+padding:
+  0 14px;
+
+background:
+  var(--chat-accent);
+
+color:
+  #fff;
+
+font-weight:
+  600;
+
+}
+
+
+
+.fs-chat-small {
+
+margin-top:
+  8px;
+
+font-size:
+  11px;
+
+color:
+  var(--chat-muted);
+
+line-height:
+  1.3;
+
+}
+
+</style>
+
+
+
+<!-- CHAT LAUNCHER -->
+
+<div
+  class="fs-chat-launcher"
+  aria-live="polite"
+>
+
+
+<div
+  class="fs-chat-pill"
+  id="fsChatPill"
+>
+
+Questions? Chat with us
+
+</div>
+
+
+
+<button
+  class="fs-chat-btn"
+  id="fsChatOpen"
+  aria-label="Open chat"
+>
+
+
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  aria-hidden="true"
+>
+
+
+<path
+  d="M4 5.5C4 4.12 5.12 3 6.5 3h11C18.88 3 20 4.12 20 5.5v7C20 13.88 18.88 15 17.5 15H9l-4.2 3.15c-.5.38-1.2.02-1.2-.6V5.5Z"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linejoin="round"
+/>
+
+
+<path
+  d="M7 7.5h10M7 10.5h7"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+/>
+
+
+</svg>
+
+
+</button>
+
+
+</div>
+
+
+
+<!-- CHAT WINDOW -->
+
+<div
+  class="fs-chat-window"
+  id="fsChatWindow"
+  role="dialog"
+  aria-label="Parent questions chat"
+>
+
+
+<div class="fs-chat-header">
+
+
+<div class="fs-chat-title">
+
+<strong>
+Parent Questions
+</strong>
+
+<span>
+Ask about hours, tuition, enrollment, meals, naps, and more.
+</span>
+
+</div>
+
+
+
+<button
+  class="fs-chat-close"
+  id="fsChatClose"
+  aria-label="Close chat"
+>
+
+
+<svg
+  viewBox="0 0 24 24"
+  width="18"
+  height="18"
+  fill="none"
+  aria-hidden="true"
+>
+
+
+<path
+  d="M6 6l12 12M18 6L6 18"
+  stroke="#111827"
+  stroke-width="2"
+  stroke-linecap="round"
+/>
+
+
+</svg>
+
+
+</button>
+
+
+</div>
+
+
+
+<div
+  class="fs-chat-body"
+  id="fsChatBody"
+>
+</div>
+
+
+
+<div class="fs-chat-footer">
+
+
+<form
+  class="fs-chat-form"
+  id="fsChatForm"
+>
+
+
+<input
+  class="fs-chat-input"
+  id="fsChatInput"
+  type="text"
+  placeholder="Type your question..."
+  autocomplete="off"
+/>
+
+
+<button
+  class="fs-chat-send"
+  type="submit"
+>
+
+Send
+
+</button>
+
+
+</form>
+
+
+
+<div class="fs-chat-small">
+
+Note: This chat provides general info.
+For anything specific, please contact the school.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     CHAT JAVASCRIPT
+===================================================== -->
+
+<script>
+
+(function(){
+
+
+const WORKER_URL =
+  "https://firststep-chat.naessean012.workers.dev";
+
+
+
+const QUICK = [
+
+{
+  label: "Hours",
+  text: "What are your hours?"
+},
+
+{
+  label: "Tuition",
+  text: "How much is tuition?"
+},
+
+{
+  label: "Ages",
+  text: "What ages do you accept?"
+},
+
+{
+  label: "Tour",
+  text: "How do I schedule a tour?"
+},
+
+{
+  label: "Meals",
+  text: "Do you provide meals and snacks?"
+}
+
+];
+
+
+
+const els = {
+
+pill:
+  document.getElementById(
+    "fsChatPill"
+  ),
+
+open:
+  document.getElementById(
+    "fsChatOpen"
+  ),
+
+close:
+  document.getElementById(
+    "fsChatClose"
+  ),
+
+win:
+  document.getElementById(
+    "fsChatWindow"
+  ),
+
+body:
+  document.getElementById(
+    "fsChatBody"
+  ),
+
+form:
+  document.getElementById(
+    "fsChatForm"
+  ),
+
+input:
+  document.getElementById(
+    "fsChatInput"
+  )
+
+};
+
+
+
+if (els.open) {
+
+els.open.classList.add(
+  "pulse"
+);
+
+}
+
+
+
+function openChat(){
+
+
+els.win.classList.add(
+  "open"
+);
+
+
+if (els.open) {
+
+els.open.classList.remove(
+  "pulse"
+);
+
+}
+
+
+if (!els.body.dataset.inited) {
+
+boot();
+
+els.body.dataset.inited =
+  "1";
+
+}
+
+
+setTimeout(
+  () => els.input.focus(),
+  50
+);
+
+
+}
+
+
+
+function closeChat(){
+
+els.win.classList.remove(
+  "open"
+);
+
+}
+
+
+
+els.open.addEventListener(
+  "click",
+  openChat
+);
+
+
+els.pill.addEventListener(
+  "click",
+  openChat
+);
+
+
+els.close.addEventListener(
+  "click",
+  closeChat
+);
+
+
+
+function addMsg(role, text){
+
+
+const wrap =
+  document.createElement(
+    "div"
+  );
+
+
+wrap.className =
+  "fs-msg " + role;
+
+
+
+const bubble =
+  document.createElement(
+    "div"
+  );
+
+
+bubble.className =
+  "fs-bubble";
+
+
+
+let html =
+  text
+
+  .replace(
+    "[CALL]",
+    '<button class="fs-action-btn" onclick="window.location.href=\'tel:16179246952\'">📞 Call</button>'
+  )
+
+  .replace(
+    "[EMAIL]",
+    '<button class="fs-action-btn" onclick="window.location.href=\'mailto:sonia_firststep@comcast.net\'">✉️ Email</button>'
+  )
+
+  .replace(
+    /\n/g,
+    "<br>"
+  );
+
+
+
+bubble.innerHTML =
+  html;
+
+
+wrap.appendChild(
+  bubble
+);
+
+
+els.body.appendChild(
+  wrap
+);
+
+
+els.body.scrollTop =
+  els.body.scrollHeight;
+
+
+}
+
+
+
+function addQuickButtons(){
+
+
+const wrap =
+  document.createElement(
+    "div"
+  );
+
+
+wrap.className =
+  "fs-msg bot";
+
+
+
+const bubble =
+  document.createElement(
+    "div"
+  );
+
+
+bubble.className =
+  "fs-bubble";
+
+
+bubble.textContent =
+  "Popular questions:";
+
+
+
+const quick =
+  document.createElement(
+    "div"
+  );
+
+
+quick.className =
+  "fs-quick";
+
+
+
+QUICK.forEach(btn => {
+
+
+const b =
+  document.createElement(
+    "button"
+  );
+
+
+b.type =
+  "button";
+
+
+b.textContent =
+  btn.label;
+
+
+b.addEventListener(
+  "click",
+  () => handleUser(
+    btn.text
+  )
+);
+
+
+quick.appendChild(
+  b
+);
+
+
+});
+
+
+
+bubble.appendChild(
+  quick
+);
+
+
+wrap.appendChild(
+  bubble
+);
+
+
+els.body.appendChild(
+  wrap
+);
+
+
+els.body.scrollTop =
+  els.body.scrollHeight;
+
+
+}
+
+
+
+async function askAI(userText){
+
+
+const res =
+  await fetch(
+    WORKER_URL,
+    {
+
+      method:
+        "POST",
+
+      headers: {
+
+        "Content-Type":
+          "application/json"
+
+      },
+
+      body:
+        JSON.stringify({
+
+          message:
+            userText
+
+        })
+
+    }
+  );
+
+
+
+const data =
+  await res.json();
+
+
+
+return (
+  data &&
+  data.reply
+)
+
+? String(data.reply)
+
+: "";
+
+
+}
+
+
+
+async function handleUser(text){
+
+
+addMsg(
+  "user",
+  text
+);
+
+
+addMsg(
+  "bot",
+  "One sec…"
+);
+
+
+
+try {
+
+
+const reply =
+  await askAI(text);
+
+
+
+if (els.body.lastChild) {
+
+els.body.lastChild.remove();
+
+}
+
+
+
+addMsg(
+
+"bot",
+
+reply ||
+
+"Sorry — I couldn’t answer that. Please contact the office."
+
+);
+
+
+}
+
+
+catch (e) {
+
+
+if (els.body.lastChild) {
+
+els.body.lastChild.remove();
+
+}
+
+
+
+addMsg(
+
+"bot",
+
+"Sorry — I’m having trouble right now. Please try again."
+
+);
+
+
+}
+
+
+}
+
+
+
+els.form.addEventListener(
+  "submit",
+  (e) => {
+
+
+e.preventDefault();
+
+
+const text =
+  els.input.value.trim();
+
+
+if (!text)
+  return;
+
+
+els.input.value =
+  "";
+
+
+handleUser(text);
+
+
+});
+
+
+function boot(){
+
+
+addMsg(
+
+"bot",
+
+"👋 Hi there! Welcome to First Step Child Care."
+
+);
+
+
+
+addMsg(
+
+"bot",
+
+"Parents often ask about openings, tours, programs, and hours. I'm happy to help!"
+
+);
+
+
+
+addMsg(
+
+"bot",
+
+"If you're interested in enrollment, we recommend scheduling a tour or contacting the office so we can confirm availability."
+
+);
+
+
+
+addQuickButtons();
+
+
+}
+
+
+
+setTimeout(
+  () => {
+
+
+if (
+  !sessionStorage.getItem(
+    "fsChatShown"
+  )
+) {
+
+
+openChat();
+
+
+sessionStorage.setItem(
+  "fsChatShown",
+  "1"
+);
+
+
+}
+
+
+},
+4000
+);
+
+
+})();
+
+</script>
+
+<!-- /Parent Chat Widget -->
+
 
 </body>
 </html>
