@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MKBBYRGPL"></script>
 <script>
@@ -14,149 +14,179 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery | First Step Child Care</title>
-  <meta name="description" content="A look inside First Step Child Care in Watertown, MA — classroom moments, learning through play, and daily activities." />
+  <title>Calendar | First Step Child Care</title>
+  <meta name="description" content="Calendar themes, events, and closures for March 2026 through August 2026 at First Step Child Care." />
 
-  <meta property="og:title" content="Gallery | First Step Child Care" />
-  <meta property="og:description" content="Explore photos from First Step Child Care — learning through play, classroom activities, and daily routines." />
+  <meta property="og:title" content="Calendar | First Step Child Care" />
+  <meta property="og:description" content="Calendar themes, events, and closures (March 2026 – August 2026)." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- calendar.html is in /pages, and CSS is in /css -->
   <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
-    /* Page-only: modern gallery */
+    /* Page-only helpers (pattern matches program.html) */
     .page-hero { padding: 34px 0; }
+
     .breadcrumbs { color: var(--muted); font-weight: 700; font-size: .95rem; }
     .breadcrumbs a { color: var(--primary-2); text-decoration: none; }
     .breadcrumbs a:hover { text-decoration: underline; }
 
-    .gallery-wrap { padding: 10px 0 52px; }
-    .gallery-head {
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      margin-bottom: 16px;
-    }
-    .gallery-head p { margin:0; color: var(--muted); max-width: 70ch; }
-
-    /* Masonry-ish columns (very modern, super simple, very fast) */
-    .masonry {
-      column-count: 3;
-      column-gap: 16px;
-    }
-    @media (max-width: 900px){ .masonry{ column-count: 2; } }
-    @media (max-width: 560px){ .masonry{ column-count: 1; } }
-
-    .shot {
-      break-inside: avoid;
-      margin: 0 0 16px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: #fff;
-      box-shadow: 0 2px 0 rgba(2,6,23,.04);
-      cursor: zoom-in;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .shot:hover{
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-    .shot img{
-      width: 100%;
-      height: auto;
-      display:block;
-    }
-
-    /* Lightbox modal */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(2,6,23,.72);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      padding: 18px;
-    }
-    .lightbox.open { display:flex; }
-
-    .lb-card{
-      width: min(1100px, 96vw);
-      max-height: 86vh;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #0b1220;
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      position: relative;
-    }
-    .lb-img{
-      width: 100%;
-      height: 86vh;
-      max-height: 86vh;
-      object-fit: contain;
-      display:block;
-      background: #0b1220;
-    }
-    .lb-close, .lb-prev, .lb-next{
-      position:absolute;
-      top: 12px;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.10);
-      color: #fff;
-      cursor: pointer;
+    .month-grid{
       display:grid;
-      place-items:center;
-      font-size: 18px;
-      line-height: 1;
-      backdrop-filter: blur(6px);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
-    .lb-close{ right: 12px; }
-    .lb-prev{ left: 12px; top: 50%; transform: translateY(-50%); }
-    .lb-next{ right: 12px; top: 50%; transform: translateY(-50%); }
-    .lb-close:hover, .lb-prev:hover, .lb-next:hover{ background: rgba(255,255,255,.18); }
-
-    .lb-hint{
-      position:absolute;
-      left: 14px;
-      bottom: 12px;
-      color: rgba(255,255,255,.75);
-      font-weight: 700;
-      font-size: .95rem;
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 8px 10px;
-      border-radius: 999px;
+    @media (max-width: 900px){
+      .month-grid{ grid-template-columns: 1fr; }
     }
 
-    /* Small CTA panel */
-    .cta-panel{
-      margin-top: 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
+    .month-card{
       background:#fff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 18px;
       box-shadow: 0 2px 0 rgba(2,6,23,.04);
     }
-    .cta-panel p{ margin:0; color: var(--muted); }
-  </style>
+    .month-card h3{
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
 
-  .fs-action-btn{
+    .event-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .event{
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .event .date{
+      flex: 0 0 auto;
+      font-weight: 900;
+      color: var(--text);
+      min-width: 118px;
+      line-height:1.25;
+    }
+    .event .desc{
+      flex: 1 1 auto;
+      color: var(--muted);
+      font-weight: 700;
+      line-height:1.35;
+    }
+
+    /* Closed highlight */
+    .event.is-closed{
+      background: rgba(239, 68, 68, .08);
+      border-color: rgba(239, 68, 68, .25);
+    }
+    .event.is-closed .desc{
+      color: #7f1d1d; /* dark red */
+      font-weight: 900;
+    }
+
+    .pill-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-weight: 800;
+      color: var(--text);
+      font-size: .92rem;
+    }
+
+    /* ---------- PRINT STYLES ---------- */
+    @media print {
+
+      @page {
+        size: landscape;
+        margin: 0.5in;
+      }
+
+      header,
+      footer,
+      .hero,
+      .hero-actions,
+      .pill-row,
+      .breadcrumbs,
+      .skip-link,
+      .wave-divider,
+      .floating-contact,
+      .fun-floaters {
+        display: none !important;
+      }
+
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+
+      .section.alt {
+        padding: 0 !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 12px !important;
+      }
+
+      .month-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      .month-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 14px !important;
+      }
+
+      .month-card h3 {
+        margin-bottom: 8px !important;
+      }
+
+      .event {
+        background: #fff !important;
+        border-color: #ddd !important;
+        padding: 8px 10px !important;
+      }
+
+      .event.is-closed {
+        background: #fce8e8 !important;
+        border-color: #f5a5a5 !important;
+      }
+
+      .event .date {
+        min-width: 105px !important;
+        font-weight: 700 !important;
+      }
+    }
+
+    .fs-action-btn{
   margin-top:8px;
   margin-right:8px;
   padding:8px 12px;
@@ -171,12 +201,13 @@
 .fs-action-btn:hover{
   background:#1f4fbf;
 }
+  </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ✅ Floating playful icons -->
+  <!-- Floating playful icons (match index.html) -->
   <div class="fun-floaters" aria-hidden="true">
     <span class="floater f1" data-speed="0.10">★</span>
     <span class="floater f2" data-speed="0.18">☁️</span>
@@ -186,24 +217,25 @@
     <span class="floater f6" data-speed="0.20">🧩</span>
   </div>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
 
-<a class="brand" href="../index.html" aria-label="First Step Child Care Home">
-  <span class="brand-icon" aria-hidden="true">👣</span>
-  <span class="brand-text">
-    <span class="brand-name">First Step</span>
-    <span class="brand-sub">Child Care</span>
-  </span>
-</a>
+      <!-- Brand -->
+      <a class="brand" href="../index.html" aria-label="First Step Child Care Home">
+        <span class="brand-icon" aria-hidden="true">👣</span>
+        <span class="brand-text">
+          <span class="brand-name">First Step</span>
+          <span class="brand-sub">Child Care</span>
+        </span>
+      </a>
 
-
+      <!-- Mobile toggle -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Open menu</span>
         ☰
       </button>
 
+      <!-- Navigation -->
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a class="nav-link" href="../index.html">Home</a></li>
@@ -213,11 +245,11 @@
               About <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="prices.html">Prices</a></li>
-              <li><a href="kindercam.html">Kinder Cam</a></li>
-              <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+              <li><a href="../pages/about.html">About Us</a></li>
+              <li><a href="../pages/prices.html">Prices</a></li>
+              <li><a href="../pages/kindercam.html">Kinder Cam</a></li>
+              <li><a aria-current="page" href="../pages/calendar.html">Calendar</a></li>
+              <li><a href="../pages/gallery.html">Gallery</a></li>
             </ul>
           </li>
 
@@ -226,13 +258,14 @@
               Programs <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
-              <li><a href="program.html">Overview</a></li>
-              <li><a href="infant-program.html">Infant Program</a></li>
-              <li><a href="toddler-program.html">Toddler Program</a></li>
-              <li><a href="preschool-program.html">Preschool / Pre-K</a></li>
-              <li><a href="schedules.html">Schedules</a></li>
+              <li><a href="../pages/program.html">Overview</a></li>
+              <li><a href="../pages/infant-program.html">Infant Program</a></li>
+              <li><a href="../pages/toddler-program.html">Toddler Program</a></li>
+              <li><a href="../pages/preschool-program.html">Preschool / Pre-K</a></li>
+              <li><a href="../pages/schedules.html">Schedules</a></li>
+
               <!-- ✅ ADDED -->
-              <li><a href="lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
+              <li><a href="../pages/lunch-and-snack-schedule.html">Lunch &amp; Snack Schedule</a></li>
             </ul>
           </li>
 
@@ -241,7 +274,8 @@
               Policies <span aria-hidden="true">▾</span>
             </button>
             <ul class="dropdown">
-              <li><a href="policies.html">Policies Overview</a></li>
+              <!-- ✅ FIXED PATH -->
+              <li><a href="../pages/policies.html">Policies Overview</a></li>
 
               <li><a href="../policies/allergy-policy.html">Allergy Policy</a></li>
               <li><a href="../policies/behavior-management.html">Behavior Management</a></li>
@@ -254,8 +288,8 @@
             </ul>
           </li>
 
-          <li><a class="nav-link" href="gallery.html" aria-current="page">Gallery</a></li>
-          
+          <li><a class="nav-link" href="../pages/gallery.html">Gallery</a></li>
+
           <li class="has-dropdown">
             <button class="nav-link dropdown-btn" aria-expanded="false">
               Contact <span aria-hidden="true">▾</span>
@@ -269,28 +303,50 @@
         </ul>
       </nav>
 
+      <!-- Header CTA -->
       <div class="header-cta">
         <a class="mini-link" href="tel:+16174846688">📞 (617) 484-6688</a>
-        <a class="mini-link"
-           href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
-           target="_blank" rel="noopener">📍 Get Directions</a>
+        <a
+          class="mini-link"
+          href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472"
+          target="_blank"
+          rel="noopener"
+        >📍 Get Directions</a>
       </div>
 
     </div>
   </header>
 
   <main id="main">
+    <!-- Page hero -->
     <section class="hero page-hero">
       <div class="container hero-inner">
         <div class="hero-copy">
           <p class="breadcrumbs">
-            <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Gallery
+            <a href="../index.html">Home</a> <span aria-hidden="true">/</span> Calendar
           </p>
-          <h1>Photo Gallery</h1>
-          <p class="lead">A look inside our classrooms, learning through play, and everyday moments.</p>
+
+          <h1>Academic Calendar (March 2026 – August 2026)</h1>
+          <p class="lead">
+            Classroom themes, special events, and closures. “Closed” dates are highlighted for quick scanning.
+          </p>
+
           <div class="hero-actions">
-            <a class="btn primary" href="program.html">Explore Programs</a>
-            <a class="btn ghost" href="about.html#contact">Request Info</a>
+            <a class="btn primary" href="#dates">View Dates</a>
+            <button class="btn ghost" type="button" onclick="window.print()">🖨️ Print Calendar</button>
+            <a class="btn ghost" href="mailto:sonia_firststep@comcast.net">Questions? Email Us</a>
+          </div>
+
+          <div class="pill-row" aria-label="Legend">
+            <span class="pill">📚 Weekly Themes</span>
+            <span class="pill" style="background: rgba(239, 68, 68, .08); border-color: rgba(239, 68, 68, .25);">
+              ❌ Closed Days
+            </span>
+          </div>
+
+          <div class="hero-contact" style="display:flex; gap:16px; margin-top:14px; font-weight:700; color: var(--muted); flex-wrap:wrap;">
+            <span>📍 1078 Belmont St, Watertown, MA</span>
+            <span>📞 (617) 484-6688</span>
           </div>
         </div>
 
@@ -305,57 +361,187 @@
       </div>
     </section>
 
-    <!-- ✅ Wave divider (Hero -> Gallery section) -->
+    <!-- ✅ WAVE DIVIDER: hero -> dates (alt blue) -->
     <div class="wave-divider" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" role="presentation" focusable="false">
-        <path d="M0,40 C240,90 480,10 720,50 C960,90 1200,20 1440,60 L1440,100 L0,100 Z" fill="#dbe9fb"></path>
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#dbe9fb" d="M0,40 C240,90 480,0 720,40 C960,80 1200,20 1440,50 L1440,90 L0,90 Z"></path>
       </svg>
     </div>
 
-    <section class="section gallery-wrap">
+    <!-- Dates -->
+    <section class="section alt" id="dates">
       <div class="container">
-        <div class="gallery-head">
-          <div>
-            <h2 class="section-title" style="margin:0 0 6px;">Moments at First Step</h2>
-            <p>Click any photo to view it larger. Use the arrows or your keyboard (← →) to navigate.</p>
-          </div>
-        </div>
+        <h2 class="section-title">Important Dates</h2>
+        <p class="section-sub">March 2026 through August 2026</p>
 
-        <!-- Gallery -->
-        <div class="masonry" id="gallery">
-          <figure class="shot"><img src="../assets/img/gallery-01.avif" alt="Children engaged in classroom activity" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-02.avif" alt="Learning through play in the classroom" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-03.avif" alt="Preschool activity and materials" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-04.avif" alt="Group play and social development" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-05.avif" alt="Teacher-led activity with children" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-06.avif" alt="Creative play and exploration" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-08.avif" alt="Play-based center activity" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/gallery-09.avif" alt="Child care environment and daily routine" loading="lazy" decoding="async"></figure>
-          <figure class="shot"><img src="../assets/img/basket.jpg" alt="Child care environment and daily routine" loading="lazy" decoding="async"></figure>          
-        </div>
+        <div class="month-grid">
 
-        <div class="cta-panel">
-          <p><strong>Want to see us in person?</strong> We’d love to meet you and answer questions about enrollment.</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="tel:+16174846688">Call (617) 484-6688</a>
-            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=1078+Belmont+St,+Watertown,+MA+02472" target="_blank" rel="noopener">Get Directions</a>
-          </div>
-        </div>
+          <!-- March 2026 -->
+          <article class="month-card" aria-label="March 2026">
+            <h3>March 2026</h3>
+            <ul class="event-list">
+              <li class="event">
+                <div class="date">3/2 – 3/6</div>
+                <div class="desc">Eric Carle Week</div>
+              </li>
+              <li class="event">
+                <div class="date">3/9 – 3/13</div>
+                <div class="desc">Fabulous Female Authors</div>
+              </li>
+              <li class="event">
+                <div class="date">3/16 – 3/20</div>
+                <div class="desc">Our Favorite Books</div>
+              </li>
+              <li class="event">
+                <div class="date">3/23 – 3/27</div>
+                <div class="desc">Spring</div>
+              </li>
+              <li class="event">
+                <div class="date">3/30 – 4/3</div>
+                <div class="desc">Gardens &amp; Veggies</div>
+              </li>
+            </ul>
+          </article>
 
+          <!-- April 2026 -->
+          <article class="month-card" aria-label="April 2026">
+            <h3>April 2026</h3>
+            <ul class="event-list">
+              <li class="event">
+                <div class="date">4/6 – 4/10</div>
+                <div class="desc">Birds</div>
+              </li>
+              <li class="event">
+                <div class="date">4/13 – 4/17</div>
+                <div class="desc">Insects</div>
+              </li>
+              <li class="event">
+                <div class="date">4/20 – 4/24</div>
+                <div class="desc">Happy Earth Week</div>
+              </li>
+              <li class="event is-closed">
+                <div class="date">4/20</div>
+                <div class="desc">Closed for Patriots Day*</div>
+              </li>
+              <li class="event">
+                <div class="date">4/27 – 5/1</div>
+                <div class="desc">Pond/Pond Life</div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- May 2026 -->
+          <article class="month-card" aria-label="May 2026">
+            <h3>May 2026</h3>
+            <ul class="event-list">
+              <li class="event">
+                <div class="date">5/4 – 5/8</div>
+                <div class="desc">Ocean/Ocean Life</div>
+              </li>
+              <li class="event">
+                <div class="date">5/11 – 5/15</div>
+                <div class="desc">Space</div>
+              </li>
+              <li class="event">
+                <div class="date">5/18 – 5/22</div>
+                <div class="desc">Dinosaurs</div>
+              </li>
+              <li class="event">
+                <div class="date">5/25 – 5/29</div>
+                <div class="desc">Sports</div>
+              </li>
+              <li class="event is-closed">
+                <div class="date">5/25</div>
+                <div class="desc">Closed for Memorial Day*</div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- June 2026 -->
+          <article class="month-card" aria-label="June 2026">
+            <h3>June 2026</h3>
+            <ul class="event-list">
+              <li class="event">
+                <div class="date">6/1 – 6/5</div>
+                <div class="desc">Cooking and Baking</div>
+              </li>
+              <li class="event">
+                <div class="date">6/8 – 6/12</div>
+                <div class="desc">Weather</div>
+              </li>
+              <li class="event">
+                <div class="date">6/15 – 6/19</div>
+                <div class="desc">Summer</div>
+              </li>
+              <li class="event is-closed">
+                <div class="date">6/19</div>
+                <div class="desc">Closed for Juneteenth*</div>
+              </li>
+              <li class="event">
+                <div class="date">6/22 – 6/26</div>
+                <div class="desc">At the Beach</div>
+              </li>
+              <li class="event">
+                <div class="date">6/29 – 7/3</div>
+                <div class="desc">Red, White and Blue</div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- July 2026 -->
+          <article class="month-card" aria-label="July 2026">
+            <h3>July 2026</h3>
+            <ul class="event-list">
+              <li class="event is-closed">
+                <div class="date">7/3</div>
+                <div class="desc">Closed for Independence Day</div>
+              </li>
+              <li class="event">
+                <div class="date">7/6 – 7/10</div>
+                <div class="desc">Colors and Rainbow</div>
+              </li>
+              <li class="event">
+                <div class="date">7/13 – 7/17</div>
+                <div class="desc">Shapes</div>
+              </li>
+              <li class="event">
+                <div class="date">7/20 – 7/24</div>
+                <div class="desc">Numbers</div>
+              </li>
+              <li class="event">
+                <div class="date">7/27 – 7/31</div>
+                <div class="desc">Alphabet Week 1</div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- August 2026 -->
+          <article class="month-card" aria-label="August 2026">
+            <h3>August 2026</h3>
+            <ul class="event-list">
+              <li class="event">
+                <div class="date">8/3 – 8/7</div>
+                <div class="desc">Alphabet Week 2</div>
+              </li>
+              <li class="event">
+                <div class="date">8/10 – 8/14</div>
+                <div class="desc">Alphabet Week 3</div>
+              </li>
+              <li class="event">
+                <div class="date">8/17 – 8/21</div>
+                <div class="desc">Wonderful Water</div>
+              </li>
+              <li class="event">
+                <div class="date">8/24 – 8/28</div>
+                <div class="desc">Discovery Week</div>
+              </li>
+            </ul>
+          </article>
+
+        </div>
       </div>
     </section>
   </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lb-card" role="dialog" aria-modal="true" aria-label="Image viewer">
-      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-      <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
-      <button class="lb-next" id="lbNext" aria-label="Next">›</button>
-      <img class="lb-img" id="lbImg" alt="">
-      <div class="lb-hint">Esc to close • ← → to navigate</div>
-    </div>
-  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -364,17 +550,24 @@
         <p class="muted">1078 Belmont St, Watertown, MA 02472 • (617) 484-6688</p>
       </div>
       <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="program.html">Programs</a>
-        <a href="policies.html">Policies</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="../pages/about.html">About</a>
+        <a href="../pages/program.html">Programs</a>
+        <a href="../pages/policies.html">Policies</a>
+        <a href="../pages/gallery.html">Gallery</a>
       </div>
     </div>
-<div class="container footer-bottom">
-  <p class="muted">© <span id="year"></span> First Step Child Care</p>
-  <p class="muted footer-credit">Website built by <span class="credit-brand">Dawgsweb</span></p>
-</div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span id="year"></span> First Step Child Care</p>
+      <p class="muted footer-credit">Website built by <span class="credit-brand">Dawgsweb</span></p>
+    </div>
   </footer>
+
+  <!-- Floating Contact Button (match index.html) -->
+  <a class="floating-contact"
+     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
+     aria-label="Email First Step Child Care">
+    ✉️ Contact
+  </a>
 
   <script>
     // year
@@ -383,111 +576,49 @@
     // mobile nav toggle
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.getElementById("site-nav");
-    toggle.addEventListener("click", () => {
-      const open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      nav.classList.toggle("open");
-    });
 
-    // dropdowns: mobile click only, desktop uses hover
+    if (toggle && nav){
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        nav.classList.toggle("open");
+      });
+    }
+
+    // dropdowns: mobile/touch = click, desktop = hover (no sticky click)
     const dropdowns = document.querySelectorAll(".has-dropdown");
     const isTouch = window.matchMedia("(hover: none)").matches;
 
+    function closeAllDropdowns(except = null){
+      dropdowns.forEach(d => {
+        if (d !== except) {
+          d.classList.remove("open");
+          const b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
     dropdowns.forEach(drop => {
       const btn = drop.querySelector(".dropdown-btn");
+      if (!btn) return;
+
       btn.addEventListener("click", (e) => {
-        if (!isTouch) return;
+        if (!isTouch) return; // desktop: ignore click so it doesn't stick
+        e.preventDefault();
         e.stopPropagation();
 
-        dropdowns.forEach(d => {
-          if (d !== drop) {
-            d.classList.remove("open");
-            const b = d.querySelector(".dropdown-btn");
-            if (b) b.setAttribute("aria-expanded", "false");
-          }
-        });
-
         const isOpen = drop.classList.contains("open");
+        closeAllDropdowns(drop);
+
         drop.classList.toggle("open", !isOpen);
         btn.setAttribute("aria-expanded", String(!isOpen));
       });
     });
 
-    document.querySelectorAll(".dropdown a").forEach(link => {
-      link.addEventListener("click", () => {
-        dropdowns.forEach(d => {
-          d.classList.remove("open");
-          const b = d.querySelector(".dropdown-btn");
-          if (b) b.setAttribute("aria-expanded", "false");
-        });
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      const isMenu = e.target.closest(".has-dropdown");
-      if (!isMenu) {
-        dropdowns.forEach(li => {
-          li.classList.remove("open");
-          const b = li.querySelector(".dropdown-btn");
-          if (b) b.setAttribute("aria-expanded", "false");
-        });
-      }
-    });
-
-    // Lightbox
-    const shots = Array.from(document.querySelectorAll("#gallery img"));
-    const lightbox = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lbImg");
-    const lbClose = document.getElementById("lbClose");
-    const lbPrev = document.getElementById("lbPrev");
-    const lbNext = document.getElementById("lbNext");
-
-    let idx = 0;
-
-    function openLB(i){
-      idx = i;
-      const img = shots[idx];
-      lbImg.src = img.src;
-      lbImg.alt = img.alt || "";
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLB(){
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      document.body.style.overflow = "";
-    }
-
-    function prev(){
-      idx = (idx - 1 + shots.length) % shots.length;
-      openLB(idx);
-    }
-    function next(){
-      idx = (idx + 1) % shots.length;
-      openLB(idx);
-    }
-
-    shots.forEach((img, i) => {
-      img.closest(".shot").addEventListener("click", () => openLB(i));
-    });
-
-    lbClose.addEventListener("click", closeLB);
-    lbPrev.addEventListener("click", (e) => { e.stopPropagation(); prev(); });
-    lbNext.addEventListener("click", (e) => { e.stopPropagation(); next(); });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLB();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (!lightbox.classList.contains("open")) return;
-      if (e.key === "Escape") closeLB();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    });
+    document.addEventListener("click", () => closeAllDropdowns());
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAllDropdowns(); });
+    document.querySelectorAll(".dropdown a").forEach(link => link.addEventListener("click", () => closeAllDropdowns()));
   </script>
 
   <!-- ✅ Scroll-reactive floaters (light parallax) -->
@@ -527,11 +658,7 @@
     })();
   </script>
 
-  <a class="floating-contact"
-     href="mailto:sonia_firststep@comcast.net?subject=First%20Step%20Child%20Care%20Inquiry"
-     aria-label="Email First Step Child Care">
-    ✉️ Contact
-  </a>
+  <!-- ✅ Pulse floating button only after user scrolls -->
   <script>
     (function(){
       const btn = document.querySelector('.floating-contact');
@@ -550,7 +677,7 @@
     })();
   </script>
 
-   <!-- Parent Chat Widget (AI Bot via Cloudflare Worker) -->
+  <!-- Parent Chat Widget (AI Bot via Cloudflare Worker) -->
  
   <style>
     :root{
